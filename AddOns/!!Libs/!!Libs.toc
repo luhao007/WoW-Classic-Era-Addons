@@ -1,0 +1,93 @@
+## Interface: 11307
+## Author: luhao007
+
+## Title: Libraries
+## Notes: Libraries
+## Title-zhCN: |cFFFFE00A<|r|cFFC41F3B基础库|r|cFFFFE00A>|r |cFFFFFFFF|cFF7FFF7FAce核心库|r |cFFFF0000必须加载|r|r
+## Notes-zhCN: 插件基础函数库|N|CFFFF0000必须加载|R
+
+
+# Common Handler Libs
+Ace3\LibStub\LibStub.lua
+Ace3\CallbackHandler-1.0\CallbackHandler-1.0.xml
+LibDataBroker-1.1\LibDataBroker-1.1.lua
+
+# Ace3 Libs
+Ace3\AceAddon-3.0\AceAddon-3.0.xml
+Ace3\AceEvent-3.0\AceEvent-3.0.xml
+Ace3\AceTimer-3.0\AceTimer-3.0.xml
+Ace3\AceBucket-3.0\AceBucket-3.0.xml
+Ace3\AceHook-3.0\AceHook-3.0.xml
+Ace3\AceDB-3.0\AceDB-3.0.xml
+Ace3\AceDBOptions-3.0\AceDBOptions-3.0.xml
+Ace3\AceLocale-3.0\AceLocale-3.0.xml
+Ace3\AceGUI-3.0\AceGUI-3.0.xml
+Ace3\AceConsole-3.0\AceConsole-3.0.xml
+Ace3\AceConfig-3.0\AceConfig-3.0.xml
+Ace3\AceComm-3.0\AceComm-3.0.xml
+Ace3\AceTab-3.0\AceTab-3.0.xml
+Ace3\AceSerializer-3.0\AceSerializer-3.0.xml
+
+# Ace3 Additional Libs
+LibSharedMedia-3.0\lib.xml
+AceGUI-3.0-SharedMediaWidgets\AceGUI-3.0-SharedMediaWidgets\widget.xml
+
+# Libs Needs to be Imported before Other Libs
+LibCompress\lib.xml
+UTF8\utf8data.lua
+UTF8\utf8.lua
+
+# HereBeDragons
+HereBeDragons\HereBeDragons-2.0.lua
+HereBeDragons\HereBeDragons-Pins-2.0.lua
+HereBeDragons\HereBeDragons-Migrate.lua
+
+# Dropdown menus
+!LibUIDropDownMenu\LibUIDropDownMenu\LibUIDropDownMenu.xml
+!LibUIDropDownMenu-2.0\LibUIDropDownMenu.xml
+
+# LibBabbles
+LibBabble\LibBabble-3.0.lua
+LibBabble\LibBabble-Boss-3.0\lib.xml
+LibBabble\LibBabble-CreatureType-3.0\lib.xml
+LibBabble\LibBabble-Faction-3.0\lib.xml
+LibBabble\LibBabble-Race-3.0\lib.xml
+LibBabble\LibBabble-SubZone-3.0\lib.xml
+
+# DR Libs
+DRList-1.0\DRList-1.0.xml
+DRData-1.0\DRData-1.0.xml
+
+# Other Libs
+LibAlts-1.0\lib.xml
+LibBossIDs-1.0\lib.xml
+LibCandyBar-3.0\lib.xml
+LibChatAnims\LibChatAnims\LibChatAnims.xml
+LibClassicCasterino\LibClassicCasterino.lua
+LibClassicDurations\LibClassicDurations.xml
+LibClassicItemSets-1.0\LibClassicItemSets-1.0.xml
+LibClassicSpellActionCount-1.0\LibClassicSpellActionCount-1.0.lua
+LibCustomGlow-1.0\LibCustomGlow-1.0.xml
+LibDBIcon-1.0\LibDBIcon-1.0\LibDBIcon-1.0.lua
+LibDDI-1.0\lib.xml
+LibDeflate\lib.xml
+LibDialog-1.0\lib.xml
+LibDogTag-3.0\lib.xml
+LibDogTag-Unit-3.0\lib.xml
+LibDropdown-1.0\LibDropdown-1.0\LibDropdown-1.0.lua
+LibDurability\LibDurability\LibDurability.xml
+LibGetFrame-1.0\LibGetFrame-1.0.xml
+LibGraph-2.0\LibGraph-2.0\LibGraph-2.0.lua
+LibItemUpgradeInfo-1.0\LibItemUpgradeInfo-1.0.xml
+LibLatency\LibLatency\LibLatency.xml
+LibOO-1.0\lib.xml
+LibQTip-1.0\lib.xml
+LibRangeCheck-2.0\LibRangeCheck-2.0\LibRangeCheck-2.0.lua
+LibRealmInfo\LibRealmInfo.lua
+LibSink-2.0\LibSink-2.0\LibSink-2.0.lua
+LibSpellRange-1.0\lib.xml
+LibWindow-1.1\LibWindow-1.1\LibWindow-1.1.lua
+NickTag-1.0\NickTag-1.0.xml
+
+# Custom Luas
+custom.lua

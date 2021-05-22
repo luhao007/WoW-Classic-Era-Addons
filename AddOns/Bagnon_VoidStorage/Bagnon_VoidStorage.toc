@@ -1,0 +1,13 @@
+## Interface: 11307
+## Author: Jaliborc (JoÃ£o Cardoso)
+## RequiredDeps: Bagnon
+## LoadOnDemand: 1
+
+## Title: Bagnon Void Storage
+## Notes: Single window display for your void storage
+## Title-zhCN: |cFFFFE00A<|r|cFF0070DE物品|r|cFFFFE00A>|r |cFFFFFFFF背包整合|r |cFF69CCF0虚空仓库|r
+## Notes-zhCN: Bagnon虚空仓库模块
+
+## X-Part-Of: Bagnon
+
+..\Bagnon\addons\vault\vault.xml

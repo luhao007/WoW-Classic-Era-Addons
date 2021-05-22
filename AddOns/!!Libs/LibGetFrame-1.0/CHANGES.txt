@@ -1,0 +1,16 @@
+lightweight tag 92782ffb5be341bd296b7fe4fed9364c48ea2c05 1.5.6
+Author:	Buds <mrbouyou@gmail.com>
+Date:	Sat Jan 9 17:53:32 2021 +0100
+
+commit 92782ffb5be341bd296b7fe4fed9364c48ea2c05
+Author: Buds <mrbouyou@gmail.com>
+Date:   Sat Jan 9 17:53:32 2021 +0100
+
+    listen INSTANCE_ENCOUNTER_ENGAGE_UNIT event for new boss units
+
+commit 3182bb377160c00b417affaaf2a02216f5e33979
+Author: Buds <mrbouyou@gmail.com>
+Date:   Mon Jan 4 23:17:35 2021 +0100
+
+    make GetUnitFrames more resilient to bad input
+

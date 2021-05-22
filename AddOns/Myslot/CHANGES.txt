@@ -1,0 +1,16 @@
+lightweight tag 1b9759b6c074beaf9c189fbb0b0d7ea56baf283c v5.5.1-classic
+Author:	Boshi Lian <farmer1992@gmail.com>
+Date:	Tue Jan 12 18:17:51 2021 -0800
+
+commit 1b9759b6c074beaf9c189fbb0b0d7ea56baf283c
+Author: Boshi Lian <farmer1992@gmail.com>
+Date:   Tue Jan 12 18:17:51 2021 -0800
+
+    Squashed commit of the following:
+    
+    commit f52ccce4751d925cb2dcdfaed1b84ee6bc55dff7
+    Author: Boshi Lian <farmer1992@gmail.com>
+    Date:   Tue Aug 27 03:52:51 2019 -0700
+    
+        support classic
+

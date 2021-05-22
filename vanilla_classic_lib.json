@@ -1,0 +1,1055 @@
+[
+  {
+    "source": "curse",
+    "id": "13376",
+    "slug": "ace3",
+    "name": "Ace3",
+    "description": "AddOn development framework",
+    "url": "https://www.curseforge.com/wow/addons/ace3",
+    "download_url": "https://edge.forgecdn.net/files/3312/435/Ace3-Release-r1252.zip",
+    "date_published": "2021-05-17T09:33:15.987000+00:00",
+    "version": "Release-r1252",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/13376/file/3312435/changelog",
+    "folders": [
+      {
+        "name": "Ace3"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "Release-r1252",
+        "install_time": "2021-05-22T12:04:28+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "13380",
+    "slug": "ace-gui-3-0-shared-media-widgets",
+    "name": "AceGUI-3.0-SharedMediaWidgets",
+    "description": "Enables AceGUI-3.0 widgets for the 5 basic SharedMedia-3.0 types",
+    "url": "https://www.curseforge.com/wow/addons/ace-gui-3-0-shared-media-widgets",
+    "download_url": "https://edge.forgecdn.net/files/3086/941/AceGUI-3.0-SharedMediaWidgets-r65-release.zip",
+    "date_published": "2020-10-19T22:07:02.467000+00:00",
+    "version": "r65-release",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/13380/file/3086941/changelog",
+    "folders": [
+      {
+        "name": "AceGUI-3.0-SharedMediaWidgets"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "r65-release",
+        "install_time": "2021-05-22T12:04:28+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "20187",
+    "slug": "drdata-1-0",
+    "name": "DRData-1.0",
+    "description": "Database of Diminishing return categories and general data",
+    "url": "https://www.curseforge.com/wow/addons/drdata-1-0",
+    "download_url": "https://edge.forgecdn.net/files/2749/115/DRData-1.0-v2.8.6-61-g6faff7a-alpha.zip",
+    "date_published": "2019-07-27T01:23:31.827000+00:00",
+    "version": "v2.8.6-61-g6faff7a-alpha",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/20187/file/2749115/changelog",
+    "folders": [
+      {
+        "name": "DRData-1.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "v2.8.6-61-g6faff7a-alpha",
+        "install_time": "2021-05-22T12:04:28+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "315757",
+    "slug": "drlist-1-0",
+    "name": "DRList-1.0 (Diminishing Returns Data)",
+    "description": "Library for crowd control diminishing return data.",
+    "url": "https://www.curseforge.com/wow/addons/drlist-1-0",
+    "download_url": "https://edge.forgecdn.net/files/3294/171/DRList-1.0-v1.2.4.zip",
+    "date_published": "2021-04-30T19:06:03.183000+00:00",
+    "version": "v1.2.4",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/315757/file/3294171/changelog",
+    "folders": [
+      {
+        "name": "DRList-1.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "v1.2.4",
+        "install_time": "2021-05-22T12:04:28+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "94348",
+    "slug": "herebedragons",
+    "name": "HereBeDragons",
+    "description": "HereBeDragons is a data API for the World of Warcraft mapping system",
+    "url": "https://www.curseforge.com/wow/addons/herebedragons",
+    "download_url": "https://edge.forgecdn.net/files/3312/444/HereBeDragons-2.06-release.zip",
+    "date_published": "2021-05-17T09:46:52.940000+00:00",
+    "version": "2.06-release",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/94348/file/3312444/changelog",
+    "folders": [
+      {
+        "name": "HereBeDragons"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "2.06-release",
+        "install_time": "2021-05-22T12:04:28+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "15745",
+    "slug": "libalts-1-0",
+    "name": "LibAlts-1.0",
+    "description": "Shared handling of alternate identity data between addons.",
+    "url": "https://www.curseforge.com/wow/addons/libalts-1-0",
+    "download_url": "https://edge.forgecdn.net/files/2349/705/LibAlts-1.0-2.0.1.zip",
+    "date_published": "2016-11-27T08:35:21.333000+00:00",
+    "version": "2.0.1",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/15745/file/2349705/changelog",
+    "folders": [
+      {
+        "name": "LibAlts-1.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "2.0.1",
+        "install_time": "2021-05-22T12:04:28+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "14262",
+    "slug": "libbabble-boss-3-0",
+    "name": "LibBabble-Boss-3.0",
+    "description": "A library to help with localization of bosses.",
+    "url": "https://www.curseforge.com/wow/addons/libbabble-boss-3-0",
+    "download_url": "https://edge.forgecdn.net/files/3120/160/LibBabble-Boss-3.0-9.0-release6.zip",
+    "date_published": "2020-11-22T22:43:35.253000+00:00",
+    "version": "9.0-release6",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/14262/file/3120160/changelog",
+    "folders": [
+      {
+        "name": "LibBabble-Boss-3.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "9.0-release6",
+        "install_time": "2021-05-22T12:04:28+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "14264",
+    "slug": "libbabble-creaturetype-3-0",
+    "name": "LibBabble-CreatureType-3.0",
+    "description": "A library to help with localization of the output of UnitCreatureType.",
+    "url": "https://www.curseforge.com/wow/addons/libbabble-creaturetype-3-0",
+    "download_url": "https://edge.forgecdn.net/files/3120/161/LibBabble-CreatureType-3.0-9.0-release6.zip",
+    "date_published": "2020-11-22T22:43:37.947000+00:00",
+    "version": "9.0-release6",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/14264/file/3120161/changelog",
+    "folders": [
+      {
+        "name": "LibBabble-CreatureType-3.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "9.0-release6",
+        "install_time": "2021-05-22T12:04:28+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "14265",
+    "slug": "libbabble-faction-3-0",
+    "name": "LibBabble-Faction-3.0",
+    "description": "A library to help with localization of factions.",
+    "url": "https://www.curseforge.com/wow/addons/libbabble-faction-3-0",
+    "download_url": "https://edge.forgecdn.net/files/3120/209/LibBabble-Faction-3.0-9.0-release7.zip",
+    "date_published": "2020-11-22T23:33:22.310000+00:00",
+    "version": "9.0-release7",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/14265/file/3120209/changelog",
+    "folders": [
+      {
+        "name": "LibBabble-Faction-3.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "9.0-release7",
+        "install_time": "2021-05-22T12:04:28+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "16748",
+    "slug": "libbabble-race-3-0",
+    "name": "LibBabble-Race-3.0",
+    "description": "A library to help with localization of races.",
+    "url": "https://www.curseforge.com/wow/addons/libbabble-race-3-0",
+    "download_url": "https://edge.forgecdn.net/files/3120/163/LibBabble-Race-3.0-9.0-release6.zip",
+    "date_published": "2020-11-22T22:43:45.207000+00:00",
+    "version": "9.0-release6",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/16748/file/3120163/changelog",
+    "folders": [
+      {
+        "name": "LibBabble-Race-3.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "9.0-release6",
+        "install_time": "2021-05-22T12:04:28+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "24454",
+    "slug": "libbabble-subzone-3-0",
+    "name": "LibBabble-SubZone-3.0",
+    "description": "A library to help with localization of in-game subzone names.",
+    "url": "https://www.curseforge.com/wow/addons/libbabble-subzone-3-0",
+    "download_url": "https://edge.forgecdn.net/files/3093/364/LibBabble-SubZone-3.0-9.0-release1.zip",
+    "date_published": "2020-10-26T15:12:25.337000+00:00",
+    "version": "9.0-release1",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/24454/file/3093364/changelog",
+    "folders": [
+      {
+        "name": "LibBabble-SubZone-3.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "9.0-release1",
+        "install_time": "2021-05-22T12:04:28+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "18245",
+    "slug": "libbossids-1-0",
+    "name": "LibBossIDs-1.0",
+    "description": "A library to provide mobIDs for bosses.",
+    "url": "https://www.curseforge.com/wow/addons/libbossids-1-0",
+    "download_url": "https://edge.forgecdn.net/files/884/246/LibBossIDs-1.0-r97-release.zip",
+    "date_published": "2015-06-24T09:43:30.077000+00:00",
+    "version": "r97-release",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/18245/file/884246/changelog",
+    "folders": [
+      {
+        "name": "LibBossIDs-1.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "r97-release",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "18909",
+    "slug": "libcandybar-3-0",
+    "name": "LibCandyBar-3.0",
+    "description": "Timer bars with that extra sweetness.",
+    "url": "https://www.curseforge.com/wow/addons/libcandybar-3-0",
+    "download_url": "https://edge.forgecdn.net/files/3252/731/LibCandyBar-3.0-r148-release.zip",
+    "date_published": "2021-03-27T12:44:12.617000+00:00",
+    "version": "r148-release",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/18909/file/3252731/changelog",
+    "folders": [
+      {
+        "name": "LibCandyBar-3.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "r148-release",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "51580",
+    "slug": "libchatanims",
+    "name": "LibChatAnims",
+    "description": "UIFrameFlash to Animation conversion library for Floating Chat Frame functions.",
+    "url": "https://www.curseforge.com/wow/addons/libchatanims",
+    "download_url": "https://edge.forgecdn.net/files/3252/688/LibChatAnims-r41-release.zip",
+    "date_published": "2021-03-27T11:42:32.900000+00:00",
+    "version": "r41-release",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/51580/file/3252688/changelog",
+    "folders": [
+      {
+        "name": "LibChatAnims"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "r41-release",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "323800",
+    "slug": "libclassicdurations",
+    "name": "LibClassicDurations",
+    "description": "Tracks aura applications and returns UnitAura-friendly duration and expirationTime pair",
+    "url": "https://www.curseforge.com/wow/addons/libclassicdurations",
+    "download_url": "https://edge.forgecdn.net/files/3288/614/LibClassicDurations-1.69a-classic.zip",
+    "date_published": "2021-04-25T13:40:51.257000+00:00",
+    "version": "1.69a-classic",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/323800/file/3288614/changelog",
+    "folders": [
+      {
+        "name": "LibClassicDurations"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "1.69a-classic",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "331895",
+    "slug": "libclassicitemsets-1-0",
+    "name": "LibClassicItemSets-1.0",
+    "description": "Library for ItemSets in Wow-Classic",
+    "url": "https://www.curseforge.com/wow/addons/libclassicitemsets-1-0",
+    "download_url": "https://edge.forgecdn.net/files/2758/873/LibClassicItemSets-1.0-WoW-1.13.2-r3.zip",
+    "date_published": "2019-08-10T14:19:53.590000+00:00",
+    "version": "WoW-1.13.2-r3",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/331895/file/2758873/changelog",
+    "folders": [
+      {
+        "name": "LibClassicItemSets-1.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "WoW-1.13.2-r3",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "354607",
+    "slug": "libclassicspellactioncount",
+    "name": "LibClassicSpellActionCount",
+    "description": "Provides a function to get the current reagent count for spells",
+    "url": "https://www.curseforge.com/wow/addons/libclassicspellactioncount",
+    "download_url": "https://edge.forgecdn.net/files/2843/785/LibClassicSpellActionCount-1.0-3.zip",
+    "date_published": "2019-12-16T16:49:55.410000+00:00",
+    "version": "v3",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/354607/file/2843785/changelog",
+    "folders": [
+      {
+        "name": "LibClassicSpellActionCount-1.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "v3",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "14273",
+    "slug": "libcompress",
+    "name": "LibCompress",
+    "description": "Compression and Decompression library",
+    "url": "https://www.curseforge.com/wow/addons/libcompress",
+    "download_url": "https://edge.forgecdn.net/files/3221/442/LibCompress-r86-release.zip",
+    "date_published": "2021-02-28T09:15:06.520000+00:00",
+    "version": "r86-release",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/14273/file/3221442/changelog",
+    "folders": [
+      {
+        "name": "LibCompress"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "r86-release",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "302151",
+    "slug": "libcustomglow",
+    "name": "LibCustomGlow",
+    "description": "Library for custom glows",
+    "url": "https://www.curseforge.com/wow/addons/libcustomglow",
+    "download_url": "https://edge.forgecdn.net/files/2759/172/LibCustomGlow-1.0-1.0.3.zip",
+    "date_published": "2019-08-10T21:00:39.950000+00:00",
+    "version": "1.0.3",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/302151/file/2759172/changelog",
+    "folders": [
+      {
+        "name": "LibCustomGlow-1.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "1.0.3",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "15552",
+    "slug": "libdbicon-1-0",
+    "name": "LibDBIcon-1.0",
+    "description": "Allows addons to easily create a lightweight minimap icon as an alternative to heavier LDB displays.",
+    "url": "https://www.curseforge.com/wow/addons/libdbicon-1-0",
+    "download_url": "https://edge.forgecdn.net/files/3252/693/LibDBIcon-1.0-v9.0.2.zip",
+    "date_published": "2021-03-27T11:57:32.020000+00:00",
+    "version": "v9.0.2",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/15552/file/3252693/changelog",
+    "folders": [
+      {
+        "name": "LibDBIcon-1.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "v9.0.2",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "27889",
+    "slug": "libddi-1-0",
+    "name": "LibDDI-1.0",
+    "description": "Simple AceGUI3 dropdown item classes for font/statusbar/sound/etc.",
+    "url": "https://www.curseforge.com/wow/addons/libddi-1-0",
+    "download_url": "https://edge.forgecdn.net/files/3252/698/LibDDI-1.0-r50-release.zip",
+    "date_published": "2021-03-27T12:05:20.250000+00:00",
+    "version": "r50-release",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/27889/file/3252698/changelog",
+    "folders": [
+      {
+        "name": "LibDDI-1.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "r50-release",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "293814",
+    "slug": "libdeflate",
+    "name": "LibDeflate",
+    "description": " Compressors and decompressors with high compression ratio.",
+    "url": "https://www.curseforge.com/wow/addons/libdeflate",
+    "download_url": "https://edge.forgecdn.net/files/2989/500/LibDeflate-1.0.2-release.zip",
+    "date_published": "2020-06-26T16:03:38.417000+00:00",
+    "version": "1.0.2-release",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/293814/file/2989500/changelog",
+    "folders": [
+      {
+        "name": "LibDeflate"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "1.0.2-release",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "32560",
+    "slug": "libdialog-1-0",
+    "name": "LibDialog-1.0",
+    "description": "Replacement for the default UI's StaticPopup dialogs.",
+    "url": "https://www.curseforge.com/wow/addons/libdialog-1-0",
+    "download_url": "https://edge.forgecdn.net/files/3093/48/LibDialog-1.0-9.0.1.1.zip",
+    "date_published": "2020-10-26T03:46:42.773000+00:00",
+    "version": "9.0.1.1",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/32560/file/3093048/changelog",
+    "folders": [
+      {
+        "name": "LibDialog-1.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "9.0.1.1",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "14280",
+    "slug": "libdogtag-3-0",
+    "name": "LibDogTag-3.0",
+    "description": "A library to provide a markup syntax",
+    "url": "https://www.curseforge.com/wow/addons/libdogtag-3-0",
+    "download_url": "https://edge.forgecdn.net/files/3288/851/LibDogTag-3.0-v90000.6-classic.zip",
+    "date_published": "2021-04-25T18:01:20.457000+00:00",
+    "version": "v90000.6-classic",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/14280/file/3288851/changelog",
+    "folders": [
+      {
+        "name": "LibDogTag-3.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "v90000.6-classic",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "17280",
+    "slug": "libdropdown-1-0",
+    "name": "LibDropdown-1.0",
+    "description": "Dropdown library for Ace3 options, extensible to other options formats. Works ok.",
+    "url": "https://www.curseforge.com/wow/addons/libdropdown-1-0",
+    "download_url": "https://edge.forgecdn.net/files/3121/33/LibDropdown-1.0-9.0.2.zip",
+    "date_published": "2020-11-23T19:07:45.287000+00:00",
+    "version": "9.0.2",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/17280/file/3121033/changelog",
+    "folders": [
+      {
+        "name": "LibDropdown-1.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "9.0.2",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "95078",
+    "slug": "libdurability",
+    "name": "LibDurability",
+    "description": "A library for transmitting and receiving durability information of players in your group.",
+    "url": "https://www.curseforge.com/wow/addons/libdurability",
+    "download_url": "https://edge.forgecdn.net/files/3252/702/LibDurability-r23-release.zip",
+    "date_published": "2021-03-27T12:10:45.267000+00:00",
+    "version": "r23-release",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/95078/file/3252702/changelog",
+    "folders": [
+      {
+        "name": "LibDurability"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "r23-release",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "310275",
+    "slug": "libgetframe",
+    "name": "LibGetFrame",
+    "description": "Return unit frame for a given unit",
+    "url": "https://www.curseforge.com/wow/addons/libgetframe",
+    "download_url": "https://edge.forgecdn.net/files/3163/386/LibGetFrame-1.0-1.5.6.zip",
+    "date_published": "2021-01-09T16:58:24.793000+00:00",
+    "version": "1.5.6",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/310275/file/3163386/changelog",
+    "folders": [
+      {
+        "name": "LibGetFrame-1.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "1.5.6",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "14287",
+    "slug": "libgraph-2-0",
+    "name": "LibGraph-2.0",
+    "description": "A library allowing for easy creation of graphs",
+    "url": "https://www.curseforge.com/wow/addons/libgraph-2-0",
+    "download_url": "https://edge.forgecdn.net/files/2647/97/LibGraph-2.0-v2.0.4.zip",
+    "date_published": "2018-12-12T18:46:20.083000+00:00",
+    "version": "v2.0.4",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/14287/file/2647097/changelog",
+    "folders": [
+      {
+        "name": "LibGraph-2.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "v2.0.4",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "52100",
+    "slug": "libitemupgradeinfo-1-0",
+    "name": "LibItemUpgradeInfo-1.0",
+    "description": "Database of item upgrade IDs",
+    "url": "https://www.curseforge.com/wow/addons/libitemupgradeinfo-1-0",
+    "download_url": "https://edge.forgecdn.net/files/3084/344/LibItemUpgradeInfo-1.0-Release-90001-31.zip",
+    "date_published": "2020-10-17T17:27:19.830000+00:00",
+    "version": "Release-90001-31",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/52100/file/3084344/changelog",
+    "folders": [
+      {
+        "name": "LibItemUpgradeInfo-1.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "Release-90001-31",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "94595",
+    "slug": "liblatency",
+    "name": "LibLatency",
+    "description": "A library for transmitting and receiving latency information of players.",
+    "url": "https://www.curseforge.com/wow/addons/liblatency",
+    "download_url": "https://edge.forgecdn.net/files/3252/706/LibLatency-r27-release.zip",
+    "date_published": "2021-03-27T12:15:13.670000+00:00",
+    "version": "r27-release",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/94595/file/3252706/changelog",
+    "folders": [
+      {
+        "name": "LibLatency"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "r27-release",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "70930",
+    "slug": "liboo-1-0",
+    "name": "LibOO-1.0",
+    "description": "LibOO-1.0 provides an object-oriented framework to World of Warcraft addons",
+    "url": "https://www.curseforge.com/wow/addons/liboo-1-0",
+    "download_url": "https://edge.forgecdn.net/files/2589/318/LibOO-1.0-1.0.23.zip",
+    "date_published": "2018-07-22T21:24:21.220000+00:00",
+    "version": "1.0.23",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/70930/file/2589318/changelog",
+    "folders": [
+      {
+        "name": "LibOO-1.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "1.0.23",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "15487",
+    "slug": "libqtip-1-0",
+    "name": "LibQTip-1.0",
+    "description": "Library providing multi-column tooltips.",
+    "url": "https://www.curseforge.com/wow/addons/libqtip-1-0",
+    "download_url": "https://edge.forgecdn.net/files/3092/811/LibQTip-1.0-9.0.1.2.zip",
+    "date_published": "2020-10-25T22:33:33.563000+00:00",
+    "version": "9.0.1.2",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/15487/file/3092811/changelog",
+    "folders": [
+      {
+        "name": "LibQTip-1.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "9.0.1.2",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "14305",
+    "slug": "librangecheck-2-0",
+    "name": "LibRangeCheck-2.0",
+    "description": "A library to determine estimated range.",
+    "url": "https://www.curseforge.com/wow/addons/librangecheck-2-0",
+    "download_url": "https://edge.forgecdn.net/files/3317/558/LibRangeCheck-2.0-v4.3.5.zip",
+    "date_published": "2021-05-21T07:00:49.803000+00:00",
+    "version": "v4.3.5",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/14305/file/3317558/changelog",
+    "folders": [
+      {
+        "name": "LibRangeCheck-2.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "v4.3.5",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "83224",
+    "slug": "librealminfo",
+    "name": "LibRealmInfo",
+    "description": "Library to provide information about realms.",
+    "url": "https://www.curseforge.com/wow/addons/librealminfo",
+    "download_url": "https://edge.forgecdn.net/files/3175/669/LibRealmInfo.zip",
+    "date_published": "2021-01-21T02:48:37.100000+00:00",
+    "version": "17",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/83224/file/3175669/changelog",
+    "folders": [
+      {
+        "name": "LibRealmInfo"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "17",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "14320",
+    "slug": "libsharedmedia-3-0",
+    "name": "LibSharedMedia-3.0",
+    "description": "Shared handling of media data (fonts, sounds, textures, ...) between addons.",
+    "url": "https://www.curseforge.com/wow/addons/libsharedmedia-3-0",
+    "download_url": "https://edge.forgecdn.net/files/3252/720/LibSharedMedia-3.0-v9.0.1.zip",
+    "date_published": "2021-03-27T12:27:13.440000+00:00",
+    "version": "v9.0.1",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/14320/file/3252720/changelog",
+    "folders": [
+      {
+        "name": "LibSharedMedia-3.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "v9.0.1",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "14324",
+    "slug": "libsink-2-0",
+    "name": "LibSink-2.0",
+    "description": "Library that handles chat output.",
+    "url": "https://www.curseforge.com/wow/addons/libsink-2-0",
+    "download_url": "https://edge.forgecdn.net/files/3252/712/LibSink-2.0-v9.0.1.zip",
+    "date_published": "2021-03-27T12:19:47.010000+00:00",
+    "version": "v9.0.1",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/14324/file/3252712/changelog",
+    "folders": [
+      {
+        "name": "LibSink-2.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "v9.0.1",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "44605",
+    "slug": "libspellrange-1-0",
+    "name": "LibSpellRange-1.0",
+    "description": "Provides enhanced spell range checking functionality",
+    "url": "https://www.curseforge.com/wow/addons/libspellrange-1-0",
+    "download_url": "https://edge.forgecdn.net/files/3085/852/LibSpellRange-1.0-1.0.15.zip",
+    "date_published": "2020-10-18T20:56:09.140000+00:00",
+    "version": "1.0.15",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/44605/file/3085852/changelog",
+    "folders": [
+      {
+        "name": "LibSpellRange-1.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "1.0.15",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "268264",
+    "slug": "libuidropdownmenu",
+    "name": "LibUIDropDownMenu",
+    "description": "A Replacement for standard UIDropDownMenu",
+    "url": "https://www.curseforge.com/wow/addons/libuidropdownmenu",
+    "download_url": "https://edge.forgecdn.net/files/3313/910/!LibUIDropDownMenu-v4.03.9000538556.zip",
+    "date_published": "2021-05-18T17:04:52.360000+00:00",
+    "version": "v4.03.9000538556",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/268264/file/3313910/changelog",
+    "folders": [
+      {
+        "name": "!LibUIDropDownMenu"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "v4.03.9000538556",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "64293",
+    "slug": "nicktag",
+    "name": "NickTag-1.0",
+    "description": "Tool used by others addons for share nicknames with your guild mates.",
+    "url": "https://www.curseforge.com/wow/addons/nicktag",
+    "download_url": "https://edge.forgecdn.net/files/3173/727/NickTag-1.0-v9.0.2.14.zip",
+    "date_published": "2021-01-19T15:01:36.760000+00:00",
+    "version": "v9.0.2.14",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/64293/file/3173727/changelog",
+    "folders": [
+      {
+        "name": "NickTag-1.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "v9.0.2.14",
+        "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  }
+]

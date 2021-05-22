@@ -1,0 +1,15 @@
+## Interface: 11307
+## Title: Archivist
+## Author: emptyrivers
+## Version: v1.0.8
+## Notes: Flexible data archive.
+## SavedVariables: ACHV_DB
+## X-Curse-Project-ID: 354259
+
+# externals
+
+Archivist.lua
+
+# builtin stores
+stores/RawData.lua
+stores/ReadOnly.lua

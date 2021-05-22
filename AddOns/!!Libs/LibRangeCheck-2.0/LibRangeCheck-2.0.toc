@@ -1,0 +1,11 @@
+## Interface: 90005
+## Title: Lib: RangeCheck-2.0
+## Notes: A library to determine estimated range.
+## Author: mitch0
+## Version: v4.3.5
+## LoadOnDemand: 1
+## X-Category: Library
+## X-AceLibrary-LibRangeCheck-2.0: true
+## X-License: Public Domain
+
+LibRangeCheck-2.0\LibRangeCheck-2.0.lua
