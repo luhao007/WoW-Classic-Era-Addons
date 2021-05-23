@@ -87,10 +87,10 @@
     "name": "Atlas Battlegrounds",
     "description": "Battleground Maps",
     "url": "https://www.curseforge.com/wow/addons/atlas-battlegrounds",
-    "download_url": "https://edge.forgecdn.net/files/3014/981/Atlas_Battlegrounds_v1.47.00.11305.zip",
-    "date_published": "2020-07-26T09:08:10.877000+00:00",
-    "version": "v1.47.00.11305",
-    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/32829/file/3014981/changelog",
+    "download_url": "https://edge.forgecdn.net/files/3319/328/Atlas_Battlegrounds_v1.49.00-classic.zip",
+    "date_published": "2021-05-22T14:31:42.077000+00:00",
+    "version": "v1.49.00-classic",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/32829/file/3319328/changelog",
     "folders": [
       {
         "name": "Atlas_Battlegrounds"
@@ -106,6 +106,10 @@
     ],
     "logged_versions": [
       {
+        "version": "v1.49.00-classic",
+        "install_time": "2021-05-23T13:49:35+00:00"
+      },
+      {
         "version": "v1.47.00.11305",
         "install_time": "2021-05-22T12:02:53+00:00"
       }
@@ -118,10 +122,10 @@
     "name": "Atlas Dungeon Locations",
     "description": "Maps for instances' location",
     "url": "https://www.curseforge.com/wow/addons/atlas-dungeon-locations",
-    "download_url": "https://edge.forgecdn.net/files/2863/929/Atlas_DungeonLocs-v1.47.00.11303.00.zip",
-    "date_published": "2020-01-19T16:46:32.883000+00:00",
-    "version": "v1.47.00.11303.00",
-    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/32830/file/2863929/changelog",
+    "download_url": "https://edge.forgecdn.net/files/3319/301/Atlas_DungeonLocs_v1.49.00-classic.zip",
+    "date_published": "2021-05-22T14:10:15.623000+00:00",
+    "version": "v1.49.00-classic",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/32830/file/3319301/changelog",
     "folders": [
       {
         "name": "Atlas_DungeonLocs"
@@ -136,6 +140,10 @@
       }
     ],
     "logged_versions": [
+      {
+        "version": "v1.49.00-classic",
+        "install_time": "2021-05-23T13:49:35+00:00"
+      },
       {
         "version": "v1.47.00.11303.00",
         "install_time": "2021-05-22T12:02:53+00:00"
@@ -721,10 +729,10 @@
     "name": "Nova World Buffs",
     "description": "Classic WoW world buff timers and pre buff drop warnings so you never miss a buff.",
     "url": "https://www.curseforge.com/wow/addons/nova-world-buffs",
-    "download_url": "https://edge.forgecdn.net/files/3317/619/NovaWorldBuffs-v2.03.zip",
-    "date_published": "2021-05-21T08:21:04.433000+00:00",
-    "version": "NovaWorldBuffs-v2.03.zip",
-    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/366310/file/3317619/changelog",
+    "download_url": "https://edge.forgecdn.net/files/3320/713/NovaWorldBuffs-v2.04.zip",
+    "date_published": "2021-05-23T13:57:18.530000+00:00",
+    "version": "NovaWorldBuffs-v2.04.zip",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/366310/file/3320713/changelog",
     "folders": [
       {
         "name": "NovaWorldBuffs"
@@ -735,6 +743,10 @@
     },
     "deps": [],
     "logged_versions": [
+      {
+        "version": "NovaWorldBuffs-v2.04.zip",
+        "install_time": "2021-05-23T14:09:43+00:00"
+      },
       {
         "version": "NovaWorldBuffs-v2.03.zip",
         "install_time": "2021-05-22T12:02:56+00:00"
@@ -835,10 +847,10 @@
     "name": "Questie",
     "description": "The Classic Quest Helper",
     "url": "https://www.curseforge.com/wow/addons/questie",
-    "download_url": "https://edge.forgecdn.net/files/3315/907/Questie-v6.3.11-Era.zip",
-    "date_published": "2021-05-19T23:46:25.103000+00:00",
-    "version": "v6.3.11 - Universal (Era)",
-    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/334372/file/3315907/changelog",
+    "download_url": "https://edge.forgecdn.net/files/3320/172/Questie-v6.3.12.zip",
+    "date_published": "2021-05-23T03:31:24.670000+00:00",
+    "version": "v6.3.12 - Universal (Era)",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/334372/file/3320172/changelog",
     "folders": [
       {
         "name": "Questie"
@@ -849,6 +861,10 @@
     },
     "deps": [],
     "logged_versions": [
+      {
+        "version": "v6.3.12 - Universal (Era)",
+        "install_time": "2021-05-23T13:49:36+00:00"
+      },
       {
         "version": "v6.3.11 - Universal (Era)",
         "install_time": "2021-05-22T12:02:58+00:00"
