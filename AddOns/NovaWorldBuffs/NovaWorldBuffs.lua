@@ -1529,6 +1529,8 @@ function NWB:combatLogEventUnfiltered(...)
 				--NWB:debug("rend hand in delay", GetTime() - lastRendHandIn);
 				--NWB:debug("rend herald found delay", GetServerTime() - lastHeraldAlert);
 				--NWB:debug("rend herald yell delay", GetServerTime() - lastHeraldYell);
+			else
+				NWB:syncBuffsWithCurrentDuration();
 			end
 		elseif (destName == UnitName("player") and spellName == L["Spirit of Zandalar"] and (GetServerTime() - lastZanBuffGained) > 1) then
 			--Zan buff has no sourceName or sourceGUID, not sure why.
@@ -1547,6 +1549,8 @@ function NWB:combatLogEventUnfiltered(...)
 					end
 					NWB:acceptSummon();
 				end
+			else
+				NWB:syncBuffsWithCurrentDuration();
 			end
 		--[[elseif (((NWB.faction == "Horde" and npcID == "14720") or (NWB.faction == "Alliance" and npcID == "14721"))
 				and destName == UnitName("player") and spellName == L["Rallying Cry of the Dragonslayer"]
@@ -1580,6 +1584,8 @@ function NWB:combatLogEventUnfiltered(...)
 					NWB:acceptSummon();
 				end
 				--NWB:debug("nef hand in delay", GetTime() - lastNefHandIn);
+			else
+				NWB:syncBuffsWithCurrentDuration()
 			end
 		--[[elseif (((NWB.faction == "Horde" and npcID == "14392") or (NWB.faction == "Alliance" and npcID == "14394"))
 				and destName == UnitName("player") and spellName == L["Rallying Cry of the Dragonslayer"]
@@ -1614,6 +1620,8 @@ function NWB:combatLogEventUnfiltered(...)
 					NWB:acceptSummon();
 				end
 				--NWB:debug("ony hand in delay", GetTime() - lastOnyHandIn);
+			else
+				NWB:syncBuffsWithCurrentDuration();
 			end
 		--[[elseif (((NWB.faction == "Horde" and destNpcID == "14392") or (NWB.faction == "Alliance" and destNpcID == "14394"))
 				and spellName == L["Sap"] and ((GetServerTime() - NWB.data.onyYell2) < 30 or (GetServerTime() - NWB.data.onyYell) < 30)) then
@@ -8509,7 +8517,8 @@ function NWB:createNewLayer(zoneID, GUID, isFromNpc)
 end
 
 function NWB:removeOldLayers()
-	local expireTime = 21600;
+	--local expireTime = 21600;
+	local expireTime = 10800; --Seems to be a lot of world crashes during tbc launch, shorten old layer expire time for a few weeks.
 	local removed;
 	if (NWB.data.layers and next(NWB.data.layers)) then
 		for k, v in pairs(NWB.data.layers) do
@@ -8518,16 +8527,18 @@ function NWB:removeOldLayers()
 			if (v.rendTimer and (v.rendTimer + expireTime) > (GetServerTime() - NWB.db.global.rendRespawnTime)) then
 				validTimer = true;
 			end
-			if (v.onyNpcDied and (v.onyNpcDied > v.onyTimer) and
+			--[[if (v.onyNpcDied and (v.onyNpcDied > v.onyTimer) and
 					(v.onyNpcDied > (GetServerTime() - NWB.db.global.onyRespawnTime))) then
 				validTimer = true;
-			elseif (v.onyTimer and (v.onyTimer + expireTime) > (GetServerTime() - NWB.db.global.onyRespawnTime)) then
+			elseif (v.onyTimer and (v.onyTimer + expireTime) > (GetServerTime() - NWB.db.global.onyRespawnTime)) then]]
+			if (v.onyTimer and (v.onyTimer + expireTime) > (GetServerTime() - NWB.db.global.onyRespawnTime)) then
 				validTimer = true;
 			end
-			if (v.nefNpcDied and (v.nefNpcDied > v.nefTimer) and
+			--[[if (v.nefNpcDied and (v.nefNpcDied > v.nefTimer) and
 					(v.nefNpcDied > (GetServerTime() - NWB.db.global.nefRespawnTime))) then
 				validTimer = true;
-			elseif (v.nefTimer and (v.nefTimer + expireTime) > (GetServerTime() - NWB.db.global.nefRespawnTime)) then
+			elseif (v.nefTimer and (v.nefTimer + expireTime) > (GetServerTime() - NWB.db.global.nefRespawnTime)) then]]
+			if (v.nefTimer and (v.nefTimer + expireTime) > (GetServerTime() - NWB.db.global.nefRespawnTime)) then
 				validTimer = true;
 			end
 			if (not v.created) then
@@ -8627,6 +8638,9 @@ function NWB:disableLayer(layer)
 		NWB.lastJoinedGroup = GetServerTime();
 		NWB:recalcDisabledLayers();
 		NWB:recalcMinimapLayerFrame(0);
+		C_Timer.After(0.1, function()
+			NWB:recalclayerFrame();
+		end)
 	else
 		NWB:print(string.format(L["layerDoesNotExist"], layer));
 	end
@@ -8640,6 +8654,9 @@ function NWB:enableLayer(layer)
 		NWB.lastJoinedGroup = GetServerTime();
 		NWB:recalcDisabledLayers();
 		NWB:recalcMinimapLayerFrame(0);
+		C_Timer.After(0.1, function()
+			NWB:recalclayerFrame();
+		end)
 	else
 		NWB:print(string.format(L["layerDoesNotExist"], layer));
 	end
@@ -8858,104 +8875,106 @@ function NWB:recalclayerFrame(isLogon, copyPaste)
 			end
 		end
 		--Disabled layers in grey after the enabled layers.
-		for k, v in NWB:pairsByKeys(NWB.data.layersDisabled) do
-			foundTimers = true;
-			count = count + 1;
-			--NWBlayerFrame.EditBox:Insert("\n|cFF989898[Layer Disabled]  (zone " .. k .. ")|r\n");
-			text = text .. "\n|cFF989898[Layer Disabled]  (zone " .. k .. ")|r\n";
-			if (not _G["NWBEnableLayerButton" .. count]) then
-				NWB:createEnabledLayerButton(count);
-			end
-			--Make sure right button is shown.
-			if (_G["NWBDisableLayerButton" .. count]) then
-				_G["NWBDisableLayerButton" .. count]:Hide();
-			end
-			_G["NWBEnableLayerButton" .. count]:Show();
-			--Set the button beside the layer text, count the lines in the edit box to find right position.
-			--local _, lineCount = string.gsub(NWBlayerFrame.EditBox:GetText(), "\n", "");
-			local _, lineCount = string.gsub(text, "\n", "");
-			lineCount = lineCount - 1;
-			NWB["NWBEnableLayerButton" .. count]:SetPoint("TOPLEFT", 215, -(lineCount * 14.25));
-			--Set the layer ID this button will enable.
-			NWB["NWBEnableLayerButton" .. count].layer = k;
-			local msg = "|cFF989898";
-			if (NWB.faction == "Horde" or NWB.db.global.allianceEnableRend) then
-				if (v.rendTimer > (GetServerTime() - NWB.db.global.rendRespawnTime)) then
-					msg = msg .. L["rend"] .. ": " .. NWB:getTimeString(NWB.db.global.rendRespawnTime - (GetServerTime() - v.rendTimer), true) .. ".";
+		if (not copyPaste) then
+			for k, v in NWB:pairsByKeys(NWB.data.layersDisabled) do
+				foundTimers = true;
+				count = count + 1;
+				--NWBlayerFrame.EditBox:Insert("\n|cFF989898[Layer Disabled]  (zone " .. k .. ")|r\n");
+				text = text .. "\n|cFF989898[Layer Disabled]  (zone " .. k .. ")|r\n";
+				if (not _G["NWBEnableLayerButton" .. count]) then
+					NWB:createEnabledLayerButton(count);
+				end
+				--Make sure right button is shown.
+				if (_G["NWBDisableLayerButton" .. count]) then
+					_G["NWBDisableLayerButton" .. count]:Hide();
+				end
+				_G["NWBEnableLayerButton" .. count]:Show();
+				--Set the button beside the layer text, count the lines in the edit box to find right position.
+				--local _, lineCount = string.gsub(NWBlayerFrame.EditBox:GetText(), "\n", "");
+				local _, lineCount = string.gsub(text, "\n", "");
+				lineCount = lineCount - 1;
+				NWB["NWBEnableLayerButton" .. count]:SetPoint("TOPLEFT", 215, -(lineCount * 14.25));
+				--Set the layer ID this button will enable.
+				NWB["NWBEnableLayerButton" .. count].layer = k;
+				local msg = "|cFF989898";
+				if (NWB.faction == "Horde" or NWB.db.global.allianceEnableRend) then
+					if (v.rendTimer > (GetServerTime() - NWB.db.global.rendRespawnTime)) then
+						msg = msg .. L["rend"] .. ": " .. NWB:getTimeString(NWB.db.global.rendRespawnTime - (GetServerTime() - v.rendTimer), true) .. ".";
+						if (NWB.db.global.showTimeStamp) then
+							local timeStamp = NWB:getTimeFormat(v.rendTimer + NWB.db.global.rendRespawnTime, nil, nil, forceServerTime, suffixST);
+							msg = msg .. " (" .. timeStamp .. ")";
+						end
+					else
+						msg = msg .. L["rend"] .. ": " .. L["noCurrentTimer"] .. ".";
+					end
+					--NWBlayerFrame.EditBox:Insert(msg .. "\n");
+					text = text .. msg .. "\n";
+				end
+				msg = "";
+				if ((v.onyNpcDied > v.onyTimer) and
+						(v.onyNpcDied > (GetServerTime() - NWB.db.global.onyRespawnTime)) and not NWB.db.global.ignoreKillData) then
+					local respawnTime = npcRespawnTime - (GetServerTime() - v.onyNpcDied);
+					if (NWB.faction == "Horde") then
+						if (respawnTime > 0) then
+							msg = string.format(L["onyxiaNpcKilledHordeWithTimer2"], NWB:getTimeString(GetServerTime() - v.onyNpcDied, true),
+									NWB:getTimeString(respawnTime, true));
+						else
+							msg = string.format(L["onyxiaNpcKilledHordeWithTimer"], NWB:getTimeString(GetServerTime() - v.onyNpcDied, true));
+						end
+					else
+						if (respawnTime > 0) then
+							msg = string.format(L["onyxiaNpcKilledAllianceWithTimer2"], NWB:getTimeString(GetServerTime() - v.onyNpcDied, true),
+									NWB:getTimeString(respawnTime, true));
+						else
+							msg = string.format(L["onyxiaNpcKilledAllianceWithTimer"], NWB:getTimeString(GetServerTime() - v.onyNpcDied, true));
+						end
+					end
+				elseif (v.onyTimer > (GetServerTime() - NWB.db.global.onyRespawnTime)) then
+					msg = msg .. L["onyxia"] .. ": " .. NWB:getTimeString(NWB.db.global.onyRespawnTime - (GetServerTime() - v.onyTimer), true) .. ".";
 					if (NWB.db.global.showTimeStamp) then
-						local timeStamp = NWB:getTimeFormat(v.rendTimer + NWB.db.global.rendRespawnTime, nil, nil, forceServerTime, suffixST);
+						local timeStamp = NWB:getTimeFormat(v.onyTimer + NWB.db.global.onyRespawnTime, nil, nil, forceServerTime, suffixST);
 						msg = msg .. " (" .. timeStamp .. ")";
 					end
 				else
-					msg = msg .. L["rend"] .. ": " .. L["noCurrentTimer"] .. ".";
+					msg = msg .. L["onyxia"] .. ": " .. L["noCurrentTimer"] .. ".";
 				end
 				--NWBlayerFrame.EditBox:Insert(msg .. "\n");
 				text = text .. msg .. "\n";
-			end
-			msg = "";
-			if ((v.onyNpcDied > v.onyTimer) and
-					(v.onyNpcDied > (GetServerTime() - NWB.db.global.onyRespawnTime)) and not NWB.db.global.ignoreKillData) then
-				local respawnTime = npcRespawnTime - (GetServerTime() - v.onyNpcDied);
-				if (NWB.faction == "Horde") then
-					if (respawnTime > 0) then
-						msg = string.format(L["onyxiaNpcKilledHordeWithTimer2"], NWB:getTimeString(GetServerTime() - v.onyNpcDied, true),
-								NWB:getTimeString(respawnTime, true));
+				msg = "";
+				if ((v.nefNpcDied > v.nefTimer) and
+						(v.nefNpcDied > (GetServerTime() - NWB.db.global.nefRespawnTime)) and not NWB.db.global.ignoreKillData) then
+					local respawnTime = npcRespawnTime - (GetServerTime() - v.nefNpcDied);
+					if (NWB.faction == "Horde") then
+						if (respawnTime > 0) then
+							msg = string.format(L["nefarianNpcKilledHordeWithTimer2"], NWB:getTimeString(GetServerTime() - v.nefNpcDied, true),
+									NWB:getTimeString(respawnTime, true));
+						else
+							msg = string.format(L["nefarianNpcKilledHordeWithTimer"], NWB:getTimeString(GetServerTime() - v.nefNpcDied, true));
+						end
 					else
-						msg = string.format(L["onyxiaNpcKilledHordeWithTimer"], NWB:getTimeString(GetServerTime() - v.onyNpcDied, true));
+						if (respawnTime > 0) then
+							msg = string.format(L["nefarianNpcKilledAllianceWithTimer2"], NWB:getTimeString(GetServerTime() - v.nefNpcDied, true),
+									NWB:getTimeString(respawnTime, true));
+						else
+							msg = string.format(L["nefarianNpcKilledAllianceWithTimer"], NWB:getTimeString(GetServerTime() - v.nefNpcDied, true));
+						end
+					end
+				elseif (v.nefTimer > (GetServerTime() - NWB.db.global.nefRespawnTime)) then
+					msg = L["nefarian"] .. ": " .. NWB:getTimeString(NWB.db.global.nefRespawnTime - (GetServerTime() - v.nefTimer), true) .. ".";
+					if (NWB.db.global.showTimeStamp) then
+						local timeStamp = NWB:getTimeFormat(v.nefTimer + NWB.db.global.nefRespawnTime, nil, nil, forceServerTime, suffixST);
+						msg = msg .. " (" .. timeStamp .. ")";
 					end
 				else
-					if (respawnTime > 0) then
-						msg = string.format(L["onyxiaNpcKilledAllianceWithTimer2"], NWB:getTimeString(GetServerTime() - v.onyNpcDied, true),
-								NWB:getTimeString(respawnTime, true));
-					else
-						msg = string.format(L["onyxiaNpcKilledAllianceWithTimer"], NWB:getTimeString(GetServerTime() - v.onyNpcDied, true));
-					end
+					msg = msg .. L["nefarian"] .. ": " .. L["noCurrentTimer"] .. ".";
 				end
-			elseif (v.onyTimer > (GetServerTime() - NWB.db.global.onyRespawnTime)) then
-				msg = msg .. L["onyxia"] .. ": " .. NWB:getTimeString(NWB.db.global.onyRespawnTime - (GetServerTime() - v.onyTimer), true) .. ".";
-				if (NWB.db.global.showTimeStamp) then
-					local timeStamp = NWB:getTimeFormat(v.onyTimer + NWB.db.global.onyRespawnTime, nil, nil, forceServerTime, suffixST);
-					msg = msg .. " (" .. timeStamp .. ")";
+				--NWBlayerFrame.EditBox:Insert(msg .. "\n");
+				text = text .. msg .. "\n";
+				if ((v.rendTimer + 3600) > (GetServerTime() - NWB.db.global.rendRespawnTime)
+						or (v.onyTimer + 3600) > (GetServerTime() - NWB.db.global.onyRespawnTime)
+						or (v.nefTimer + 3600) > (GetServerTime() - NWB.db.global.nefRespawnTime)) then
+					NWB:removeOldLayers();
 				end
-			else
-				msg = msg .. L["onyxia"] .. ": " .. L["noCurrentTimer"] .. ".";
-			end
-			--NWBlayerFrame.EditBox:Insert(msg .. "\n");
-			text = text .. msg .. "\n";
-			msg = "";
-			if ((v.nefNpcDied > v.nefTimer) and
-					(v.nefNpcDied > (GetServerTime() - NWB.db.global.nefRespawnTime)) and not NWB.db.global.ignoreKillData) then
-				local respawnTime = npcRespawnTime - (GetServerTime() - v.nefNpcDied);
-				if (NWB.faction == "Horde") then
-					if (respawnTime > 0) then
-						msg = string.format(L["nefarianNpcKilledHordeWithTimer2"], NWB:getTimeString(GetServerTime() - v.nefNpcDied, true),
-								NWB:getTimeString(respawnTime, true));
-					else
-						msg = string.format(L["nefarianNpcKilledHordeWithTimer"], NWB:getTimeString(GetServerTime() - v.nefNpcDied, true));
-					end
-				else
-					if (respawnTime > 0) then
-						msg = string.format(L["nefarianNpcKilledAllianceWithTimer2"], NWB:getTimeString(GetServerTime() - v.nefNpcDied, true),
-								NWB:getTimeString(respawnTime, true));
-					else
-						msg = string.format(L["nefarianNpcKilledAllianceWithTimer"], NWB:getTimeString(GetServerTime() - v.nefNpcDied, true));
-					end
-				end
-			elseif (v.nefTimer > (GetServerTime() - NWB.db.global.nefRespawnTime)) then
-				msg = L["nefarian"] .. ": " .. NWB:getTimeString(NWB.db.global.nefRespawnTime - (GetServerTime() - v.nefTimer), true) .. ".";
-				if (NWB.db.global.showTimeStamp) then
-					local timeStamp = NWB:getTimeFormat(v.nefTimer + NWB.db.global.nefRespawnTime, nil, nil, forceServerTime, suffixST);
-					msg = msg .. " (" .. timeStamp .. ")";
-				end
-			else
-				msg = msg .. L["nefarian"] .. ": " .. L["noCurrentTimer"] .. ".";
-			end
-			--NWBlayerFrame.EditBox:Insert(msg .. "\n");
-			text = text .. msg .. "\n";
-			if ((v.rendTimer + 3600) > (GetServerTime() - NWB.db.global.rendRespawnTime)
-					or (v.onyTimer + 3600) > (GetServerTime() - NWB.db.global.onyRespawnTime)
-					or (v.nefTimer + 3600) > (GetServerTime() - NWB.db.global.nefRespawnTime)) then
-				NWB:removeOldLayers();
 			end
 		end
 	else

@@ -654,10 +654,10 @@
     "name": "LibDropdown-1.0",
     "description": "Dropdown library for Ace3 options, extensible to other options formats. Works ok.",
     "url": "https://www.curseforge.com/wow/addons/libdropdown-1-0",
-    "download_url": "https://edge.forgecdn.net/files/3121/33/LibDropdown-1.0-9.0.2.zip",
-    "date_published": "2020-11-23T19:07:45.287000+00:00",
-    "version": "9.0.2",
-    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/17280/file/3121033/changelog",
+    "download_url": "https://edge.forgecdn.net/files/3319/593/LibDropdown-1.0-2021-05-22_2-bcc.zip",
+    "date_published": "2021-05-22T18:17:55.793000+00:00",
+    "version": "2021-05-22_2-bcc",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/17280/file/3319593/changelog",
     "folders": [
       {
         "name": "LibDropdown-1.0"
@@ -668,6 +668,10 @@
     },
     "deps": [],
     "logged_versions": [
+      {
+        "version": "2021-05-22_2-bcc",
+        "install_time": "2021-05-23T13:49:39+00:00"
+      },
       {
         "version": "9.0.2",
         "install_time": "2021-05-22T12:04:29+00:00"
@@ -995,6 +999,33 @@
       {
         "version": "1.0.15",
         "install_time": "2021-05-22T12:04:29+00:00"
+      }
+    ]
+  },
+  {
+    "source": "curse",
+    "id": "322175",
+    "slug": "libtranslit",
+    "name": "LibTranslit",
+    "description": "Transliterate string",
+    "url": "https://www.curseforge.com/wow/addons/libtranslit",
+    "download_url": "https://edge.forgecdn.net/files/2734/926/LibTranslit-1.0-1.0.4.zip",
+    "date_published": "2019-07-03T16:40:34.277000+00:00",
+    "version": "1.0.4",
+    "changelog_url": "https://addons-ecs.forgesvc.net/api/v2/addon/322175/file/2734926/changelog",
+    "folders": [
+      {
+        "name": "LibTranslit-1.0"
+      }
+    ],
+    "options": {
+      "strategy": "any_flavour"
+    },
+    "deps": [],
+    "logged_versions": [
+      {
+        "version": "1.0.4",
+        "install_time": "2021-05-23T14:10:09+00:00"
       }
     ]
   },
