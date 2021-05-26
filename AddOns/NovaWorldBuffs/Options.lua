@@ -1389,7 +1389,9 @@ function NWB:loadSpecificOptions()
 			fontSize = "medium",
 			order = 25,
 		};
-		NWB.optionDefaults.global.minimapIcon = {["minimapPos"] = 182, ["hide"] = false};
+	end
+	if (NWB.isTBC or NWB.realmsTBC) then
+		NWB.optionDefaults.global.minimapIcon = {["minimapPos"] = 139, ["hide"] = false};
 	end
 	if (NWB.faction == "Alliance") then
 		NWB.options.args["allianceEnableRend"] = {
@@ -1553,7 +1555,7 @@ NWB.optionDefaults = {
 		soundsNpcWalking = "NWB - MGS2",
 		showExpiredTimers = true,
 		expiredTimersDuration = 5,
-		minimapIcon = {["minimapPos"] = 180, ["hide"] = false},
+		minimapIcon = {["minimapPos"] = 160, ["hide"] = false},
 		minimapButton = true,
 		flashOneMin = true,
 		flashFirstYell = true,

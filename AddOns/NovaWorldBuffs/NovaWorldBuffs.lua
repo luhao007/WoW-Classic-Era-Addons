@@ -1387,6 +1387,7 @@ local lastHeraldAlert = 0;
 local speedtest = 0;
 local waitingCombatEnd, hideSummonPopup;
 local lastRendHandIn, lastOnyHandIn, lastNefHandIn, lastZanHandIn = 0, 0, 0, 0;
+local unitDamageFrame = CreateFrame("Frame");
 function NWB:combatLogEventUnfiltered(...)
 	local timestamp, subEvent, hideCaster, sourceGUID, sourceName, sourceFlags, sourceRaidFlags, destGUID, 
 			destName, destFlags, destRaidFlags, _, spellName = CombatLogGetCurrentEventInfo();
@@ -1652,6 +1653,9 @@ function NWB:combatLogEventUnfiltered(...)
 				or spellName == L["Sayge's Dark Fortune of Resistance"] or spellName == L["Sayge's Dark Fortune of Damage"]
 				 or spellName == L["Sayge's Dark Fortune of Intelligence"])) then
 			local expirationTime = NWB:getBuffDuration(spellName, 0);
+			if ((NWB.realmsTBC or NWB.isTBC) and spellName == L["Sayge's Dark Fortune of Damage"]) then
+				unitDamageFrame:RegisterEvent("UNIT_DAMAGE");
+			end
 			if (expirationTime >= 7199) then
 				NWB:trackNewBuff(spellName, "dmf", npcID);
 				lastDmfBuffGained = GetServerTime();
@@ -2405,6 +2409,79 @@ function NWB:questTurnedIn(...)
 	end
 end
 
+local function insertDmfDamageTooltip()
+	if (NWB.realmsTBC or NWB.isTBC) then
+		local title = GameTooltipTextLeft1:GetText();
+		if (title and string.find(title, L["Sayge's Dark Fortune of Damage"])) then
+			local percent;
+			for k, v in pairs(NWB.data.myChars[UnitName("player")].buffs) do
+				if (k == L["Sayge's Dark Fortune of Damage"] and v.dmfPercent) then
+					percent = v.dmfPercent;
+				end
+			end
+			if (percent) then
+				percent = "|cFF00C800" .. percent .. "%|r";
+				GameTooltip:AddLine(string.format(L["dmfDamagePercentTooltip"], percent),
+						NWB.db.global.prefixColorR, NWB.db.global.prefixColorG, NWB.db.global.prefixColorB);
+				GameTooltip:Show();
+			end
+		end
+	end
+end
+
+hooksecurefunc(GameTooltip, "SetUnitAura", function(self, ...)
+	insertDmfDamageTooltip();
+end);
+
+hooksecurefunc(GameTooltip, "SetUnitBuff", function(self, ...)
+	local unit = ...;
+	if (UnitIsUnit(unit, "player")) then
+		insertDmfDamageTooltip();
+	end
+end);
+
+local dmfDmgPercent = 0;
+unitDamageFrame:SetScript("OnEvent", function(self, event, ...)
+	if (event == "UNIT_DAMAGE") then
+		local doMsg = true;
+		local _, _, _, _, _, _, percent = UnitDamage("player");
+		percent = NWB:round(percent * 100) - NWB:round(dmfDmgPercent  * 100);
+		if (percent > 0) then
+			for k, v in pairs(NWB.data.myChars[UnitName("player")].buffs) do
+				if (k == L["Sayge's Dark Fortune of Damage"]) then
+					NWB.data.myChars[UnitName("player")].buffs[k].dmfPercent = percent;
+					if (doMsg) then
+						C_Timer.After(1, function()
+							NWB:printDmfPercent();
+						end)
+						doMsg = false;
+					end
+				end
+			end
+		end
+		unitDamageFrame:UnregisterEvent("UNIT_DAMAGE");
+	end
+end)
+
+function NWB:trackUnitDamage()
+	local _, _, _, _, _, _, percent = UnitDamage("player");
+	if (tonumber(percent)) then
+		dmfDmgPercent = NWB:round(percent, 2);
+	end
+end
+
+function NWB:printDmfPercent()
+	local percent;
+	for k, v in pairs(NWB.data.myChars[UnitName("player")].buffs) do
+		if (k == L["Sayge's Dark Fortune of Damage"] and v.dmfPercent) then
+			percent = v.dmfPercent;
+		end
+	end
+	if (percent) then
+		NWB:print(string.format(L["dmfDamagePercent"], percent));
+	end
+end
+
 --Track our current buff durations across all chars.
 local gotPlayedData;
 local chronoRestoreUsed = 0;
@@ -2461,6 +2538,9 @@ end
 function NWB:untrackBuff(spellName)
 	if (NWB.data.myChars[UnitName("player")].buffs and NWB.data.myChars[UnitName("player")].buffs[spellName]) then
 		NWB.data.myChars[UnitName("player")].buffs[spellName].track = false;
+		if (spellName == L["Sayge's Dark Fortune of Damage"]) then
+			NWB.data.myChars[UnitName("player")].buffs[spellName].dmfPercent = nil;
+		end
 		NWB:recalcBuffListFrame();
 	end
 end
@@ -3038,6 +3118,7 @@ local function GetCooldownLeft(start, duration)
 end
 
 function NWB:recordChronoData(trade)
+	local found;
 	for bag = 0, NUM_BAG_SLOTS do
 		for slot = 1, GetContainerNumSlots(bag) do
 			local item = Item:CreateFromBagAndSlot(bag, slot);
@@ -3045,6 +3126,7 @@ function NWB:recordChronoData(trade)
 				local itemID = item:GetItemID(item);
 				local itemName = item:GetItemName(item);
 				if (itemID and itemID == 184937) then
+					found = true;
 					local startTime, duration, isEnabled = GetContainerItemCooldown(bag, slot);
 					local endTime = GetCooldownLeft(startTime, duration) + GetServerTime();
 					if (isEnabled == 1 and startTime > 0 and duration > 0) then
@@ -3052,6 +3134,13 @@ function NWB:recordChronoData(trade)
 					end
 				end
 			end
+		end
+	end
+	if (not found) then
+		local startTime, duration, isEnabled = GetItemCooldown(184937);
+		local endTime = GetCooldownLeft(startTime, duration) + GetServerTime();
+		if (isEnabled == 1 and startTime > 0 and duration > 0) then
+			NWB.data.myChars[UnitName("player")].chronoCooldown = endTime;
 		end
 	end
 	NWB.data.myChars[UnitName("player")].chronoCount = (GetItemCount(184937) or 0);
@@ -3275,6 +3364,7 @@ f:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED");
 f:RegisterEvent("QUEST_TURNED_IN");
 f:RegisterEvent("BAG_UPDATE_DELAYED");
 f:RegisterEvent("UI_INFO_MESSAGE");
+f:RegisterEvent("UNIT_DAMAGE");
 local doLogon = true;
 local mc = "myChars";
 local storeBuffsTimer;
@@ -3292,6 +3382,7 @@ f:SetScript("OnEvent", function(self, event, ...)
 			NWB:syncBuffsWithCurrentDuration();
 		end)
 	elseif (event == "PLAYER_ENTERING_WORLD") then
+		NWB:trackUnitDamage();
 		if (doLogon) then
 			--Refresh map stuff after login, loading them at initialize creates a bug with them not showing up until you move sometimes.
 			C_Timer.After(5, function()
@@ -3392,6 +3483,7 @@ f:SetScript("OnEvent", function(self, event, ...)
 	elseif (event == "UNIT_SPELLCAST_START") then
 		local unit, GUID, spellID = ...;
 		if (unit == "player" and spellID == 349858) then
+			NWB:trackUnitDamage();
 			NWB:storeBuffs();
 			--Run another check of buffs every second before the cast ends.
 			--This is to check for any new buffs that landed during the chronoboon cast.
@@ -3427,6 +3519,16 @@ f:SetScript("OnEvent", function(self, event, ...)
 			end)
 		end
 		if (unit == "player" and spellID == 349863) then
+			if (NWB.realmsTBC or NWB.isTBC) then
+				if (NWB.data.myChars[UnitName("player")].storedBuffs) then
+					for k, v in pairs(NWB.data.myChars[UnitName("player")].storedBuffs) do
+						if (k == L["Sayge's Dark Fortune of Damage"]) then
+							unitDamageFrame:RegisterEvent("UNIT_DAMAGE");
+							break;
+						end
+					end
+				end
+			end
 			chronoRestoreUsed = GetTime();
 			NWB:dmfChronoCheck();
 			NWB:clearStoredBuffs();
@@ -3447,6 +3549,13 @@ f:SetScript("OnEvent", function(self, event, ...)
 		if (msg == ERR_TRADE_COMPLETE) then
 			--We want to update the /buffs frame instantly after trades so no throddle.
 			skipBagThroddle = true;
+		end
+	elseif (event == "UNIT_DAMAGE") then
+		local unit = ...;
+		if (unit == "player") then
+			C_Timer.After(1, function()
+				NWB:trackUnitDamage();
+			end)
 		end
 	end
 end)
@@ -4409,6 +4518,9 @@ function NWB:updateMinimapButton(tooltip, usingPanel)
 						or (v.nefTimer + 3600) > (GetServerTime() - NWB.db.global.nefRespawnTime)) then
 					NWB:removeOldLayers();
 				end
+			end
+			if (count == 0) then
+				tooltip:AddLine(NWB.chatColor .. "No layers found yet.");
 			end
 		else
 			local msg = "";
@@ -7360,7 +7472,11 @@ function NWB:recalcBuffListFrame()
 								elseif (k == "Distilled Wisdom") then
 									buffName = "Flask of Distilled Wisdom";
 								end
-								buffString = buffString .. "        " .. icon .. " |cFFFFAE42" .. buffName .. "  ";
+								if (k == L["Sayge's Dark Fortune of Damage"] and v.dmfPercent) then
+									buffString = buffString .. "        " .. icon .. " |cFFFFAE42" .. buffName .. " (" .. v.dmfPercent .. "%) ";
+								else
+									buffString = buffString .. "        " .. icon .. " |cFFFFAE42" .. buffName .. "  ";
+								end
 								if (storedBuffs[k]) then
 									buffString = buffString .. "|cFF9CD6DE(Inactive due to Chronoboon stored buff)|r"
 								else

@@ -1,5 +1,14 @@
 ## Revision History:
 
+#### v3.1 (May 24, 2021)
+------------------------------
+* Fixed the default state for zeppelins
+
+#### v3.0 (May 24, 2021)
+------------------------------
+* Reworked to match other addon versions (Retail / BCC)
+* .toc update
+
 #### v2.2.0 (October 14, 2020)
 ------------------------------
 * Rework config
@@ -18,7 +27,7 @@
 
 #### v2.1.5b (October 13, 2019)
 -------------------------------
-* fixed error on logon ([ticket#2](https://www.curseforge.com/wow/addons/handynotes-travelguide-classic/issues/2) , [#3](https://www.curseforge.com/wow/addons/handynotes-travelguide-classic/issues/3))   
+* fixed error on logon ([ticket#2](https://www.curseforge.com/wow/addons/handynotes-travelguide-classic/issues/2) , [#3](https://www.curseforge.com/wow/addons/handynotes-travelguide-classic/issues/3))
 
 #### v2.1.5 (October 13, 2019)
 ------------------------------
@@ -37,7 +46,7 @@
 
 #### v2.1.2 (September 15, 2019)
 --------------------------------
-* fixed "Visibility Options not saved between sessions and after reload." 
+* fixed "Visibility Options not saved between sessions and after reload."
 	* thanks to agentschmitt for report ((ticket #1)[https://www.curseforge.com/wow/addons/handynotes*travelguide*classic/issues/1])
 
 #### v2.1.1 (September 12, 2019)

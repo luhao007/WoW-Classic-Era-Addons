@@ -789,3 +789,6 @@ L["ammunition"] = "Ammo";
 L["attunements"] = "Attunements";
 L["currentRaidLockouts"] = "Current Raid Lockouts";
 L["none"] = "None.";
+
+L["dmfDamagePercent"] = "This new DMF buff is at %s%% damage.";
+L["dmfDamagePercentTooltip"] = "NWB detected this as %s damage.";
