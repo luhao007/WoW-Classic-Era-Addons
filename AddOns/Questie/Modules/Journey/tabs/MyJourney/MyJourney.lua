@@ -23,15 +23,14 @@ function _QuestieJourney.myJourney:ManageTree(container)
 
         journeyTreeFrame.treeframe:SetWidth(220);
 
-        local journeyTree = {};
-        journeyTree = _QuestieJourney:GetHistory();
+        local journeyTree = _QuestieJourney:GetHistory();
         journeyTreeFrame:SetTree(journeyTree);
         local latestMonth, latestYear = _QuestieJourney:GetMonthAndYearOfLatestEntry()
         if latestMonth and latestYear then
             journeyTreeFrame:SelectByPath(latestYear, latestMonth)
         end
         journeyTreeFrame:SetCallback("OnGroupSelected", function(group)
-            Questie:Debug(DEBUG_DEVELOP, "[Journey] OnGroupSelected - Path:", group.localstatus.selected)
+            Questie:Debug(Questie.DEBUG_DEVELOP, "[Journey] OnGroupSelected - Path:", group.localstatus.selected)
 
             local _, _, e = strsplit("\001", group.localstatus.selected);
 
@@ -84,7 +83,7 @@ function _QuestieJourney.myJourney:ManageTree(container)
                     f:AddChild(created);
 
                 elseif entry.Event == "Quest" then
-                    local state = '';
+                    local state
                     if entry.SubType == "Accept" then
                         state = l10n("Accepted");
                     elseif entry.SubType == "Complete" then

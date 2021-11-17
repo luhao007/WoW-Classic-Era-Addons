@@ -18,7 +18,8 @@ local _GetChannelName = GetChannelName --> wow api locals
 local _UnitExists = UnitExists --> wow api locals
 local _UnitName = UnitName --> wow api locals
 local _UnitIsPlayer = UnitIsPlayer --> wow api locals
-local _UnitGroupRolesAssigned = DetailsFramework.UnitGroupRolesAssigned --> wow api locals
+
+local _UnitGroupRolesAssigned = DetailsFramework.UnitGroupRolesAssigned --framework call
 
 local _detalhes = 		_G._detalhes
 local gump = 			_detalhes.gump

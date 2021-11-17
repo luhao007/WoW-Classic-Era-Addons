@@ -36,7 +36,7 @@ local trackerUILocales = {
         ["zhCN"] = "任务完成!",
         ["zhTW"] = "任務完成!",
         ["esES"] = "¡Misión completada!",
-        ["frFR"] = "Quête terminée!",
+        ["frFR"] = "Quête terminée !",
     },
     ["Quest completion failed!"] = {
         ["ptBR"] = "A missão falhou!",
@@ -48,7 +48,7 @@ local trackerUILocales = {
         ["zhCN"] = "任务失败!",
         ["zhTW"] = "任務失敗!",
         ["esES"] = "¡La misión ha fracasado!",
-        ["frFR"] = "Échec de la quête!",
+        ["frFR"] = "Échec de la quête !",
     },
     ["Untrack Quest"] = {
         ["ptBR"] = "Não rastrear a missão",
@@ -144,7 +144,7 @@ local trackerUILocales = {
         ["zhCN"] = "将任务连接到聊天框",
         ["zhTW"] = "將任務連結貼到對話",
         ["esES"] = "Vincular misión al chat",
-        ["frFR"] = "Linker la quêter dans la chat",
+        ["frFR"] = "Linker la quêter dans la discussion",
     },
     ["Show in Quest Log"] = {
         ["ptBR"] = "Mostrar no registro de missões",
@@ -157,6 +157,18 @@ local trackerUILocales = {
         ["zhTW"] = "開啟任務日誌",
         ["esES"] = "Mostrar en registro de misiones",
         ["frFR"] = "Afficher dans le journal de quête",
+    },
+    ["Can't open Quest Log while in combat. Open it manually."] = {
+        ["ptBR"] = "Não é possível abrir o registro de missões durante o combate. Abra-o manualmente.",
+        ["ruRU"] = "Невозможно автоматически открыть журнал заданий, находясь в бою. Откройте его вручную.",
+        ["deDE"] = "Das Quest Log kann nicht im Kampf geöffnet werden. Bitte öffne es manuell.",
+        ["koKR"] = "전투 중에는 퀘스트 목록을 열 수 없습니다. 수동으로 열어주세요.",
+        ["esMX"] = "No se puede abrir el registro de misiones durante el combate. Ábrelo manualmente.",
+        ["enUS"] = true,
+        ["zhCN"] = false,
+        ["zhTW"] = false,
+        ["esES"] = "No se puede abrir el registro de misiones durante el combate. Ábrelo manualmente.",
+        ["frFR"] = "Impossible d'ouvrir le journal des quêtes en combat. Ouvrez-le manuellement.",
     },
 }
 

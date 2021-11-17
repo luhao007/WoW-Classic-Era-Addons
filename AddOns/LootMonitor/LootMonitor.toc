@@ -1,6 +1,6 @@
-## Interface: 11307
+## Interface: 11401
 ## Author: Aoikaze
-## Version: 3.26
+## Version: 3.27
 ## SavedVariables: LootMonitorDB
 
 ## Title: LootMonitor

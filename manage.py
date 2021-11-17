@@ -11,15 +11,9 @@ from toc import TOC
 
 logger = logging.getLogger('manager')
 
-CLASSIC_ERA_VER = '11307'
+CLASSIC_ERA_VER = '11401'
 CLASSIC_VER = '20501'
-RETAIL_VER = '90005'
-
-
-NOT_WORKING = ['!Swatter', 'Auc-Advanced', 'Auc-Filter-Basic', 'Auc-ScanData', 'Auc-Stat-Histogram', 'Auc-Stat-iLevel',
-                'Auc-Stat-Purchased', 'Auc-Stat-Simple', 'Auc-Stat-StdDev', 'Auc-Util-FixAH',
-                'BeanCounter', 'ClassicCastbars', 'ClassicCastbars_Options', 'Enchantrix', 'Enchantrix-Barker',
-                'Informant', 'MerInspect', 'SlideBar', 'Stubby']
+RETAIL_VER = '90100'
 
 
 def available_on(platforms):
@@ -80,11 +74,11 @@ class Manager:
 
     @functools.lru_cache
     def get_addon_config(self, addon):
-        return self.config.find('.//*[@name="{}"]'.format(addon))
+        return self.config.find(f'.//*[@name="{addon}"]')
 
     @functools.lru_cache
     def get_addon_parent_config(self, addon):
-        return self.config.find('.//*[@name="{}"]../..'.format(addon))
+        return self.config.find(f'.//*[@name="{addon}"]../..')
 
     def get_title(self, addon):
         parts = []
@@ -102,7 +96,7 @@ class Manager:
         colors = {
             '基础库': 'C41F3B',     # Red - DK
             '任务': '00FF96',       # Spring green - Monk
-            '物品': '0070DE',       # Doget blue - Shaman
+            '专业': '0070DE',       # Doget blue - Shaman
             '界面': 'A330C9',       # Dark Magenta - DH
             '副本': 'FF7D0A',       # Orange - Druid
             '战斗': 'C79C6E',       # Tan - Warrior
@@ -114,9 +108,9 @@ class Manager:
             '辅助': 'FFFFFF',       # White - Priest
         }
         color = colors.get(cat, 'FFF569')   # Unknown defaults to Rogue Yellow
-        parts.append('|cFFFFE00A<|r|cFF{}{}|r|cFFFFE00A>|r'.format(color, cat))
+        parts.append(f'|cFFFFE00A<|r|cFF{color}{cat}|r|cFFFFE00A>|r')
 
-        parts.append('|cFFFFFFFF{}|r'.format(title))
+        parts.append(f'|cFFFFFFFF{title}|r')
 
         if config.tag.endswith('SubAddon'):
             sub = config.find('x:Title', namespace).text
@@ -124,7 +118,7 @@ class Manager:
                 color = 'FF0055FF'
             else:
                 color = 'FF69CCF0'
-            parts.append('|c{}{}|r'.format(color, sub))
+            parts.append(f'|c{color}{sub}|r')
         elif not (('DBM' in addon and addon != 'DBM-Core') or
                   'Grail-' in addon or
                   addon == '!!Libs'):
@@ -132,11 +126,11 @@ class Manager:
                 title_en = config.find('x:Title-en', namespace).text
             else:
                 title_en = addon
-            parts.append('|cFFFFE00A{}|r'.format(title_en))
+            parts.append(f'|cFFFFE00A{title_en}|r')
 
         ext = config.find('x:TitleExtra', namespace)
         if ext is not None:
-            parts.append('|cFF22B14C{}|r'.format(ext.text))
+            parts.append(f'|cFF22B14C{ext.text}|r')
 
         return ' '.join(parts)
 
@@ -151,9 +145,6 @@ class Manager:
                 toc = TOC(lines)
 
                 toc.tags['Interface'] = self.interface
-
-                if utils.get_platform() == 'classic' and addon in NOT_WORKING:
-                    toc.tags['Interface'] = '10000'
                 toc.tags['Title-zhCN'] = self.get_title(addon)
 
                 namespace = {'x': 'https://www.github.com/luhao007'}
@@ -214,6 +205,7 @@ class Manager:
                         '\n',
                         '# Libs Needs to be Imported before Other Libs\n',
                         'LibCompress\\lib.xml\n',
+                        'LibDeflate\\lib.xml\n',
                         'UTF8\\utf8data.lua\n',
                         'UTF8\\utf8.lua\n',
                         '\n',
@@ -230,7 +222,8 @@ class Manager:
         root = Path('Addons/!!Libs')
         libs = set(os.listdir(root))
         libs -= {'!!Libs.toc', 'Ace3', 'AceGUI-3.0-SharedMediaWidgets', 'HereBeDragons', 'UTF8', 'FrameXML',
-                    '!LibUIDropDownMenu', '!LibUIDropDownMenu-2.0', 'LibCompress', 'LibDataBroker-1.1', 'LibSharedMedia-3.0'}
+                 '!LibUIDropDownMenu', '!LibUIDropDownMenu-2.0', 'LibCompress', 'LibDeflate',
+                 'LibDataBroker-1.1', 'LibSharedMedia-3.0'}
 
         if 'LibBabble' in libs:
             toc.contents += lib_babble_to_toc()
@@ -282,7 +275,7 @@ class Manager:
             end = lines[start:].index('end\n')
 
             for line in lines[start+1:start+end+1]:
-                ret.append('--{}'.format(line))
+                ret.append(f'--{line}')
             ret += lines[start+end+1:]
 
             return ret
@@ -341,34 +334,34 @@ class Manager:
     @staticmethod
     def handle_dup_libraries():
         addons = ['Atlas', 'BlizzMove', 'DBM-Core', 'Details_Streamer',
-                    'Details_TinyThreat', 'ExRT', 'GatherMate2', 'GTFO',
+                    'Details_TinyThreat', 'MRT', 'GatherMate2', 'GTFO',
                     'HandyNotes', 'ItemRack', 'ItemRackOptions', 'MapSter',
                     'MikScrollingBattleText', 'OmniCC', 'OmniCC_Config',
                     'Quartz', 'RangeDisplay', 'RangeDisplay_Options', 'TellMeWhen', 'TomTom']
 
         if utils.get_platform() == 'retail':
             addons += ['AllTheThings', 'Details_ChartViewer',
-                        'Details_DeathGraphs', 'Details_EncounterDetails',
-                        'Details_RaidCheck', 'Details_TimeLine',
-                        'Details_Vanguard', 'FasterCamera',
-                        'GladiatorlosSA2', 'Gladius',
-                        'HandyNotes_Argus', 'HandyNotes_BrokenShore',
-                        'HandyNotes_BattleForAzeroth',
-                        'HandyNotes_Draenor',
-                        'HandyNotes_DraenorTreasures',
-                        'HandyNotes_LegionClassOrderHalls',
-                        'HandyNotes_LegionRaresTreasures',
-                        'HandyNotes_Shadowlands',
-                        'HandyNotes_SuramarShalAranTelemancy',
-                        'HandyNotes_TimelessIsleChests',
-                        'HandyNotes_VisionsOfNZoth',
-                        'NPCScan', 'Omen',
-                        'RelicInspector', 'Simulationcraft', 'Titan']
+                       'Details_DeathGraphs', 'Details_EncounterDetails',
+                       'Details_RaidCheck', 'Details_TimeLine',
+                       'Details_Vanguard', 'FasterCamera',
+                       'GladiatorlosSA2', 'Gladius',
+                       'HandyNotes_Argus', 'HandyNotes_BrokenShore',
+                       'HandyNotes_BattleForAzeroth',
+                       'HandyNotes_Draenor',
+                       'HandyNotes_DraenorTreasures',
+                       'HandyNotes_LegionClassOrderHalls',
+                       'HandyNotes_LegionRaresTreasures',
+                       'HandyNotes_Shadowlands',
+                       'HandyNotes_SuramarShalAranTelemancy',
+                       'HandyNotes_TimelessIsleChests',
+                       'HandyNotes_VisionsOfNZoth',
+                       'MinimalArchaeology', 'NPCScan', 'Omen',
+                       'RelicInspector', 'Simulationcraft', 'Titan']
         else:
-            addons += ['alaTalentEmu', 'alaCalendar', 'AtlasLootClassic', 'AtlasLootClassic_Options',
-                        'ATT-Classic', 'ClassicCastbars_Options',
-                        'Fizzle', 'GroupCalendar', 'HandyNotes_NPCs (Classic)',
-                        'PallyPower', 'SimpleChatClassic', 'TradeLog', 'TitanClassic', 'WclPlayerScore']
+            addons += ['alaCalendar', 'AtlasLootClassic', 'AtlasLootClassic_Options',
+                       'ATT-Classic', 'ClassicCastbars_Options',
+                       'Fizzle', 'GroupCalendar', 'HandyNotes_NPCs (Classic)',
+                       'PallyPower', 'SimpleChatClassic', 'TradeLog', 'TitanClassic', 'WclPlayerScore']
 
 
         for addon in addons:
@@ -399,16 +392,16 @@ class Manager:
     def handle_ate():
         utils.remove_libraries(
                 ['CallbackHandler-1.0', 'LibDataBroker-1.1',
-                    'LibDbIcon-1.0', 'LibStub'],
-                'AddOns/alaTalentEmu/Lib',
+                 'LibDbIcon-1.0', 'LibStub'],
+                'AddOns/alaTalentEmu/Libs',
                 'AddOns/alaTalentEmu/alaTalentEmu.xml'
             )
 
     @staticmethod
     def handle_att():
+        addon = 'AllTheThings' if utils.get_platform() == 'retail' else 'ATT-Classic'
         utils.change_defaults(
-            'Addons/{}/Settings.lua'.format(
-                'AllTheThings' if utils.get_platform() == 'retail' else 'ATT-Classic'),
+            f'Addons/{addon}/Settings.lua',
             ['		["MinimapButton"] = false,',
                 '		["Auto:MiniList"] = false,']
         )
@@ -443,25 +436,6 @@ class Manager:
         )
 
     @staticmethod
-    @available_on(['classic', 'classic_era'])
-    def handle_auctioneer():
-        addons = ['Auc-Advanced', 'BeanCounter', 'Enchantrix', 'Informant']
-
-        for addon in addons:
-            utils.rm_tree(Path('AddOns') / addon / 'Libs' / 'LibDataBroker')
-            utils.process_file(
-                Path('AddOns') / addon / 'Libs' / 'Load.xml',
-                lambda lines: [line for line in lines
-                                if 'LibDataBroker' not in line]
-            )
-
-        utils.rm_tree('AddOns/SlideBar/Libs')
-        utils.process_file(
-            'AddOns/SlideBar/Load.xml',
-            lambda lines: [line for line in lines if 'Libs' not in line]
-        )
-
-    @staticmethod
     def handle_bagnon():
         utils.rm_tree('AddOns/Bagnon/common/LibDataBroker-1.1')
         utils.process_file(
@@ -478,7 +452,7 @@ class Manager:
         )
 
     @staticmethod
-    @available_on(['retail'])
+    @available_on(['classic', 'retail'])
     def handle_btwquest():
         def process(lines):
             ret = []
@@ -498,9 +472,9 @@ class Manager:
 
     @staticmethod
     def handle_dcs():
+        addon = 'Character' if utils.get_platform() == 'retail' else 'Classic'
         utils.change_defaults(
-            'AddOns/Deja{}Stats/DCSDuraRepair.lua'.format(
-                'Character' if utils.get_platform() == 'retail' else 'Classic'),
+            f'AddOns/Deja{addon}Stats/DCSDuraRepair.lua',
             ['	ShowDuraSetChecked = false,',
                 '	ShowItemRepairSetChecked = false,',
                 '	ShowItemLevelSetChecked = false,',
@@ -581,7 +555,7 @@ class Manager:
         utils.process_file('AddOns/Fizzle/Core.lua', process)
 
     @staticmethod
-    @available_on(['classic', 'classic_era'])
+    @available_on(['classic_era'])
     def handle_goodleader():
         utils.remove_libraries(
             ['AceAddon-3.0', 'AceBucket-3.0', 'AceComm-3.0', 'AceDB-3.0',
@@ -602,15 +576,10 @@ class Manager:
             if 'Grail' not in folder:
                 continue
 
-            if (('NPCs' in folder or 'Quests' in folder) and
-               not folder.endswith('_') and
-               ('enUS' not in folder and 'zhCN' not in folder)):
-                utils.rm_tree(Path('AddOns') / folder)
+            local = folder[-4:]
+            if local in ['deDE', 'esES', 'esMX', 'frFR', 'itIT', 'koKR', 'ptBR', 'ruRU', 'zhTW']:
+                utils.rm_tree(Path('Addons') / folder)
 
-            if ((utils.get_platform() == 'retail' and 'classic' in folder) or
-                (not utils.get_platform() == 'retail' and
-                 ('retail' in folder or 'Achievements' in folder))):
-                utils.rm_tree(Path('AddOns') / folder)
 
     @staticmethod
     @available_on(['classic', 'classic_era'])
@@ -668,23 +637,6 @@ class Manager:
             'Addons/MerInspect/Options.lua',
             ['    ShowCharacterItemSheet = false,          --玩家自己裝備列表',
                 '    ShowCharacterItemStats = false,          --玩家自己屬性統計']
-        )
-
-    @staticmethod
-    @available_on(['retail'])
-    def handle_mogit():
-        utils.remove_libraries(
-            ['AceConfig-3.0', 'AceDB-3.0', 'AceDBOptions-3.0', 'AceGUI-3.0',
-                'CallbackHandler-1.0', 'LibBabble-Boss-3.0',
-                'LibBabble-Inventory-3.0', 'LibBabble-Race-3.0', 'LibDBIcon-1.0',
-                'LibDataBroker-1.1', 'LibStub'],
-            'Addons/MogIt/Libs',
-            'Addons/MogIt/Libs/Embeds.xml'
-        )
-
-        utils.change_defaults(
-            'Addons/Mogit/Core/Core.lua',
-            '		minimap = { hide = true },'
         )
 
     @staticmethod
@@ -779,8 +731,9 @@ class Manager:
             'AddOns/Questie/embeds.xml'
         )
 
-        for postfix in ['', '-BCC', '-Classic']:
-            utils.remove_libraries([ 'LibUIDropDownMenu'], 'AddOns/Questie/Libs', f'AddOns/Questie/Questie{postfix}.toc')
+        if utils.get_platform() == 'classic_era':
+            for postfix in ['', '-BCC']:
+                utils.remove_libraries([ 'LibUIDropDownMenu'], 'AddOns/Questie/Libs', f'AddOns/Questie/Questie{postfix}.toc')
 
         root = Path('AddOns/Questie')
         with open(root / 'Questie.toc', 'r', encoding='utf-8') as file:
@@ -800,13 +753,13 @@ class Manager:
                     break
 
             ret = lines[:start+1]
-            ret.append('    return {}, {}, {}\n'.format(major, minor, patch))
+            ret.append(f'    return {major}, {minor}, {patch}\n')
             ret.append('end\n')
             end = lines[start:].index('end\n')
 
             if not lines[start+1].strip().startswith('return'):
                 for line in lines[start+1:start+end+1]:
-                    ret.append('--{}'.format(line))
+                    ret.append(f'--{line}')
 
             ret += lines[start+end+1:]
             return ret
@@ -867,10 +820,9 @@ class Manager:
 
     @staticmethod
     def handle_titan():
-        path = 'Addons/Titan{0}Location/Titan{0}Location.lua'.format(
-            '' if utils.get_platform() == 'retail' else 'Classic')
+        addon = 'TitanLocation' if utils.get_platform() == 'retail' else 'TitanClassicLocation'
         utils.change_defaults(
-            path,
+            f'Addons/{addon}/{addon}.lua',
             ['			ShowCoordsOnMap = false,',
                 '			ShowCursorOnMap = false,']
         )
@@ -929,7 +881,7 @@ class Manager:
             'Addons/VuhDo/Libs/Libs.xml'
         )
 
-        if not utils.get_platform() == 'retail':
+        if utils.get_platform() != 'retail':
             utils.rm_tree('Addons/Vuhdo/Libs/!LibTotemInfo/LibStub')
             utils.remove_libs_in_file(
                 'Addons/Vuhdo/Libs/!LibTotemInfo/embeds.xml',

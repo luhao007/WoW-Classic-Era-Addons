@@ -1,6 +1,6 @@
-## Interface: 11307
+## Interface: 11401
 ## Author: Cali
-## Version: 1.24
+## Version: @project-version@
 ## RequiredDeps: HandyNotes
 ## OptionalDeps: LibStub, !LibUIDropDownMenu
 ## SavedVariables: HandyNotes_NPCsClassicDB

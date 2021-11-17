@@ -786,7 +786,7 @@ function Frame:ADDON_LOADED(Name)
 end
 -- 进入世界
 function Frame:PLAYER_ENTERING_WORLD()
-	if Addon.LDB and Addon.LDBIcon then
+	if Addon.LDB and Addon.LDBIcon and ((IsAddOnLoaded("TitanClassic")) or (IsAddOnLoaded("Titan"))) then
 		MinimapIcon:InitBroker()
 	else
         -- 初始化小地图按钮

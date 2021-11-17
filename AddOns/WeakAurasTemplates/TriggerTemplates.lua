@@ -1,5 +1,7 @@
 -- Special layout for the New Aura Trigger template page
 
+local AddonName, TemplatePrivate = ...
+
 local AceGUI = LibStub("AceGUI-3.0");
 local floor, ceil, tinsert = floor, ceil, tinsert;
 local CreateFrame, UnitClass, UnitRace, GetSpecialization = CreateFrame, UnitClass, UnitRace, GetSpecialization;
@@ -49,7 +51,7 @@ local function changes(property, regionType)
   elseif property == "glow" and (regionType == "icon" or regionType == "aurabar") then
     return {
       value = true,
-      property = regionType == "icon" and "sub.1.glow" or "sub.2.glow",
+      property = "sub.2.glow"
     };
   elseif WeakAuras.regionTypes[regionType].default[property] == nil then
     return nil;
@@ -517,14 +519,13 @@ local function subTypesFor(item, regionType)
     cd = 134377,
     cd2 = 134376,
   };
-  local subglow = WeakAuras.getDefaultGlow(regionType)
-  local subglowindex = (regionType == "icon" or regionType == "aurabar") and 1
   local data = {}
-  local dataGlow = {
-    subRegions = {
-      [subglowindex] = subglow
+  local dataGlow = {}
+  if regionType == "aurabar" then
+    dataGlow.subRegions = {
+      [1] = WeakAuras.getDefaultGlow(regionType)
     }
-  }
+  end
   if (item.type == "ability") then
     tinsert(types, {
       fallback = true,
@@ -1202,7 +1203,9 @@ local function subTypesFor(item, regionType)
   return fallbacks
 end
 
-function WeakAuras.CreateTemplateView(frame)
+function WeakAuras.CreateTemplateView(Private, frame)
+  TemplatePrivate.Private = Private
+
   local newView = AceGUI:Create("InlineGroup");
   newView.frame:SetParent(frame);
   newView.frame:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -17, 42);
@@ -1594,17 +1597,10 @@ function WeakAuras.CreateTemplateView(frame)
       WeakAuras.UpdateThumbnail(data);
       WeakAuras.UpdateDisplayButton(data);
     end
-    if (data.controlledChildren) then
-      for index, childId in pairs(data.controlledChildren) do
-        local childData = WeakAuras.GetData(childId);
-        if(childData) then
-          handle(childData, item, subType);
-        end
-      end
-    else
-      handle(data, item, subType);
-      WeakAuras.PickDisplay(data.id);
+    for child in TemplatePrivate.Private.TraverseLeafsOrAura(data) do
+      handle(child, item, subType);
     end
+    WeakAuras.ClearAndUpdateOptions(data.id)
   end
 
   local function addTriggers(data, item, subType)
@@ -1620,17 +1616,10 @@ function WeakAuras.CreateTemplateView(frame)
       WeakAuras.UpdateThumbnail(data);
       WeakAuras.UpdateDisplayButton(data);
     end
-    if (data.controlledChildren) then
-      for index, childId in pairs(data.controlledChildren) do
-        local childData = WeakAuras.GetData(childId);
-        if(childData) then
-          handle(childData, item, subType);
-        end
-      end
-    else
-      handle(data, item, subType);
-      WeakAuras.PickDisplay(data.id);
+    for child in TemplatePrivate.Private.TraverseLeafsOrAura(data) do
+      handle(child, item, subType);
     end
+    WeakAuras.ClearAndUpdateOptions(data.id)
   end
 
   local function createLastPage()
@@ -1864,16 +1853,16 @@ function WeakAuras.CreateTemplateView(frame)
   newViewCancel:SetWidth(100);
   newViewCancel:SetText(L["Cancel"]);
 
-  function newView.Open(self, data)
+  function newView.Open(self, data, targetId)
     frame.window = "newView";
     frame:UpdateFrameVisible()
+    self.targetId = targetId
+    self.data = data -- Might be nil
     if (data) then
-      self.data = data;
       newView.existingAura = true;
       newView.chosenItem = nil;
       newView.chosenSubType = nil;
     else
-      self.data = nil; -- Data is cloned from display template
       newView.existingAura = false;
       newView.chosenItem = nil;
       newView.chosenSubType = nil;
@@ -1897,11 +1886,6 @@ function WeakAuras.CreateTemplateView(frame)
     if (not self.data) then
       frame:NewAura();
     end
-  end
-
-  function WeakAuras.OpenTriggerTemplate(data, targetId)
-    frame.newView.targetId = targetId;
-    frame.newView:Open(data);
   end
 
   return newView;

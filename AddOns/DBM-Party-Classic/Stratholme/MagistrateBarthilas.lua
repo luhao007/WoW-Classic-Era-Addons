@@ -1,7 +1,7 @@
 local mod	= DBM:NewMod(454, "DBM-Party-Classic", 16, 236)
 local L		= mod:GetLocalizedStrings()
 
-mod:SetRevision("20200817152042")
+mod:SetRevision("20211102172935")
 mod:SetCreatureID(10435)
 mod:SetEncounterID(482)
 
@@ -12,7 +12,7 @@ mod:RegisterEventsInCombat(
 )
 
 local warningCrowdPummel		= mod:NewSpellAnnounce(10887, 2)
-local warningMightyBlow			= mod:NewSpellAnnounce(14099, 2)
+local warningMightyBlow			= mod:NewSpellAnnounce(14099, 2, nil, "Tank", 2)
 
 local timerCrowdPummelCD		= mod:NewAITimer(180, 10887, nil, nil, nil, 2)
 local timerMightyBlowCD			= mod:NewAITimer(180, 14099, nil, "Tank", 2, 5, nil, DBM_CORE_L.TANK_ICON)

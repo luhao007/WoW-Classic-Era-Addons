@@ -1,11 +1,11 @@
 local mod	= DBM:NewMod("Lucifron", "DBM-MC", 1)
 local L		= mod:GetLocalizedStrings()
 
-mod:SetRevision("20201225041541")
+mod:SetRevision("20211031030228")
 mod:SetCreatureID(12118)--, 12119
 mod:SetEncounterID(663)
 mod:SetModelID(13031)
-mod:SetUsedIcons(1, 2)
+mod:SetUsedIcons(1, 2, 3, 4)
 
 mod:RegisterCombat("combat")
 
@@ -30,7 +30,7 @@ local timerCurseCD	= mod:NewCDTimer(20.5, 19703, nil, nil, nil, 3, nil, DBM_CORE
 local timerDoomCD	= mod:NewCDTimer(20, 19702, nil, nil, nil, 3, nil, DBM_CORE_L.MAGIC_ICON)--20-25
 --local timerDoom		= mod:NewCastTimer(10, 19702, nil, nil, nil, 3, nil, DBM_CORE_L.MAGIC_ICON)
 
-mod:AddSetIconOption("SetIconOnMC", 20604, true, false, {1, 2})
+mod:AddSetIconOption("SetIconOnMC", 20604, true, false, {1, 2, 3, 4})
 
 mod.vb.lastIcon = 1
 
@@ -53,11 +53,18 @@ do
 			specWarnMC:Play("targetyou")
 			yellMC:Yell()
 		end
-		--Alternate icon between 1 and 2
-		if self.vb.lastIcon == 1 then
-			self.vb.lastIcon = 2
-		else
-			self.vb.lastIcon = 1
+		if self:IsSeasonal() then--4 adds
+			--use icons 1-4, in a resetting loop
+			if self.vb.lastIcon == 5 then
+				self.vb.lastIcon = 1
+			end
+		else--2 adds
+			--Alternate icon between 1 and 2
+			if self.vb.lastIcon == 1 then
+				self.vb.lastIcon = 2
+			else
+				self.vb.lastIcon = 1
+			end
 		end
 	end
 

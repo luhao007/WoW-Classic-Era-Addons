@@ -1,12 +1,12 @@
-## Interface: 11307
+## Interface: 11401
 ## Author: Tuller & Jaliborc (JoÃ£o Cardoso)
-## Version: 9.0.7
+## Version: 9.1.3
 ## OptionalDeps: BagBrother, WoWUnit, TestPoncho
 ## SavedVariables: Bagnon_Sets
 
 ## Title: Bagnon
 ## Notes: Single window displays for your inventory and bank
-## Title-zhCN: |cFFFFE00A<|r|cFF0070DE物品|r|cFFFFE00A>|r |cFFFFFFFF背包整合|r |cFFFFE00ABagnon|r
+## Title-zhCN: |cFFFFE00A<|r|cFFFFF569物品|r|cFFFFE00A>|r |cFFFFFFFF背包整合|r |cFFFFE00ABagnon|r
 ## Notes-zhCN: 将背包整合成一个窗口
 
 

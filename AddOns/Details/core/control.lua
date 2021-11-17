@@ -1639,7 +1639,7 @@
 		local panel = _G.DetailsEraseDataConfirmation
 		if (not panel) then
 			
-			panel = CreateFrame ("frame", "DetailsEraseDataConfirmation", UIParent)
+			panel = CreateFrame ("frame", "DetailsEraseDataConfirmation", UIParent, BackdropTemplateMixin and "BackdropTemplate")
 			panel:SetSize (400, 85)
 			panel:SetBackdrop ({bgFile = [[Interface\AddOns\Details\images\background]], tile = true, tileSize = 16,
 			edgeFile = [[Interface\AddOns\Details\images\border_2]], edgeSize = 12})

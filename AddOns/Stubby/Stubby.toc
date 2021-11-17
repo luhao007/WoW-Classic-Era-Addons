@@ -1,4 +1,4 @@
-## Interface: 11307
+## Interface: 11401
 ## Author: Norganna's AddOns
 ## Version: 8.2.6376 (SwimmingSeadragon)
 ## OptionalDeps: !nLog, DebugLib
@@ -6,7 +6,7 @@
 
 ## Title: Stubby |cff224477(lib)
 ## Notes: Allows AddOns to load automatically, and provides event handling support.
-## Title-zhCN: |cFFFFE00A<|r|cFF0070DE物品|r|cFFFFE00A>|r |cFFFFFFFF拍卖助手|r |cFF69CCF0调用助手|r
+## Title-zhCN: |cFFFFE00A<|r|cFFFFF569物品|r|cFFFFE00A>|r |cFFFFFFFF拍卖助手|r |cFF69CCF0调用助手|r
 ## Notes-zhCN: 让Auctioneer各种子插件可以需要时自动加载
 
 ## X-Part-Of: Auc-Advanced

@@ -12,7 +12,7 @@ local myJourneyLocales = {
         ["zhCN"] = "打开 Questie",
         ["zhTW"] = "打開 Questie",
         ["esES"] = "Opciones de Questie",
-        ["frFR"] = "Questie options",
+        ["frFR"] = "Options Questie",
     },
     ["My Journey"] = {
         ["ptBR"] = "Minha jornada",
@@ -60,7 +60,7 @@ local myJourneyLocales = {
         ["zhCN"] = "是时候踏上旅程了！",
         ["zhTW"] = "是時候踏上旅程了！",
         ["esES"] = "¡Es hora de que te embarques en tu primera aventura!",
-        ["frFR"] = "Il est temps que vous embarquiez pour votre premier voyage !",
+        ["frFR"] = "Il est temps d'embarquer pour votre premier voyage !",
     },
     ["Congratulations! You reached %s !"] = {
         ["ptBR"] = "Parabéns! Você alcançou %s!",
@@ -136,7 +136,7 @@ local myJourneyLocales = {
     },
     ["Accepted"] = {
         ["ptBR"] = "Aceita",
-        ["ruRU"] = "Принято",
+        ["ruRU"] = "принято",
         ["deDE"] = "Angenommen",
         ["koKR"] = "수락",
         ["esMX"] = "Aceptada",
@@ -144,7 +144,7 @@ local myJourneyLocales = {
         ["zhCN"] = "接受",
         ["zhTW"] = "接受",
         ["esES"] = "Aceptada",
-        ["frFR"] = "acceptée",
+        ["frFR"] = "Acceptée",
     },
     ["You Abandoned the quest %s"] = {
         ["ptBR"] = "Você abandonou a missão %s",
@@ -160,7 +160,7 @@ local myJourneyLocales = {
     },
     ["Abandoned"] = {
         ["ptBR"] = "Abandonada",
-        ["ruRU"] = "Отменено",
+        ["ruRU"] = "отменено",
         ["deDE"] = "Abgebrochen",
         ["koKR"] = "포기",
         ["esMX"] = "Abandonada",
@@ -168,7 +168,7 @@ local myJourneyLocales = {
         ["zhCN"] = "放弃",
         ["zhTW"] = "放棄",
         ["esES"] = "Abandonada",
-        ["frFR"] = "abandonnée",
+        ["frFR"] = "Abandonnée",
     },
     ["Entry Title"] = {
         ["ptBR"] = "Título da entrada",
@@ -232,7 +232,7 @@ local myJourneyLocales = {
     },
     ["No Note was entered. You must enter a note before submitting."] = {
         ["ptBR"] = "Nenhuma anotação foi inserida. Você deve inserir uma anotação antes de submeter.",
-        ["ruRU"] = "Вы не ввели описание заметки. Введите описание для добавления заметки",
+        ["ruRU"] = "Вы не ввели описание заметки. Введите описание для добавления заметки.",
         ["deDE"] = "Keine Notiz angegeben. Du musst eine Notiz angeben, bevor ein Eintrag angelegt werden kann.",
         ["koKR"] = "내용이 입력되지 않았습니다. 메모를 추가하려면 내용을 입력해주세요.",
         ["esMX"] = "No has introducido una nota. Tienes que introducir una antes de crear tu nota.",
@@ -244,7 +244,7 @@ local myJourneyLocales = {
     },
     ["No Title was entered. You must enter a title before submitting your note."] = {
         ["ptBR"] = "Nenhum título foi inserido. Você deve inserir um título antes de submeter sua anotação.",
-        ["ruRU"] = "Вы не ввели название заметки. Введите название для добавления заметки",
+        ["ruRU"] = "Вы не ввели название заметки. Введите название для добавления заметки.",
         ["deDE"] = "Kein Titel angegeben. Du musst einen Titel angeben, bevor ein Eintrag angelegt werden kann.",
         ["koKR"] = "제목이 입력되지 않았습니다. 메모를 추가하려면 제목을 입력해주세요.",
         ["esMX"] = "No has introducido un título. Tienes que introducir uno antes de crear tu nota.",
@@ -276,7 +276,7 @@ local myJourneyLocales = {
         ["zhCN"] = "笔记：%s",
         ["zhTW"] = "筆記：%s",
         ["esES"] = "Nota: %s",
-        ["frFR"] = "Remarque : %s",
+        ["frFR"] = "Note : %s",
     },
     ["Add New Adventure Note"] = {
         ["ptBR"] = "Adicione uma nova anotação de aventura",

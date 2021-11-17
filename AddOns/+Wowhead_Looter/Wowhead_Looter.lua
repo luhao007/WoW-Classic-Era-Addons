@@ -3,15 +3,15 @@
 --     W o w h e a d   L o o t e r     --
 --                                     --
 --                                     --
---    Patch: 1.13.7                    --
---    Updated: April 21, 2021          --
+--    Patch: 1.14.0                    --
+--    Updated: Nov 9, 2021             --
 --    E-mail: feedback@wowhead.com     --
 --                                     --
 -----------------------------------------
 
 
 local WL_NAME = "|cffffff7fWowhead Looter|r";
-local WL_VERSION = 11307;
+local WL_VERSION = 11401;
 local WL_VERSION_PATCH = 0;
 local WL_ADDONNAME, WL_ADDONTABLE = ...
 
@@ -546,6 +546,7 @@ local wlTrackerClearedTime = 0;
 local wlChatLootIsBlocked = false;
 local wlLastShipmentContainer = nil;
 local wlLockedID = nil;
+local wlSeasonId = "";
 
 -- Hooks
 local wlDefaultGetQuestReward;
@@ -674,6 +675,16 @@ end
 function wlEvent_ADDON_LOADED(self, name)
     if name == "+Wowhead_Looter" then
         wlTimers.autoCollect = wlGetTime() + 60000; -- 60 seconds timeout
+        local seasonId = 0;
+        if (C_Seasons and
+            C_Seasons.GetActiveSeason and
+            C_Seasons.HasActiveSeason and C_Seasons.HasActiveSeason()) then
+            seasonId = C_Seasons.GetActiveSeason();
+        end
+        wlSeasonId = "Season-" .. seasonId;
+        if (not wlUnit[wlSeasonId]) then
+            wlUnit[wlSeasonId] = {};
+        end
     end
 end
 
@@ -744,27 +755,27 @@ function wlEvent_PLAYER_TARGET_CHANGED(self)
         return;
     end
 
-    wlUpdateVariable(wlUnit, id, "init", {
+    wlUpdateVariable(wlUnit, wlSeasonId, id, "init", {
         class = select(2, UnitClass("target")),
         isPvp = UnitIsPVP("target") and true or false,
     });
 
-    if not wlUnit[id].class then
-        wlUpdateVariable(wlUnit, id, "class", "set", select(2, UnitClass("target")));
-        wlUpdateVariable(wlUnit, id, "isPvp", "set", UnitIsPVP("target") and true or false);
+    if not wlUnit[wlSeasonId][id].class then
+        wlUpdateVariable(wlUnit, wlSeasonId, id, "class", "set", select(2, UnitClass("target")));
+        wlUpdateVariable(wlUnit, wlSeasonId, id, "isPvp", "set", UnitIsPVP("target") and true or false);
     end
 
-    wlUpdateVariable(wlUnit, id, "sex", UnitSex("target"), "add", 1);
+    wlUpdateVariable(wlUnit, wlSeasonId, id, "sex", UnitSex("target"), "add", 1);
 
-    if not wlUnit[id].faction then
-        wlUnit[id].faction = wlUnitFaction("target");
+    if not wlUnit[wlSeasonId][id].faction then
+        wlUnit[wlSeasonId][id].faction = wlUnitFaction("target");
     end
 
-    wlUpdateVariable(wlUnit, id, "reaction", wlConcat(UnitLevel("player"), UnitFactionGroup("player"), UnitReaction("player", "target")), "init", wlGetTime());
+    wlUpdateVariable(wlUnit, wlSeasonId, id, "reaction", wlConcat(UnitLevel("player"), UnitFactionGroup("player"), UnitReaction("player", "target")), "init", wlGetTime());
 
     local dd, level = wlGetInstanceDifficulty(), UnitLevel("target");
 
-    wlUpdateVariable(wlUnit, id, "spec", dd, level, "init", {
+    wlUpdateVariable(wlUnit, wlSeasonId, id, "spec", dd, level, "init", {
         health = UnitHealthMax("target"),
         powertype = UnitPowerType("target"),
         powermax = UnitPowerMax("target", powertype),
@@ -808,18 +819,18 @@ function wlRegisterUnitLocation(id, level)
 
     local zone, x, y, uiMapID = wlGetLocation();
 
-    wlUpdateVariable(wlUnit, id, "spec", dd, level, "loc", zone, uiMapID, "init", { n = 0 });
+    wlUpdateVariable(wlUnit, wlSeasonId, id, "spec", dd, level, "loc", zone, uiMapID, "init", { n = 0 });
 
-    local i = wlGetLocationIndex(wlUnit[id].spec[dd][level].loc[zone][uiMapID], x, y, uiMapID, 5);
+    local i = wlGetLocationIndex(wlUnit[wlSeasonId][id].spec[dd][level].loc[zone][uiMapID], x, y, uiMapID, 5);
     if i then
-        local n = wlUnit[id].spec[dd][level].loc[zone][uiMapID][i].n;
+        local n = wlUnit[wlSeasonId][id].spec[dd][level].loc[zone][uiMapID][i].n;
 
-        wlUnit[id].spec[dd][level].loc[zone][uiMapID][i].x = floor((wlUnit[id].spec[dd][level].loc[zone][uiMapID][i].x * n + x) / (n + 1) + 0.5);
-        wlUnit[id].spec[dd][level].loc[zone][uiMapID][i].y = floor((wlUnit[id].spec[dd][level].loc[zone][uiMapID][i].y * n + y) / (n + 1) + 0.5);
-        wlUnit[id].spec[dd][level].loc[zone][uiMapID][i].n = n + 1;
+        wlUnit[wlSeasonId][id].spec[dd][level].loc[zone][uiMapID][i].x = floor((wlUnit[wlSeasonId][id].spec[dd][level].loc[zone][uiMapID][i].x * n + x) / (n + 1) + 0.5);
+        wlUnit[wlSeasonId][id].spec[dd][level].loc[zone][uiMapID][i].y = floor((wlUnit[wlSeasonId][id].spec[dd][level].loc[zone][uiMapID][i].y * n + y) / (n + 1) + 0.5);
+        wlUnit[wlSeasonId][id].spec[dd][level].loc[zone][uiMapID][i].n = n + 1;
     else
-        i = wlUpdateVariable(wlUnit, id, "spec", dd, level, "loc", zone, uiMapID, "n", "add", 1);
-        wlUpdateVariable(wlUnit, id, "spec", dd, level, "loc", zone, uiMapID, i, "set", {
+        i = wlUpdateVariable(wlUnit, wlSeasonId, id, "spec", dd, level, "loc", zone, uiMapID, "n", "add", 1);
+        wlUpdateVariable(wlUnit, wlSeasonId, id, "spec", dd, level, "loc", zone, uiMapID, i, "set", {
             x = x,
             y = y,
             dl = uiMapID,
@@ -828,7 +839,7 @@ function wlRegisterUnitLocation(id, level)
         if (IsInInstance()) then
             local name, iType, difficultyIndex, difficultyName, maxPlayers, dynamicDifficulty, isDynamic,
                 instanceMapId, lfgId = GetInstanceInfo();
-            wlUpdateVariable(wlUnit, id, "spec", dd, level, "loc", zone, uiMapID, i, "instance", "set", {
+            wlUpdateVariable(wlUnit, wlSeasonId, id, "spec", dd, level, "loc", zone, uiMapID, i, "instance", "set", {
                 name = name,
                 iType = iType,
                 difficultyIndex = difficultyIndex,
@@ -886,11 +897,11 @@ function wlRegisterUnitQuote(name, how, language, text)
     end
 
     -- language -> language known
-    if (language ~= "" and not wlLanguage[language]) or not name or not wlNpcInfo[name] or not wlUnit[wlNpcInfo[name].id] then
+    if (language ~= "" and not wlLanguage[language]) or not name or not wlNpcInfo[name] or not wlUnit[wlSeasonId][wlNpcInfo[name].id] then
         return;
     end
 
-    wlUpdateVariable(wlUnit, wlNpcInfo[name].id, "quote", how, text, "set", language);
+    wlUpdateVariable(wlUnit, wlSeasonId, wlNpcInfo[name].id, "quote", how, text, "set", language);
 end
 
 --**--**--**--**--**--**--**--**--**--**--**--**--**--**--**--**--**--**--
@@ -982,11 +993,11 @@ function wlRegisterUnitGossip(gossip)
         id, kind = unpack(wlTracker.gossipNpc);
     end
 
-    if not id or kind ~= "npc" or not wlUnit[id] then
+    if not id or kind ~= "npc" or not wlUnit[wlSeasonId][id] then
         return;
     end
 
-    wlUpdateVariable(wlUnit, id, "gossip", gossip, "add", 1);
+    wlUpdateVariable(wlUnit, wlSeasonId, id, "gossip", gossip, "add", 1);
 end
 
 --**--**--**--**--**--**--**--**--**--**--**--**--**--**--**--**--**--**--
@@ -998,7 +1009,7 @@ function wlEvent_PET_BAR_UPDATE(self)
     end
 
     if wlTracker.spell and wlTracker.spell.time and wlTracker.spell.action == "MindControl" and wlTracker.spell.event == "SUCCEEDED" then
-        if id and kind == "npc" and wlUnit[id] and id == wlTracker.spell.id then
+        if id and kind == "npc" and wlUnit[wlSeasonId][id] and id == wlTracker.spell.id then
             wlCurrentMindControlTarget = id;
         end
 
@@ -1033,12 +1044,12 @@ function wlEvent_MERCHANT_UPDATE(self)
 
     local id, kind = wlUnitGUID("npc");
 
-    if not id or kind ~= "npc" or not wlUnit[id] then
+    if not id or kind ~= "npc" or not wlUnit[wlSeasonId][id] then
         return;
     end
 
     if CanMerchantRepair() then
-        wlUpdateVariable(wlUnit, id, "canRepair", "init", 1);
+        wlUpdateVariable(wlUnit, wlSeasonId, id, "canRepair", "init", 1);
     end
 
     local standing = select(2, wlUnitFaction("npc"));
@@ -1160,7 +1171,7 @@ function wlEvent_MERCHANT_UPDATE(self)
     end
 
     for link, numAvailable in pairs(merchantItemList) do
-        wlUpdateVariable(wlUnit, id, "merchant", link, "max", numAvailable);
+        wlUpdateVariable(wlUnit, wlSeasonId, id, "merchant", link, "max", numAvailable);
     end
 
     if (merchantFilters) then
@@ -1176,7 +1187,7 @@ function wlEvent_TRAINER_SHOW(self)
 
     local id, kind = wlUnitGUID("npc");
 
-    if not id or kind ~= "npc" or not wlUnit[id] then
+    if not id or kind ~= "npc" or not wlUnit[wlSeasonId][id] then
         return;
     end
 
@@ -1218,7 +1229,7 @@ function wlEvent_TRAINER_SHOW(self)
 
             cost = wlGetFullCost(wlSelectOne(1, GetTrainerServiceCost(i)), standing);
 
-            wlUpdateVariable(wlUnit, id, "training", wlSelectOne(2, UnitClass("player")), wlConcat(spellId, skill, skillRank, reqLevel, cost, icon, spellName, spellSubText, itemId), "init", 1);
+            wlUpdateVariable(wlUnit, wlSeasonId, id, "training", wlSelectOne(2, UnitClass("player")), wlConcat(spellId, skill, skillRank, reqLevel, cost, icon, spellName, spellSubText, itemId), "init", 1);
         end
     end
 
@@ -1240,11 +1251,11 @@ end
 
 function wlEvent_CHAT_MSG_MONSTER_EMOTE(self, emote, name)
     if emote == WL_RUNSAWAY then
-        if not name or not wlNpcInfo[name] or not wlUnit[wlNpcInfo[name].id] then
+        if not name or not wlNpcInfo[name] or not wlUnit[wlSeasonId][wlNpcInfo[name].id] then
             return;
         end
 
-        wlUpdateVariable(wlUnit, wlNpcInfo[name].id, "runsaway", "init", 1);
+        wlUpdateVariable(wlUnit, wlSeasonId, wlNpcInfo[name].id, "runsaway", "init", 1);
     end
 end
 
@@ -1257,7 +1268,7 @@ function wlCheckUnitForRep(guid, name)
     local now = wlGetTime();
 
     -- npc check
-    if not id or id == 0 or kind ~= "npc" or not wlUnit[id] then
+    if not id or id == 0 or kind ~= "npc" or not wlUnit[wlSeasonId][id] then
         return id, now;
     end
 
@@ -1332,7 +1343,7 @@ function wlEvent_COMBAT_LOG_EVENT_UNFILTERED()
 
         if bit_band(WL_NPC_FLAGS, sourceFlags) ~= 0 and bit_band(WL_NPC_CONTROL_FLAGS, sourceFlags) == WL_NPC_CONTROL_FLAGS then
 
-            wlUpdateVariable(wlUnit, unitId, "spec", wlGetInstanceDifficulty(), "spell", (spellId == 0 and spellName or spellId), "add", 1);
+            wlUpdateVariable(wlUnit, wlSeasonId, unitId, "spec", wlGetInstanceDifficulty(), "spell", (spellId == 0 and spellName or spellId), "add", 1);
 
         elseif not wlCurrentMindControlTarget and bit_band(WL_PET_FLAGS, sourceFlags) ~= 0 and bit_band(WL_PET_CONTROL_FLAGS, sourceFlags) == WL_PET_CONTROL_FLAGS then
 
@@ -1357,15 +1368,15 @@ function wlEvent_COMBAT_LOG_EVENT_UNFILTERED()
                 return;
             end
 
-            wlUpdateVariable(wlUnit, unitId, "spec", wlGetInstanceDifficulty(), "spell", (spellId == 0 and spellName or spellId), "add", 1);
+            wlUpdateVariable(wlUnit, wlSeasonId, unitId, "spec", wlGetInstanceDifficulty(), "spell", (spellId == 0 and spellName or spellId), "add", 1);
 
-        elseif bit_band(WL_MINDCONTROL_FLAGS, sourceFlags) == WL_MINDCONTROL_FLAGS and wlCurrentMindControlTarget == unitId and wlUnit[unitId] then
+        elseif bit_band(WL_MINDCONTROL_FLAGS, sourceFlags) == WL_MINDCONTROL_FLAGS and wlCurrentMindControlTarget == unitId and wlUnit[wlSeasonId][unitId] then
 
             for i=1, NUM_PET_ACTION_SLOTS do
                 local petSpellName, _, _, _, _, autoCastAllowed = GetPetActionInfo(i);
 
                 if petSpellName == spellName then
-                    wlUpdateVariable(wlUnit, unitId, "spec", wlGetInstanceDifficulty(), "mcspell", i, "init", wlConcat(spellId == 0 and spellName or spellId, autoCastAllowed or 0));
+                    wlUpdateVariable(wlUnit, wlSeasonId, unitId, "spec", wlGetInstanceDifficulty(), "mcspell", i, "init", wlConcat(spellId == 0 and spellName or spellId, autoCastAllowed or 0));
                     break;
                 end
             end
@@ -1844,6 +1855,8 @@ function wlRegisterQuestReturn()
     wlEvent[wlId][wlN][eventId].choiceItemLinks = wlTracker.quest.choiceItemLinks;
     wlEvent[wlId][wlN][eventId].rewardCurrencies = wlTracker.quest.rewardCurrencies;
     wlEvent[wlId][wlN][eventId].playerLevel = UnitLevel("player");
+    wlEvent[wlId][wlN][eventId].xp = GetRewardXP();
+    wlEvent[wlId][wlN][eventId].seasonId = wlSeasonId;
     wlEvent[wlId][wlN][eventId].playerWarModeActive = UnitIsWarModeActive and UnitIsWarModeActive("player") or false;
     wlEvent[wlId][wlN][eventId].playerWarModeDesired = UnitIsWarModeDesired and UnitIsWarModeDesired("player") or false;
     wlEvent[wlId][wlN][eventId].playerWarModePhased = UnitIsWarModePhased and UnitIsWarModePhased("player") or false;
@@ -1901,7 +1914,7 @@ function wlEvent_CHAT_MSG_COMBAT_FACTION_CHANGE(self, msg)
     end
 
     amount = floor((amount/repMod) + 0.5);
-    wlUpdateVariable(wlUnit, wlTracker.rep.id, "spec", wlGetInstanceDifficulty(), "rep", wlConcat(factionName, wlFaction[factionName].standing, amount, wlTracker.rep.flags, wlFaction[factionName].id), "add", 1);
+    wlUpdateVariable(wlUnit, wlSeasonId, wlTracker.rep.id, "spec", wlGetInstanceDifficulty(), "rep", wlConcat(factionName, wlFaction[factionName].standing, amount, wlTracker.rep.flags, wlFaction[factionName].id), "add", 1);
 end
 
 --**--**--**--**--**--**--**--**--**--**--**--**--**--**--**--**--**--**--
@@ -4839,7 +4852,7 @@ function wlRegisterStats()
 
     _, nCharacters = wlExportData:gsub(";", "");
 
-    wlStats = wlConcat(wlArrayLength(wlUnit), wlArrayLength(wlObject), nQuests, nDrops, wlArrayLength(wlAuction, 2), nCharacters, GetLocale(), wlSelectOne(2, GetBuildInfo()));
+    wlStats = wlConcat(wlArrayLength(wlUnit[wlSeasonId]), wlArrayLength(wlObject), nQuests, nDrops, wlArrayLength(wlAuction, 2), nCharacters, GetLocale(), wlSelectOne(2, GetBuildInfo()));
 end
 
 --**--**--**--**--**--**--**--**--**--**--**--**--**--**--**--**--**--**--

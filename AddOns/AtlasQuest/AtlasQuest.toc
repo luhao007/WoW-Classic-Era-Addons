@@ -1,7 +1,7 @@
-## Interface: 11307
+## Interface: 11401
 ## Author: Thandrenn
-## Version: 4.11.68
-## RequiredDeps: Atlas
+## Version: 4.12.51
+## RequiredDeps: Atlas, Atlas_ClassicWoW
 ## Dependencies: 
 ## OptionalDeps: 
 ## LoadOnDemand: 0
@@ -21,7 +21,7 @@
 ## X-License: GPLv2
 ## X-Credits: AtlasQuest Team
 ## X-Localizations: enUS, deDE, koKR, zhCN, zhTW, ruRU, esES, esMX
-## X-Date: May 25, 2021
+## X-Date: September 30, 2021
 ## X-Help: AtlasQuestHelp
 
 AtlasQuest_InsideFrame.xml

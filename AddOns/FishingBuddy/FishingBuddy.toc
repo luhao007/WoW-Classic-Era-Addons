@@ -1,4 +1,4 @@
-## Interface: 11307
+## Interface: 11401
 ## Author: Sutorix=AT=hotmail.com
 ## Version: 0.7.3 Beta 10
 ## OptionalDeps: FB_Debugging, myAddOns, Titan, TownsfolkTracker
@@ -7,7 +7,7 @@
 
 ## Title: Fishing Buddy (Classic)
 ## Notes: Help with fishing related tasks -- clothing, fish information, etc.
-## Title-zhCN: |cFFFFE00A<|r|cFF0070DE物品|r|cFFFFE00A>|r |cFFFFFFFF钓鱼助手|r |cFFFFE00AFishingBuddy|r
+## Title-zhCN: |cFFFFE00A<|r|cFFFFF569物品|r|cFFFFE00A>|r |cFFFFFFFF钓鱼助手|r |cFFFFE00AFishingBuddy|r
 
 ## X-Date: July 21, 2005
 ## X-Help: FBConstants.HELPMSG

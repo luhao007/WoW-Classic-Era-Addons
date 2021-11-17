@@ -22756,6 +22756,2300 @@ t[24285] = {
 	sellPrice = 375000,
 	reqLevel = 0,
 }
+t[27694] = {
+	name = L["Recipe: Blackened Trout"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 20000,
+	sellPrice = 5000,
+	reqLevel = 0,
+	profession = L["Cooking"],
+	teaches = L["Blackened Trout"],
+	learnedAt = 300,
+}
+t[27920] = {
+	name = L["Mark of Conquest"],
+	quality = 3,
+	icon = "inv_misc_armorkit_11",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 62,
+}
+t[27924] = {
+	name = L["Mark of Defiance"],
+	quality = 3,
+	icon = "inv_jewelry_necklace_16",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 62,
+}
+t[27926] = {
+	name = L["Mark of Vindication"],
+	quality = 3,
+	icon = "inv_qirajidol_sun",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 62,
+}
+t[27928] = {
+	name = L["Terminal Edge"],
+	quality = 3,
+	icon = "inv_axe_03",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 62,
+}
+t[27930] = {
+	name = L["Splintermark"],
+	quality = 3,
+	icon = "inv_weapon_bow_04",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 62,
+}
+t[27939] = {
+	name = L["Incendic Rod"],
+	quality = 3,
+	icon = "inv_wand_11",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 62,
+}
+t[27947] = {
+	name = L["Totem of Impact"],
+	quality = 3,
+	icon = "spell_nature_slowingtotem",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 62,
+}
+t[27949] = {
+	name = L["Libram of Zeal"],
+	quality = 3,
+	icon = "inv_relics_libramoftruth",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 62,
+}
+t[27989] = {
+	name = L["Idol of Savagery"],
+	quality = 3,
+	icon = "inv_relics_idolofferocity",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 62,
+}
+t[27637] = {
+	name = L["Shadowstalker's Sash"],
+	quality = 3,
+	icon = "inv_belt_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 66,
+}
+t[27638] = {
+	name = L["Hierophant's Sash"],
+	quality = 3,
+	icon = "inv_belt_17",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 66,
+}
+t[27639] = {
+	name = L["Slayer's Waistguard"],
+	quality = 3,
+	icon = "inv_belt_14",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 66,
+}
+t[27643] = {
+	name = L["Stormbreaker's Girdle"],
+	quality = 3,
+	icon = "inv_belt_20",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 66,
+}
+t[27644] = {
+	name = L["Avenger's Waistguard"],
+	quality = 3,
+	icon = "inv_belt_14",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 66,
+}
+t[27645] = {
+	name = L["Dreamstalker Sash"],
+	quality = 3,
+	icon = "inv_belt_17",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 66,
+}
+t[27646] = {
+	name = L["Marksman's Belt"],
+	quality = 3,
+	icon = "inv_belt_20",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 66,
+}
+t[27647] = {
+	name = L["Marksman's Legguards"],
+	quality = 3,
+	icon = "inv_pants_mail_04",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 66,
+}
+t[27648] = {
+	name = L["Dreamstalker Leggings"],
+	quality = 3,
+	icon = "inv_pants_07",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 66,
+}
+t[27649] = {
+	name = L["Hierophant's Leggings"],
+	quality = 3,
+	icon = "inv_pants_cloth_05",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 66,
+}
+t[27650] = {
+	name = L["Shadowstalker's Leggings"],
+	quality = 3,
+	icon = "inv_pants_leather_03",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 66,
+}
+t[27652] = {
+	name = L["Stormbreaker's Leggings"],
+	quality = 3,
+	icon = "inv_pants_mail_12",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 66,
+}
+t[27653] = {
+	name = L["Slayer's Leggings"],
+	quality = 3,
+	icon = "inv_pants_plate_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 66,
+}
+t[27654] = {
+	name = L["Avenger's Legplates"],
+	quality = 3,
+	icon = "inv_pants_plate_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 66,
+}
+t[27679] = {
+	name = L["Sublime Mystic Dawnstone"],
+	quality = 4,
+	icon = "inv_misc_gem_topaz_01",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 0,
+}
+t[27680] = {
+	name = L["Halaani Bag"],
+	quality = 3,
+	icon = "inv_misc_bag_17",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 0,
+}
+t[32071] = {
+	name = L["Recipe: Elixir of Ironskin"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 0,
+	profession = L["Alchemy"],
+	teaches = L["Elixir of Ironskin"],
+	learnedAt = 330,
+}
+t[33783] = {
+	name = L["Design: Steady Talasite"],
+	quality = 3,
+	icon = "inv_scroll_05",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 0,
+}
+t[21902] = {
+	name = L["Pattern: Soulcloth Gloves"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 80000,
+	sellPrice = 20000,
+	reqLevel = 0,
+	profession = L["Tailoring"],
+	teaches = L["Soulcloth Gloves"],
+	learnedAt = 355,
+}
+t[27691] = {
+	name = L["Recipe: Roasted Clefthoof"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 30000,
+	sellPrice = 7500,
+	reqLevel = 0,
+	profession = L["Cooking"],
+	teaches = L["Roasted Clefthoof"],
+	learnedAt = 325,
+}
+t[27693] = {
+	name = L["Recipe: Talbuk Steak"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 30000,
+	sellPrice = 7500,
+	reqLevel = 0,
+	profession = L["Cooking"],
+	teaches = L["Talbuk Steak"],
+	learnedAt = 325,
+}
+t[27697] = {
+	name = L["Recipe: Grilled Mudfish"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 30000,
+	sellPrice = 7500,
+	reqLevel = 0,
+	profession = L["Cooking"],
+	teaches = L["Grilled Mudfish"],
+	learnedAt = 320,
+}
+t[27698] = {
+	name = L["Recipe: Poached Bluefish"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 30000,
+	sellPrice = 7500,
+	reqLevel = 0,
+	profession = L["Cooking"],
+	teaches = L["Poached Bluefish"],
+	learnedAt = 320,
+}
+t[29136] = {
+	name = L["Far Seer's Helm"],
+	quality = 3,
+	icon = "inv_helmet_04",
+	buyPrice = 207131,
+	sellPrice = 41426,
+	reqLevel = 70,
+}
+t[29138] = {
+	name = L["Arechron's Gift"],
+	quality = 3,
+	icon = "inv_mace_45",
+	buyPrice = 524392,
+	sellPrice = 104878,
+	reqLevel = 70,
+}
+t[29140] = {
+	name = L["Cloak of the Ancient Spirits"],
+	quality = 3,
+	icon = "inv_misc_cape_19",
+	buyPrice = 130314,
+	sellPrice = 26062,
+	reqLevel = 70,
+}
+t[29142] = {
+	name = L["Kurenai Kilt"],
+	quality = 3,
+	icon = "inv_pants_leather_14",
+	buyPrice = 218818,
+	sellPrice = 43763,
+	reqLevel = 70,
+}
+t[29144] = {
+	name = L["Worg Hide Quiver"],
+	quality = 3,
+	icon = "inv_misc_quiver_06",
+	buyPrice = 100000,
+	sellPrice = 25000,
+	reqLevel = 68,
+}
+t[29146] = {
+	name = L["Band of Elemental Spirits"],
+	quality = 3,
+	icon = "inv_jewelry_ring_35",
+	buyPrice = 175952,
+	sellPrice = 43988,
+	reqLevel = 70,
+}
+t[29148] = {
+	name = L["Blackened Leather Spaulders"],
+	quality = 3,
+	icon = "inv_shoulder_25",
+	buyPrice = 167743,
+	sellPrice = 33548,
+	reqLevel = 70,
+}
+t[29217] = {
+	name = L["Pattern: Netherfury Belt"],
+	quality = 3,
+	icon = "inv_scroll_05",
+	buyPrice = 120000,
+	sellPrice = 30000,
+	reqLevel = 0,
+	profession = L["Leatherworking"],
+	teaches = L["Netherfury Belt"],
+	learnedAt = 340,
+}
+t[29218] = {
+	name = L["Pattern: Netherfury Boots"],
+	quality = 3,
+	icon = "inv_scroll_05",
+	buyPrice = 120000,
+	sellPrice = 30000,
+	reqLevel = 0,
+	profession = L["Leatherworking"],
+	teaches = L["Netherfury Boots"],
+	learnedAt = 350,
+}
+t[29219] = {
+	name = L["Pattern: Netherfury Leggings"],
+	quality = 3,
+	icon = "inv_scroll_05",
+	buyPrice = 120000,
+	sellPrice = 30000,
+	reqLevel = 0,
+	profession = L["Leatherworking"],
+	teaches = L["Netherfury Leggings"],
+	learnedAt = 340,
+}
+t[29227] = {
+	name = L["Reins of the Cobalt War Talbuk"],
+	quality = 4,
+	icon = "inv_misc_foot_centaur",
+	buyPrice = 1000000,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[29229] = {
+	name = L["Reins of the Silver War Talbuk"],
+	quality = 4,
+	icon = "inv_misc_foot_centaur",
+	buyPrice = 1000000,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[29230] = {
+	name = L["Reins of the Tan War Talbuk"],
+	quality = 4,
+	icon = "inv_misc_foot_centaur",
+	buyPrice = 1000000,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[29231] = {
+	name = L["Reins of the White War Talbuk"],
+	quality = 4,
+	icon = "inv_misc_foot_centaur",
+	buyPrice = 1000000,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[30443] = {
+	name = L["Recipe: Transmute Primal Fire to Earth"],
+	quality = 2,
+	icon = "inv_scroll_06",
+	buyPrice = 80000,
+	sellPrice = 20000,
+	reqLevel = 0,
+	profession = L["Alchemy"],
+	teaches = L["Transmute: Primal Fire to Earth"],
+	learnedAt = 350,
+}
+t[30444] = {
+	name = L["Pattern: Reinforced Mining Bag"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 50000,
+	sellPrice = 12500,
+	reqLevel = 0,
+	profession = L["Leatherworking"],
+	teaches = L["Reinforced Mining Bag"],
+	learnedAt = 325,
+}
+t[31774] = {
+	name = L["Kurenai Tabard"],
+	quality = 1,
+	icon = "inv_shirt_guildtabard_01",
+	buyPrice = 10000,
+	sellPrice = 2500,
+	reqLevel = 0,
+}
+t[31830] = {
+	name = L["Reins of the Cobalt Riding Talbuk"],
+	quality = 4,
+	icon = "inv_misc_foot_centaur",
+	buyPrice = 700000,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[31832] = {
+	name = L["Reins of the Silver Riding Talbuk"],
+	quality = 4,
+	icon = "inv_misc_foot_centaur",
+	buyPrice = 700000,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[31834] = {
+	name = L["Reins of the Tan Riding Talbuk"],
+	quality = 4,
+	icon = "inv_misc_foot_centaur",
+	buyPrice = 700000,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[31836] = {
+	name = L["Reins of the White Riding Talbuk"],
+	quality = 4,
+	icon = "inv_misc_foot_centaur",
+	buyPrice = 700000,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[34173] = {
+	name = L["Pattern: Drums of Speed"],
+	quality = 1,
+	icon = "inv_scroll_06",
+	buyPrice = 160000,
+	sellPrice = 40000,
+	reqLevel = 0,
+	profession = L["Leatherworking"],
+	teaches = L["Drums of Speed"],
+	learnedAt = 345,
+}
+t[34175] = {
+	name = L["Pattern: Drums of Restoration"],
+	quality = 1,
+	icon = "inv_scroll_06",
+	buyPrice = 160000,
+	sellPrice = 40000,
+	reqLevel = 0,
+	profession = L["Leatherworking"],
+	teaches = L["Drums of Restoration"],
+	learnedAt = 350,
+}
+t[22917] = {
+	name = L["Recipe: Transmute Primal Fire to Earth"],
+	quality = 2,
+	icon = "inv_scroll_06",
+	buyPrice = 80000,
+	sellPrice = 20000,
+	reqLevel = 0,
+	profession = L["Alchemy"],
+	teaches = L["Transmute: Primal Fire to Earth"],
+	learnedAt = 350,
+}
+t[25741] = {
+	name = L["Pattern: Netherfury Belt"],
+	quality = 3,
+	icon = "inv_scroll_05",
+	buyPrice = 120000,
+	sellPrice = 30000,
+	reqLevel = 0,
+	profession = L["Leatherworking"],
+	teaches = L["Netherfury Belt"],
+	learnedAt = 340,
+}
+t[25742] = {
+	name = L["Pattern: Netherfury Leggings"],
+	quality = 3,
+	icon = "inv_scroll_05",
+	buyPrice = 120000,
+	sellPrice = 30000,
+	reqLevel = 0,
+	profession = L["Leatherworking"],
+	teaches = L["Netherfury Leggings"],
+	learnedAt = 340,
+}
+t[25743] = {
+	name = L["Pattern: Netherfury Boots"],
+	quality = 3,
+	icon = "inv_scroll_05",
+	buyPrice = 120000,
+	sellPrice = 30000,
+	reqLevel = 0,
+	profession = L["Leatherworking"],
+	teaches = L["Netherfury Boots"],
+	learnedAt = 350,
+}
+t[29102] = {
+	name = L["Reins of the Cobalt War Talbuk"],
+	quality = 4,
+	icon = "inv_misc_foot_centaur",
+	buyPrice = 1000000,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[29103] = {
+	name = L["Reins of the White War Talbuk"],
+	quality = 4,
+	icon = "inv_misc_foot_centaur",
+	buyPrice = 1000000,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[29104] = {
+	name = L["Reins of the Silver War Talbuk"],
+	quality = 4,
+	icon = "inv_misc_foot_centaur",
+	buyPrice = 1000000,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[29105] = {
+	name = L["Reins of the Tan War Talbuk"],
+	quality = 4,
+	icon = "inv_misc_foot_centaur",
+	buyPrice = 1000000,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[29135] = {
+	name = L["Earthcaller's Headdress"],
+	quality = 3,
+	icon = "inv_helmet_17",
+	buyPrice = 206398,
+	sellPrice = 41279,
+	reqLevel = 70,
+}
+t[29137] = {
+	name = L["Hellscream's Will"],
+	quality = 3,
+	icon = "inv_axe_44",
+	buyPrice = 522358,
+	sellPrice = 104471,
+	reqLevel = 70,
+}
+t[29139] = {
+	name = L["Ceremonial Cover"],
+	quality = 3,
+	icon = "inv_misc_cape_06",
+	buyPrice = 126329,
+	sellPrice = 25265,
+	reqLevel = 70,
+}
+t[29141] = {
+	name = L["Tempest Leggings"],
+	quality = 3,
+	icon = "inv_pants_leather_14",
+	buyPrice = 218004,
+	sellPrice = 43600,
+	reqLevel = 70,
+}
+t[29143] = {
+	name = L["Clefthoof Hide Quiver"],
+	quality = 3,
+	icon = "inv_misc_quiver_08",
+	buyPrice = 100000,
+	sellPrice = 25000,
+	reqLevel = 68,
+}
+t[29145] = {
+	name = L["Band of Ancestral Spirits"],
+	quality = 3,
+	icon = "inv_jewelry_ring_15",
+	buyPrice = 175952,
+	sellPrice = 43988,
+	reqLevel = 70,
+}
+t[29147] = {
+	name = L["Talbuk Hide Spaulders"],
+	quality = 3,
+	icon = "inv_shoulder_07",
+	buyPrice = 167132,
+	sellPrice = 33426,
+	reqLevel = 70,
+}
+t[29664] = {
+	name = L["Pattern: Reinforced Mining Bag"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 50000,
+	sellPrice = 12500,
+	reqLevel = 0,
+	profession = L["Leatherworking"],
+	teaches = L["Reinforced Mining Bag"],
+	learnedAt = 325,
+}
+t[31773] = {
+	name = L["Mag'har Tabard"],
+	quality = 1,
+	icon = "inv_shirt_guildtabard_01",
+	buyPrice = 10000,
+	sellPrice = 2500,
+	reqLevel = 0,
+}
+t[31829] = {
+	name = L["Reins of the Cobalt Riding Talbuk"],
+	quality = 4,
+	icon = "inv_misc_foot_centaur",
+	buyPrice = 700000,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[31831] = {
+	name = L["Reins of the Silver Riding Talbuk"],
+	quality = 4,
+	icon = "inv_misc_foot_centaur",
+	buyPrice = 700000,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[31833] = {
+	name = L["Reins of the Tan Riding Talbuk"],
+	quality = 4,
+	icon = "inv_misc_foot_centaur",
+	buyPrice = 700000,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[31835] = {
+	name = L["Reins of the White Riding Talbuk"],
+	quality = 4,
+	icon = "inv_misc_foot_centaur",
+	buyPrice = 700000,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[34172] = {
+	name = L["Pattern: Drums of Speed"],
+	quality = 1,
+	icon = "inv_scroll_06",
+	buyPrice = 160000,
+	sellPrice = 40000,
+	reqLevel = 0,
+	profession = L["Leatherworking"],
+	teaches = L["Drums of Speed"],
+	learnedAt = 345,
+}
+t[34174] = {
+	name = L["Pattern: Drums of Restoration"],
+	quality = 1,
+	icon = "inv_scroll_06",
+	buyPrice = 160000,
+	sellPrice = 40000,
+	reqLevel = 0,
+	profession = L["Leatherworking"],
+	teaches = L["Drums of Restoration"],
+	learnedAt = 350,
+}
+t[24208] = {
+	name = L["Design: Mystic Dawnstone"],
+	quality = 3,
+	icon = "inv_scroll_05",
+	buyPrice = 120000,
+	sellPrice = 30000,
+	reqLevel = 0,
+}
+t[28915] = {
+	name = L["Reins of the Dark Riding Talbuk"],
+	quality = 4,
+	icon = "inv_misc_foot_centaur",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[29228] = {
+	name = L["Reins of the Dark War Talbuk"],
+	quality = 4,
+	icon = "inv_misc_foot_centaur",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[30568] = {
+	name = L["The Sharp Cookie"],
+	quality = 2,
+	icon = "ability_upgrademoonglaive",
+	buyPrice = 22142,
+	sellPrice = 5535,
+	reqLevel = 66,
+}
+t[30569] = {
+	name = L["Proximo's Rudius"],
+	quality = 0,
+	icon = "inv_sword_04",
+	buyPrice = 18166,
+	sellPrice = 3633,
+	reqLevel = 64,
+}
+t[30570] = {
+	name = L["Arkadian Claymore"],
+	quality = 2,
+	icon = "inv_sword_draenei_06",
+	buyPrice = 87726,
+	sellPrice = 17545,
+	reqLevel = 66,
+}
+t[30571] = {
+	name = L["Don Rodrigo's Heart"],
+	quality = 3,
+	icon = "inv_misc_gem_ruby_01",
+	buyPrice = 140972,
+	sellPrice = 35243,
+	reqLevel = 0,
+}
+t[30615] = {
+	name = L["Halaani Whiskey"],
+	quality = 1,
+	icon = "inv_drink_01",
+	buyPrice = 16000,
+	sellPrice = 1333,
+	reqLevel = 0,
+}
+t[30597] = {
+	name = L["Halaani Claymore"],
+	quality = 2,
+	icon = "inv_sword_draenei_06",
+	buyPrice = 92463,
+	sellPrice = 18492,
+	reqLevel = 66,
+}
+t[30598] = {
+	name = L["Don Amancio's Heart"],
+	quality = 3,
+	icon = "inv_misc_gem_ruby_01",
+	buyPrice = 140972,
+	sellPrice = 35243,
+	reqLevel = 0,
+}
+t[30599] = {
+	name = L["Avenging Blades"],
+	quality = 2,
+	icon = "ability_upgrademoonglaive",
+	buyPrice = 22142,
+	sellPrice = 5535,
+	reqLevel = 66,
+}
+t[27859] = {
+	name = L["Zangar Caps"],
+	quality = 1,
+	icon = "inv_mushroom_04",
+	buyPrice = 5600,
+	sellPrice = 280,
+	reqLevel = 55,
+}
+t[29453] = {
+	name = L["Sporeggar Mushroom"],
+	quality = 1,
+	icon = "inv_misc_food_96_zangarcaps",
+	buyPrice = 8000,
+	sellPrice = 400,
+	reqLevel = 65,
+}
+t[13444] = {
+	name = L["Major Mana Potion"],
+	quality = 1,
+	icon = "inv_potion_76",
+	buyPrice = 6000,
+	sellPrice = 1500,
+	reqLevel = 49,
+}
+t[31337] = {
+	name = L["Orb of the Blackwhelp"],
+	quality = 1,
+	icon = "inv_misc_orb_02",
+	buyPrice = 25000,
+	sellPrice = 6250,
+	reqLevel = 0,
+}
+t[31341] = {
+	name = L["Wyrmcultist's Cloak"],
+	quality = 2,
+	icon = "inv_misc_cape_20",
+	buyPrice = 100261,
+	sellPrice = 20052,
+	reqLevel = 67,
+}
+t[4425] = {
+	name = L["Scroll of Agility III"],
+	quality = 1,
+	icon = "inv_scroll_02",
+	buyPrice = 500,
+	sellPrice = 125,
+	reqLevel = 40,
+}
+t[4426] = {
+	name = L["Scroll of Strength III"],
+	quality = 1,
+	icon = "inv_scroll_02",
+	buyPrice = 500,
+	sellPrice = 125,
+	reqLevel = 40,
+}
+t[10307] = {
+	name = L["Scroll of Stamina IV"],
+	quality = 1,
+	icon = "inv_scroll_07",
+	buyPrice = 600,
+	sellPrice = 112,
+	reqLevel = 50,
+}
+t[10308] = {
+	name = L["Scroll of Intellect IV"],
+	quality = 1,
+	icon = "inv_scroll_01",
+	buyPrice = 600,
+	sellPrice = 112,
+	reqLevel = 50,
+}
+t[22572] = {
+	name = L["Mote of Air"],
+	quality = 1,
+	icon = "inv_elemental_mote_air01",
+	buyPrice = 1600,
+	sellPrice = 400,
+	reqLevel = 0,
+}
+t[22573] = {
+	name = L["Mote of Earth"],
+	quality = 1,
+	icon = "inv_elemental_mote_earth01",
+	buyPrice = 1600,
+	sellPrice = 400,
+	reqLevel = 0,
+}
+t[22574] = {
+	name = L["Mote of Fire"],
+	quality = 1,
+	icon = "inv_elemental_mote_fire01",
+	buyPrice = 1600,
+	sellPrice = 400,
+	reqLevel = 0,
+}
+t[22575] = {
+	name = L["Mote of Life"],
+	quality = 1,
+	icon = "inv_elemental_mote_life01",
+	buyPrice = 1600,
+	sellPrice = 400,
+	reqLevel = 0,
+}
+t[22576] = {
+	name = L["Mote of Mana"],
+	quality = 1,
+	icon = "inv_elemental_mote_mana",
+	buyPrice = 1600,
+	sellPrice = 400,
+	reqLevel = 0,
+}
+t[22577] = {
+	name = L["Mote of Shadow"],
+	quality = 1,
+	icon = "inv_elemental_mote_shadow01",
+	buyPrice = 1600,
+	sellPrice = 400,
+	reqLevel = 0,
+}
+t[22578] = {
+	name = L["Mote of Water"],
+	quality = 1,
+	icon = "inv_elemental_mote_water01",
+	buyPrice = 1600,
+	sellPrice = 400,
+	reqLevel = 0,
+}
+t[27921] = {
+	name = L["Mark of Conquest"],
+	quality = 3,
+	icon = "inv_misc_armorkit_12",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 62,
+}
+t[27927] = {
+	name = L["Mark of Vindication"],
+	quality = 3,
+	icon = "inv_qirajidol_sun",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 62,
+}
+t[27707] = {
+	name = L["Gladiator's Satin Gloves"],
+	quality = 4,
+	icon = "inv_gauntlets_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[28126] = {
+	name = L["Gladiator's Dragonhide Gloves"],
+	quality = 4,
+	icon = "inv_gauntlets_28",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[28136] = {
+	name = L["Gladiator's Wyrmhide Gloves"],
+	quality = 4,
+	icon = "inv_gauntlets_28",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[31375] = {
+	name = L["Gladiator's Kodohide Gloves"],
+	quality = 4,
+	icon = "inv_gauntlets_28",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[31409] = {
+	name = L["Gladiator's Mooncloth Gloves"],
+	quality = 4,
+	icon = "inv_gauntlets_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[25857] = {
+	name = L["Gladiator's Silk Handguards"],
+	quality = 4,
+	icon = "inv_gauntlets_19",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[26000] = {
+	name = L["Gladiator's Linked Gauntlets"],
+	quality = 4,
+	icon = "inv_gauntlets_11",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[27470] = {
+	name = L["Gladiator's Mail Gauntlets"],
+	quality = 4,
+	icon = "inv_gauntlets_11",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[31397] = {
+	name = L["Gladiator's Ringmail Gauntlets"],
+	quality = 4,
+	icon = "inv_gauntlets_11",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[21900] = {
+	name = L["Pattern: Imbued Netherweave Robe"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 60000,
+	sellPrice = 15000,
+	reqLevel = 0,
+	profession = L["Tailoring"],
+	teaches = L["Imbued Netherweave Robe"],
+	learnedAt = 360,
+}
+t[21901] = {
+	name = L["Pattern: Imbued Netherweave Tunic"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 60000,
+	sellPrice = 15000,
+	reqLevel = 0,
+	profession = L["Tailoring"],
+	teaches = L["Imbued Netherweave Tunic"],
+	learnedAt = 360,
+}
+t[23113] = {
+	name = L["Brilliant Golden Draenite"],
+	quality = 2,
+	icon = "inv_misc_gem_goldendraenite_02",
+	buyPrice = 10000,
+	sellPrice = 2500,
+	reqLevel = 0,
+}
+t[23118] = {
+	name = L["Solid Azure Moonstone"],
+	quality = 2,
+	icon = "inv_misc_gem_azuredraenite_02",
+	buyPrice = 10000,
+	sellPrice = 2500,
+	reqLevel = 0,
+}
+t[23121] = {
+	name = L["Lustrous Azure Moonstone"],
+	quality = 2,
+	icon = "inv_misc_gem_azuredraenite_02",
+	buyPrice = 10000,
+	sellPrice = 2500,
+	reqLevel = 0,
+}
+t[23786] = {
+	name = L["Khorium Power Core"],
+	quality = 1,
+	icon = "inv_gizmo_khoriumpowercore",
+	buyPrice = 48000,
+	sellPrice = 12000,
+	reqLevel = 0,
+}
+t[23787] = {
+	name = L["Felsteel Stabilizer"],
+	quality = 1,
+	icon = "inv_gizmo_felstabilizer",
+	buyPrice = 48000,
+	sellPrice = 12000,
+	reqLevel = 0,
+}
+t[10306] = {
+	name = L["Scroll of Spirit IV"],
+	quality = 1,
+	icon = "inv_scroll_01",
+	buyPrice = 550,
+	sellPrice = 100,
+	reqLevel = 45,
+}
+t[25834] = {
+	name = L["Gladiator's Leather Gloves"],
+	quality = 4,
+	icon = "inv_gauntlets_28",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[23785] = {
+	name = L["Hardened Adamantite Tube"],
+	quality = 1,
+	icon = "inv_gizmo_hardenedadamantitetube",
+	buyPrice = 120000,
+	sellPrice = 30000,
+	reqLevel = 0,
+}
+t[13467] = {
+	name = L["Icecap"],
+	quality = 1,
+	icon = "inv_misc_herb_icecap",
+	buyPrice = 1000,
+	sellPrice = 250,
+	reqLevel = 0,
+}
+t[22785] = {
+	name = L["Felweed"],
+	quality = 1,
+	icon = "inv_misc_herb_felweed",
+	buyPrice = 2000,
+	sellPrice = 500,
+	reqLevel = 0,
+}
+t[22786] = {
+	name = L["Dreaming Glory"],
+	quality = 1,
+	icon = "inv_misc_herb_dreamingglory",
+	buyPrice = 2000,
+	sellPrice = 500,
+	reqLevel = 0,
+}
+t[22791] = {
+	name = L["Netherbloom"],
+	quality = 1,
+	icon = "inv_misc_herb_netherbloom",
+	buyPrice = 4000,
+	sellPrice = 1000,
+	reqLevel = 0,
+}
+t[22793] = {
+	name = L["Mana Thistle"],
+	quality = 1,
+	icon = "inv_misc_herb_manathistle",
+	buyPrice = 10000,
+	sellPrice = 2500,
+	reqLevel = 0,
+}
+t[22845] = {
+	name = L["Major Arcane Protection Potion"],
+	quality = 1,
+	icon = "inv_potion_128",
+	buyPrice = 24000,
+	sellPrice = 6000,
+	reqLevel = 60,
+}
+t[2771] = {
+	name = L["Tin Ore"],
+	quality = 1,
+	icon = "inv_ore_tin_01",
+	buyPrice = 100,
+	sellPrice = 25,
+	reqLevel = 0,
+}
+t[29583] = {
+	name = L["Sinister Scimitar"],
+	quality = 2,
+	icon = "inv_sword_34",
+	buyPrice = 7313,
+	sellPrice = 1462,
+	reqLevel = 15,
+}
+t[32083] = {
+	name = L["Faceguard of Determination"],
+	quality = 4,
+	icon = "inv_helmet_01",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[32084] = {
+	name = L["Helmet of the Steadfast Champion"],
+	quality = 4,
+	icon = "inv_helmet_16",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[32085] = {
+	name = L["Warpstalker Helm"],
+	quality = 4,
+	icon = "inv_helmet_72",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[32086] = {
+	name = L["Storm Master's Helmet"],
+	quality = 4,
+	icon = "inv_helmet_69",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[32087] = {
+	name = L["Mask of the Deceiver"],
+	quality = 4,
+	icon = "inv_helmet_73",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[32088] = {
+	name = L["Cowl of Beastly Rage"],
+	quality = 4,
+	icon = "inv_helmet_38",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[32089] = {
+	name = L["Mana-Binders Cowl"],
+	quality = 4,
+	icon = "inv_helmet_30",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[32090] = {
+	name = L["Cowl of Naaru Blessings"],
+	quality = 4,
+	icon = "inv_helmet_30",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29011] = {
+	name = L["Warbringer Greathelm"],
+	quality = 4,
+	icon = "inv_helmet_58",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29012] = {
+	name = L["Warbringer Chestguard"],
+	quality = 4,
+	icon = "inv_chest_plate02",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29015] = {
+	name = L["Warbringer Legguards"],
+	quality = 4,
+	icon = "inv_pants_plate_05",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29016] = {
+	name = L["Warbringer Shoulderguards"],
+	quality = 4,
+	icon = "inv_shoulder_29",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29017] = {
+	name = L["Warbringer Handguards"],
+	quality = 4,
+	icon = "inv_gauntlets_28",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29019] = {
+	name = L["Warbringer Breastplate"],
+	quality = 4,
+	icon = "inv_chest_plate02",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29020] = {
+	name = L["Warbringer Gauntlets"],
+	quality = 4,
+	icon = "inv_gauntlets_28",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29021] = {
+	name = L["Warbringer Battle-Helm"],
+	quality = 4,
+	icon = "inv_helmet_58",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29022] = {
+	name = L["Warbringer Greaves"],
+	quality = 4,
+	icon = "inv_pants_plate_05",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29023] = {
+	name = L["Warbringer Shoulderplates"],
+	quality = 4,
+	icon = "inv_shoulder_29",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29028] = {
+	name = L["Cyclone Headdress"],
+	quality = 4,
+	icon = "inv_helmet_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29029] = {
+	name = L["Cyclone Hauberk"],
+	quality = 4,
+	icon = "inv_chest_chain_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29030] = {
+	name = L["Cyclone Kilt"],
+	quality = 4,
+	icon = "inv_pants_mail_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29031] = {
+	name = L["Cyclone Shoulderpads"],
+	quality = 4,
+	icon = "inv_shoulder_14",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29032] = {
+	name = L["Cyclone Gloves"],
+	quality = 4,
+	icon = "inv_gauntlets_25",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29033] = {
+	name = L["Cyclone Chestguard"],
+	quality = 4,
+	icon = "inv_chest_chain_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29034] = {
+	name = L["Cyclone Handguards"],
+	quality = 4,
+	icon = "inv_gauntlets_25",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29035] = {
+	name = L["Cyclone Faceguard"],
+	quality = 4,
+	icon = "inv_helmet_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29036] = {
+	name = L["Cyclone Legguards"],
+	quality = 4,
+	icon = "inv_pants_mail_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29037] = {
+	name = L["Cyclone Shoulderguards"],
+	quality = 4,
+	icon = "inv_shoulder_14",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29038] = {
+	name = L["Cyclone Breastplate"],
+	quality = 4,
+	icon = "inv_chest_chain_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29039] = {
+	name = L["Cyclone Gauntlets"],
+	quality = 4,
+	icon = "inv_gauntlets_25",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29040] = {
+	name = L["Cyclone Helm"],
+	quality = 4,
+	icon = "inv_helmet_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29042] = {
+	name = L["Cyclone War-Kilt"],
+	quality = 4,
+	icon = "inv_pants_mail_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29043] = {
+	name = L["Cyclone Shoulderplates"],
+	quality = 4,
+	icon = "inv_shoulder_14",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29044] = {
+	name = L["Netherblade Facemask"],
+	quality = 4,
+	icon = "inv_helmet_58",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29045] = {
+	name = L["Netherblade Chestpiece"],
+	quality = 4,
+	icon = "inv_chest_plate02",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29046] = {
+	name = L["Netherblade Breeches"],
+	quality = 4,
+	icon = "inv_pants_plate_05",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29047] = {
+	name = L["Netherblade Shoulderpads"],
+	quality = 4,
+	icon = "inv_shoulder_29",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29048] = {
+	name = L["Netherblade Gloves"],
+	quality = 4,
+	icon = "inv_gauntlets_28",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29061] = {
+	name = L["Justicar Diadem"],
+	quality = 4,
+	icon = "inv_helmet_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29062] = {
+	name = L["Justicar Chestpiece"],
+	quality = 4,
+	icon = "inv_chest_chain_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29063] = {
+	name = L["Justicar Leggings"],
+	quality = 4,
+	icon = "inv_pants_mail_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29064] = {
+	name = L["Justicar Pauldrons"],
+	quality = 4,
+	icon = "inv_shoulder_14",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29065] = {
+	name = L["Justicar Gloves"],
+	quality = 4,
+	icon = "inv_gauntlets_25",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29066] = {
+	name = L["Justicar Chestguard"],
+	quality = 4,
+	icon = "inv_chest_chain_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29067] = {
+	name = L["Justicar Handguards"],
+	quality = 4,
+	icon = "inv_gauntlets_25",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29068] = {
+	name = L["Justicar Faceguard"],
+	quality = 4,
+	icon = "inv_helmet_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29069] = {
+	name = L["Justicar Legguards"],
+	quality = 4,
+	icon = "inv_pants_mail_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29070] = {
+	name = L["Justicar Shoulderguards"],
+	quality = 4,
+	icon = "inv_shoulder_14",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29071] = {
+	name = L["Justicar Breastplate"],
+	quality = 4,
+	icon = "inv_chest_chain_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29072] = {
+	name = L["Justicar Gauntlets"],
+	quality = 4,
+	icon = "inv_gauntlets_25",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29073] = {
+	name = L["Justicar Crown"],
+	quality = 4,
+	icon = "inv_helmet_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29074] = {
+	name = L["Justicar Greaves"],
+	quality = 4,
+	icon = "inv_pants_mail_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29075] = {
+	name = L["Justicar Shoulderplates"],
+	quality = 4,
+	icon = "inv_shoulder_14",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29076] = {
+	name = L["Collar of the Aldor"],
+	quality = 4,
+	icon = "inv_crown_01",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29077] = {
+	name = L["Vestments of the Aldor"],
+	quality = 4,
+	icon = "inv_chest_cloth_43",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29078] = {
+	name = L["Legwraps of the Aldor"],
+	quality = 4,
+	icon = "inv_pants_cloth_05",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29079] = {
+	name = L["Pauldrons of the Aldor"],
+	quality = 4,
+	icon = "inv_shoulder_25",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29080] = {
+	name = L["Gloves of the Aldor"],
+	quality = 4,
+	icon = "inv_gauntlets_17",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29086] = {
+	name = L["Crown of Malorne"],
+	quality = 4,
+	icon = "inv_helmet_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29087] = {
+	name = L["Chestguard of Malorne"],
+	quality = 4,
+	icon = "inv_chest_chain_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29088] = {
+	name = L["Legguards of Malorne"],
+	quality = 4,
+	icon = "inv_pants_mail_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29089] = {
+	name = L["Shoulderguards of Malorne"],
+	quality = 4,
+	icon = "inv_shoulder_14",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29090] = {
+	name = L["Handguards of Malorne"],
+	quality = 4,
+	icon = "inv_gauntlets_25",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29091] = {
+	name = L["Chestpiece of Malorne"],
+	quality = 4,
+	icon = "inv_chest_chain_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29092] = {
+	name = L["Gloves of Malorne"],
+	quality = 4,
+	icon = "inv_gauntlets_25",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29093] = {
+	name = L["Antlers of Malorne"],
+	quality = 4,
+	icon = "inv_helmet_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29094] = {
+	name = L["Britches of Malorne"],
+	quality = 4,
+	icon = "inv_pants_mail_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29095] = {
+	name = L["Pauldrons of Malorne"],
+	quality = 4,
+	icon = "inv_shoulder_14",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29096] = {
+	name = L["Breastplate of Malorne"],
+	quality = 4,
+	icon = "inv_chest_chain_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29097] = {
+	name = L["Gauntlets of Malorne"],
+	quality = 4,
+	icon = "inv_gauntlets_25",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29098] = {
+	name = L["Stag-Helm of Malorne"],
+	quality = 4,
+	icon = "inv_helmet_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29099] = {
+	name = L["Greaves of Malorne"],
+	quality = 4,
+	icon = "inv_pants_mail_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29100] = {
+	name = L["Mantle of Malorne"],
+	quality = 4,
+	icon = "inv_shoulder_14",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[2997] = {
+	name = L["Bolt of Woolen Cloth"],
+	quality = 1,
+	icon = "inv_fabric_wool_03",
+	buyPrice = 400,
+	sellPrice = 100,
+	reqLevel = 0,
+}
+t[4338] = {
+	name = L["Mageweave Cloth"],
+	quality = 1,
+	icon = "inv_fabric_mageweave_01",
+	buyPrice = 1000,
+	sellPrice = 250,
+	reqLevel = 0,
+}
+t[21957] = {
+	name = L["Design: Necklace of the Diamond Tower"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 13500,
+	sellPrice = 3375,
+	reqLevel = 0,
+}
+t[21941] = {
+	name = L["Design: Black Pearl Panther"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 5000,
+	sellPrice = 1250,
+	reqLevel = 0,
+}
+t[21943] = {
+	name = L["Design: Truesilver Crab"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 6000,
+	sellPrice = 1500,
+	reqLevel = 0,
+}
+t[20855] = {
+	name = L["Design: Wicked Moonstone Ring"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 1500,
+	sellPrice = 375,
+	reqLevel = 0,
+}
+t[2102] = {
+	name = L["Small Ammo Pouch"],
+	quality = 1,
+	icon = "inv_misc_ammo_bullet_01",
+	buyPrice = 4,
+	sellPrice = 1,
+	reqLevel = 1,
+}
+t[11363] = {
+	name = L["Medium Shot Pouch"],
+	quality = 1,
+	icon = "inv_misc_ammo_bullet_01",
+	buyPrice = 1000,
+	sellPrice = 250,
+	reqLevel = 10,
+}
+t[30497] = {
+	name = L["Sentinel's Mail Leggings"],
+	quality = 4,
+	icon = "inv_pants_03",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[35564] = {
+	name = L["Recipe: Charred Bear Kabobs"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 18000,
+	sellPrice = 4500,
+	reqLevel = 0,
+	profession = L["Cooking"],
+	teaches = L["Charred Bear Kabobs"],
+	learnedAt = 250,
+}
+t[35566] = {
+	name = L["Recipe: Juicy Bear Burger"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 18000,
+	sellPrice = 4500,
+	reqLevel = 0,
+	profession = L["Cooking"],
+	teaches = L["Juicy Bear Burger"],
+	learnedAt = 250,
+}
+t[20973] = {
+	name = L["Design: Blazing Citrine Ring"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 2000,
+	sellPrice = 500,
+	reqLevel = 0,
+}
+t[21952] = {
+	name = L["Design: Emerald Crown of Destruction"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 10000,
+	sellPrice = 2500,
+	reqLevel = 0,
+}
+t[30498] = {
+	name = L["Outrider's Lamellar Legguards"],
+	quality = 4,
+	icon = "inv_pants_plate_15",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[20970] = {
+	name = L["Design: Pendant of the Agate Shield"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 1500,
+	sellPrice = 375,
+	reqLevel = 0,
+}
+t[33234] = {
+	name = L["Iced Berry Slush"],
+	quality = 1,
+	icon = "inv_drink_20",
+	buyPrice = 4000,
+	sellPrice = 200,
+	reqLevel = 45,
+}
+t[33236] = {
+	name = L["Fizzy Faire Drink \"Classic\""],
+	quality = 1,
+	icon = "inv_drink_waterskin_11",
+	buyPrice = 5600,
+	sellPrice = 280,
+	reqLevel = 60,
+}
+t[33246] = {
+	name = L["Funnel Cake"],
+	quality = 1,
+	icon = "inv_misc_food_73cinnamonroll",
+	buyPrice = 5600,
+	sellPrice = 280,
+	reqLevel = 55,
+}
+t[33254] = {
+	name = L["Afrazi Forest Strider Drumstick"],
+	quality = 1,
+	icon = "inv_misc_food_48",
+	buyPrice = 8000,
+	sellPrice = 400,
+	reqLevel = 65,
+}
+t[13465] = {
+	name = L["Mountain Silversage"],
+	quality = 1,
+	icon = "inv_misc_herb_mountainsilversage",
+	buyPrice = 600,
+	sellPrice = 150,
+	reqLevel = 0,
+}
+t[13468] = {
+	name = L["Black Lotus"],
+	quality = 2,
+	icon = "inv_misc_herb_blacklotus",
+	buyPrice = 4000,
+	sellPrice = 1000,
+	reqLevel = 0,
+}
+t[22787] = {
+	name = L["Ragveil"],
+	quality = 1,
+	icon = "inv_misc_herb_ragveil",
+	buyPrice = 2400,
+	sellPrice = 600,
+	reqLevel = 0,
+}
+t[22789] = {
+	name = L["Terocone"],
+	quality = 1,
+	icon = "inv_misc_herb_terrocone",
+	buyPrice = 2000,
+	sellPrice = 500,
+	reqLevel = 0,
+}
+t[22790] = {
+	name = L["Ancient Lichen"],
+	quality = 1,
+	icon = "inv_misc_herb_ancientlichen",
+	buyPrice = 3000,
+	sellPrice = 750,
+	reqLevel = 0,
+}
+t[23793] = {
+	name = L["Heavy Knothide Leather"],
+	quality = 1,
+	icon = "inv_misc_leatherscrap_11",
+	buyPrice = 25000,
+	sellPrice = 6250,
+	reqLevel = 0,
+}
+t[4419] = {
+	name = L["Scroll of Intellect III"],
+	quality = 1,
+	icon = "inv_scroll_01",
+	buyPrice = 450,
+	sellPrice = 112,
+	reqLevel = 35,
+}
+t[4422] = {
+	name = L["Scroll of Stamina III"],
+	quality = 1,
+	icon = "inv_scroll_07",
+	buyPrice = 450,
+	sellPrice = 112,
+	reqLevel = 35,
+}
+t[10305] = {
+	name = L["Scroll of Protection IV"],
+	quality = 1,
+	icon = "inv_scroll_07",
+	buyPrice = 550,
+	sellPrice = 100,
+	reqLevel = 45,
+}
+t[10310] = {
+	name = L["Scroll of Strength IV"],
+	quality = 1,
+	icon = "inv_scroll_02",
+	buyPrice = 650,
+	sellPrice = 125,
+	reqLevel = 55,
+}
+t[27499] = {
+	name = L["Scroll of Intellect V"],
+	quality = 1,
+	icon = "inv_scroll_01",
+	buyPrice = 600,
+	sellPrice = 112,
+	reqLevel = 60,
+}
+t[27500] = {
+	name = L["Scroll of Protection V"],
+	quality = 1,
+	icon = "inv_scroll_07",
+	buyPrice = 550,
+	sellPrice = 100,
+	reqLevel = 60,
+}
+t[27501] = {
+	name = L["Scroll of Spirit V"],
+	quality = 1,
+	icon = "inv_scroll_01",
+	buyPrice = 550,
+	sellPrice = 100,
+	reqLevel = 60,
+}
+t[27503] = {
+	name = L["Scroll of Strength V"],
+	quality = 1,
+	icon = "inv_scroll_02",
+	buyPrice = 500,
+	sellPrice = 125,
+	reqLevel = 60,
+}
+t[21954] = {
+	name = L["Design: Ring of Bitter Shadows"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 10000,
+	sellPrice = 2500,
+	reqLevel = 0,
+}
+t[20971] = {
+	name = L["Design: Heavy Iron Knuckles"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 1500,
+	sellPrice = 375,
+	reqLevel = 0,
+}
+t[21942] = {
+	name = L["Design: Ruby Crown of Restoration"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 6000,
+	sellPrice = 1500,
+	reqLevel = 0,
+}
+t[20177] = {
+	name = L["Defiler's Lamellar Girdle"],
+	quality = 3,
+	icon = "inv_belt_14",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 58,
+}
+t[20178] = {
+	name = L["Defiler's Lamellar Girdle"],
+	quality = 3,
+	icon = "inv_belt_14",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 28,
+}
+t[20179] = {
+	name = L["Defiler's Lamellar Girdle"],
+	quality = 3,
+	icon = "inv_belt_14",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 48,
+}
+t[20180] = {
+	name = L["Defiler's Lamellar Girdle"],
+	quality = 3,
+	icon = "inv_belt_14",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 40,
+}
+t[20181] = {
+	name = L["Defiler's Lamellar Greaves"],
+	quality = 3,
+	icon = "inv_boots_plate_04",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 58,
+}
+t[20182] = {
+	name = L["Defiler's Lamellar Greaves"],
+	quality = 3,
+	icon = "inv_boots_plate_04",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 28,
+}
+t[20183] = {
+	name = L["Defiler's Lamellar Greaves"],
+	quality = 3,
+	icon = "inv_boots_plate_04",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 40,
+}
+t[20184] = {
+	name = L["Defiler's Lamellar Spaulders"],
+	quality = 4,
+	icon = "inv_shoulder_01",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[20185] = {
+	name = L["Defiler's Lamellar Greaves"],
+	quality = 3,
+	icon = "inv_boots_plate_04",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 48,
+}
+t[20044] = {
+	name = L["Highlander's Mail Girdle"],
+	quality = 3,
+	icon = "inv_belt_20",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 58,
+}
+t[20051] = {
+	name = L["Highlander's Mail Greaves"],
+	quality = 3,
+	icon = "inv_boots_chain_02",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 58,
+}
+t[20056] = {
+	name = L["Highlander's Mail Pauldrons"],
+	quality = 4,
+	icon = "inv_shoulder_19",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 60,
+}
+t[20118] = {
+	name = L["Highlander's Mail Girdle"],
+	quality = 3,
+	icon = "inv_belt_20",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 48,
+}
+t[20119] = {
+	name = L["Highlander's Mail Girdle"],
+	quality = 3,
+	icon = "inv_belt_20",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 40,
+}
+t[20120] = {
+	name = L["Highlander's Mail Girdle"],
+	quality = 3,
+	icon = "inv_belt_20",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 28,
+}
+t[20121] = {
+	name = L["Highlander's Mail Greaves"],
+	quality = 3,
+	icon = "inv_boots_chain_02",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 48,
+}
+t[20122] = {
+	name = L["Highlander's Mail Greaves"],
+	quality = 3,
+	icon = "inv_boots_chain_02",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 40,
+}
+t[20123] = {
+	name = L["Highlander's Mail Greaves"],
+	quality = 3,
+	icon = "inv_boots_chain_02",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 28,
+}
+t[18839] = {
+	name = L["Combat Healing Potion"],
+	quality = 1,
+	icon = "inv_potion_39",
+	buyPrice = 1000,
+	sellPrice = 250,
+	reqLevel = 35,
+}
+t[18841] = {
+	name = L["Combat Mana Potion"],
+	quality = 1,
+	icon = "inv_potion_81",
+	buyPrice = 1000,
+	sellPrice = 250,
+	reqLevel = 41,
+}
+t[28234] = {
+	name = L["Medallion of the Alliance"],
+	quality = 3,
+	icon = "inv_jewelry_trinketpvp_01",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[32455] = {
+	name = L["Star's Lament"],
+	quality = 1,
+	icon = "inv_drink_waterskin_02",
+	buyPrice = 1200,
+	sellPrice = 60,
+	reqLevel = 55,
+}
+t[22729] = {
+	name = L["Schematic: Steam Tonk Controller"],
+	quality = 1,
+	icon = "inv_scroll_03",
+	buyPrice = 8000,
+	sellPrice = 2000,
+	reqLevel = 0,
+	profession = L["Engineering"],
+	teaches = L["Steam Tonk Controller"],
+	learnedAt = 275,
+}
+t[24551] = {
+	name = L["Talisman of the Horde"],
+	quality = 4,
+	icon = "inv_jewelry_talisman_09",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[28239] = {
+	name = L["Medallion of the Horde"],
+	quality = 3,
+	icon = "inv_jewelry_trinketpvp_02",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[28241] = {
+	name = L["Medallion of the Horde"],
+	quality = 3,
+	icon = "inv_jewelry_trinketpvp_02",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[28242] = {
+	name = L["Medallion of the Horde"],
+	quality = 3,
+	icon = "inv_jewelry_trinketpvp_02",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[29592] = {
+	name = L["Insignia of the Horde"],
+	quality = 3,
+	icon = "inv_jewelry_trinketpvp_02",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 0,
+}
+t[30343] = {
+	name = L["Medallion of the Horde"],
+	quality = 3,
+	icon = "inv_jewelry_trinketpvp_02",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[30345] = {
+	name = L["Medallion of the Horde"],
+	quality = 3,
+	icon = "inv_jewelry_trinketpvp_02",
+	buyPrice = 0,
+	sellPrice = 0,
+	reqLevel = 70,
+}
+t[27498] = {
+	name = L["Scroll of Agility V"],
+	quality = 1,
+	icon = "inv_scroll_02",
+	buyPrice = 500,
+	sellPrice = 125,
+	reqLevel = 60,
+}
+t[28100] = {
+	name = L["Volatile Healing Potion"],
+	quality = 1,
+	icon = "inv_potion_40",
+	buyPrice = 4000,
+	sellPrice = 1000,
+	reqLevel = 55,
+}
+t[28101] = {
+	name = L["Unstable Mana Potion"],
+	quality = 1,
+	icon = "inv_potion_75",
+	buyPrice = 6000,
+	sellPrice = 1500,
+	reqLevel = 55,
+}
 t[22913] = {
 	name = L["Recipe: Haste Potion"],
 	profession = L["Alchemy"],
@@ -22924,12 +25218,6 @@ t[13476] = {
 	teaches = L["Mighty Rage Potion"],
 	learnedAt = 255,
 }
-t[32071] = {
-	name = L["Recipe: Elixir of Ironskin"],
-	profession = L["Alchemy"],
-	teaches = L["Elixir of Ironskin"],
-	learnedAt = 330,
-}
 t[6663] = {
 	name = L["Recipe: Elixir of Giant Growth"],
 	profession = L["Alchemy"],
@@ -22978,12 +25266,6 @@ t[35755] = {
 	teaches = L["Assassin's Alchemist Stone"],
 	learnedAt = 375,
 }
-t[30443] = {
-	name = L["Recipe: Transmute Primal Fire to Earth"],
-	profession = L["Alchemy"],
-	teaches = L["Transmute: Primal Fire to Earth"],
-	learnedAt = 350,
-}
 t[13518] = {
 	name = L["Recipe: Flask of Petrification"],
 	profession = L["Alchemy"],
@@ -23013,12 +25295,6 @@ t[35294] = {
 	profession = L["Alchemy"],
 	teaches = L["Elixir of Empowerment"],
 	learnedAt = 365,
-}
-t[22917] = {
-	name = L["Recipe: Transmute Primal Fire to Earth"],
-	profession = L["Alchemy"],
-	teaches = L["Transmute: Primal Fire to Earth"],
-	learnedAt = 350,
 }
 t[6211] = {
 	name = L["Recipe: Elixir of Ogre's Strength"],
@@ -24442,12 +26718,6 @@ t[8029] = {
 	teaches = L["Wicked Mithril Blade"],
 	learnedAt = 225,
 }
-t[35566] = {
-	name = L["Recipe: Juicy Bear Burger"],
-	profession = L["Cooking"],
-	teaches = L["Juicy Bear Burger"],
-	learnedAt = 250,
-}
 t[33875] = {
 	name = L["Recipe: Kibler's Bits"],
 	profession = L["Cooking"],
@@ -24472,18 +26742,6 @@ t[33870] = {
 	teaches = L["Skullfish Soup"],
 	learnedAt = 325,
 }
-t[35564] = {
-	name = L["Recipe: Charred Bear Kabobs"],
-	profession = L["Cooking"],
-	teaches = L["Charred Bear Kabobs"],
-	learnedAt = 250,
-}
-t[27698] = {
-	name = L["Recipe: Poached Bluefish"],
-	profession = L["Cooking"],
-	teaches = L["Poached Bluefish"],
-	learnedAt = 320,
-}
 t[34834] = {
 	name = L["Recipe: Captain Rumsey's Lager"],
 	profession = L["Cooking"],
@@ -24502,28 +26760,10 @@ t[27684] = {
 	teaches = L["Buzzard Bites"],
 	learnedAt = 300,
 }
-t[27691] = {
-	name = L["Recipe: Roasted Clefthoof"],
-	profession = L["Cooking"],
-	teaches = L["Roasted Clefthoof"],
-	learnedAt = 325,
-}
 t[21025] = {
 	name = L["Recipe: Dirge's Kickin' Chimaerok Chops"],
 	profession = L["Cooking"],
 	teaches = L["Dirge's Kickin' Chimaerok Chops"],
-	learnedAt = 300,
-}
-t[27697] = {
-	name = L["Recipe: Grilled Mudfish"],
-	profession = L["Cooking"],
-	teaches = L["Grilled Mudfish"],
-	learnedAt = 320,
-}
-t[27694] = {
-	name = L["Recipe: Blackened Trout"],
-	profession = L["Cooking"],
-	teaches = L["Blackened Trout"],
 	learnedAt = 300,
 }
 t[33869] = {
@@ -24579,12 +26819,6 @@ t[27686] = {
 	profession = L["Cooking"],
 	teaches = L["Roasted Moongraze Tenderloin"],
 	learnedAt = 1,
-}
-t[27693] = {
-	name = L["Recipe: Talbuk Steak"],
-	profession = L["Cooking"],
-	teaches = L["Talbuk Steak"],
-	learnedAt = 325,
 }
 t[16073] = {
 	name = L["Artisan Cookbook"],
@@ -25456,12 +27690,6 @@ t[18657] = {
 	teaches = L["Hyper-Radiant Flame Reflector"],
 	learnedAt = 290,
 }
-t[22729] = {
-	name = L["Schematic: Steam Tonk Controller"],
-	profession = L["Engineering"],
-	teaches = L["Steam Tonk Controller"],
-	learnedAt = 275,
-}
 t[18653] = {
 	name = L["Schematic: Goblin Jumper Cables XL"],
 	profession = L["Engineering"],
@@ -25942,12 +28170,6 @@ t[30308] = {
 	teaches = L["Hurricane Boots"],
 	learnedAt = 375,
 }
-t[29664] = {
-	name = L["Pattern: Reinforced Mining Bag"],
-	profession = L["Leatherworking"],
-	teaches = L["Reinforced Mining Bag"],
-	learnedAt = 325,
-}
 t[35216] = {
 	name = L["Pattern: Leather Chestguard of the Sun"],
 	profession = L["Leatherworking"],
@@ -26086,12 +28308,6 @@ t[32751] = {
 	teaches = L["Living Earth Shoulders"],
 	learnedAt = 375,
 }
-t[30444] = {
-	name = L["Pattern: Reinforced Mining Bag"],
-	profession = L["Leatherworking"],
-	teaches = L["Reinforced Mining Bag"],
-	learnedAt = 325,
-}
 t[15730] = {
 	name = L["Pattern: Red Dragonscale Breastplate"],
 	profession = L["Leatherworking"],
@@ -26140,12 +28356,6 @@ t[29730] = {
 	teaches = L["Earthen Netherscale Boots"],
 	learnedAt = 365,
 }
-t[34175] = {
-	name = L["Pattern: Drums of Restoration"],
-	profession = L["Leatherworking"],
-	teaches = L["Drums of Restoration"],
-	learnedAt = 350,
-}
 t[25730] = {
 	name = L["Pattern: Stylin' Jungle Hat"],
 	profession = L["Leatherworking"],
@@ -26188,18 +28398,6 @@ t[32747] = {
 	teaches = L["Swiftstrike Shoulders"],
 	learnedAt = 375,
 }
-t[29218] = {
-	name = L["Pattern: Netherfury Boots"],
-	profession = L["Leatherworking"],
-	teaches = L["Netherfury Boots"],
-	learnedAt = 350,
-}
-t[25742] = {
-	name = L["Pattern: Netherfury Leggings"],
-	profession = L["Leatherworking"],
-	teaches = L["Netherfury Leggings"],
-	learnedAt = 340,
-}
 t[29669] = {
 	name = L["Pattern: Shadow Armor Kit"],
 	profession = L["Leatherworking"],
@@ -26217,18 +28415,6 @@ t[35302] = {
 	profession = L["Leatherworking"],
 	teaches = L["Cobrascale Gloves"],
 	learnedAt = 365,
-}
-t[29217] = {
-	name = L["Pattern: Netherfury Belt"],
-	profession = L["Leatherworking"],
-	teaches = L["Netherfury Belt"],
-	learnedAt = 340,
-}
-t[29219] = {
-	name = L["Pattern: Netherfury Leggings"],
-	profession = L["Leatherworking"],
-	teaches = L["Netherfury Leggings"],
-	learnedAt = 340,
 }
 t[5974] = {
 	name = L["Pattern: Guardian Cloak"],
@@ -26380,12 +28566,6 @@ t[35528] = {
 	teaches = L["Swiftstrike Shoulders"],
 	learnedAt = 375,
 }
-t[34173] = {
-	name = L["Pattern: Drums of Speed"],
-	profession = L["Leatherworking"],
-	teaches = L["Drums of Speed"],
-	learnedAt = 345,
-}
 t[29672] = {
 	name = L["Pattern: Flame Armor Kit"],
 	profession = L["Leatherworking"],
@@ -26464,12 +28644,6 @@ t[187048] = {
 	teaches = L["Greater Drums of Restoration"],
 	learnedAt = 350,
 }
-t[34174] = {
-	name = L["Pattern: Drums of Restoration"],
-	profession = L["Leatherworking"],
-	teaches = L["Drums of Restoration"],
-	learnedAt = 350,
-}
 t[32748] = {
 	name = L["Pattern: Bindings of Lightning Reflexes"],
 	profession = L["Leatherworking"],
@@ -26487,12 +28661,6 @@ t[19332] = {
 	profession = L["Leatherworking"],
 	teaches = L["Corehound Belt"],
 	learnedAt = 300,
-}
-t[34172] = {
-	name = L["Pattern: Drums of Speed"],
-	profession = L["Leatherworking"],
-	teaches = L["Drums of Speed"],
-	learnedAt = 345,
 }
 t[17023] = {
 	name = L["Pattern: Molten Helm"],
@@ -26914,12 +29082,6 @@ t[32429] = {
 	teaches = L["Boots of Shackled Souls"],
 	learnedAt = 375,
 }
-t[25743] = {
-	name = L["Pattern: Netherfury Boots"],
-	profession = L["Leatherworking"],
-	teaches = L["Netherfury Boots"],
-	learnedAt = 350,
-}
 t[15781] = {
 	name = L["Pattern: Black Dragonscale Leggings"],
 	profession = L["Leatherworking"],
@@ -27021,12 +29183,6 @@ t[35520] = {
 	profession = L["Leatherworking"],
 	teaches = L["Living Earth Bindings"],
 	learnedAt = 375,
-}
-t[25741] = {
-	name = L["Pattern: Netherfury Belt"],
-	profession = L["Leatherworking"],
-	teaches = L["Netherfury Belt"],
-	learnedAt = 340,
 }
 t[15763] = {
 	name = L["Pattern: Blue Dragonscale Shoulders"],
@@ -27160,18 +29316,6 @@ t[24313] = {
 	teaches = L["Battlecast Hood"],
 	learnedAt = 375,
 }
-t[21900] = {
-	name = L["Pattern: Imbued Netherweave Robe"],
-	profession = L["Tailoring"],
-	teaches = L["Imbued Netherweave Robe"],
-	learnedAt = 360,
-}
-t[21902] = {
-	name = L["Pattern: Soulcloth Gloves"],
-	profession = L["Tailoring"],
-	teaches = L["Soulcloth Gloves"],
-	learnedAt = 355,
-}
 t[35207] = {
 	name = L["Pattern: Robe of Eternal Light"],
 	profession = L["Tailoring"],
@@ -27231,12 +29375,6 @@ t[4356] = {
 	profession = L["Tailoring"],
 	teaches = L["Star Belt"],
 	learnedAt = 200,
-}
-t[21901] = {
-	name = L["Pattern: Imbued Netherweave Tunic"],
-	profession = L["Tailoring"],
-	teaches = L["Imbued Netherweave Tunic"],
-	learnedAt = 360,
 }
 t[21905] = {
 	name = L["Pattern: Arcanoweave Bracers"],

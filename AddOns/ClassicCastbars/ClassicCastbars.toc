@@ -1,6 +1,6 @@
-## Interface: 11307
+## Interface: 11401
 ## Author: Wardz
-## Version: v1.4.0
+## Version: v1.4.2
 ## SavedVariables: ClassicCastbarsDB
 ## SavedVariablesPerCharacter: ClassicCastbarsCharDB
 

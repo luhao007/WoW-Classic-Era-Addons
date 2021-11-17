@@ -38,11 +38,6 @@ function _QuestieJourney:HideJourneyTooltip()
     end
 end
 
-function _QuestieJourney:JumpToQuest()
-    QuestieSearchResults:JumpToQuest(self)
-    _QuestieJourney:HideJourneyTooltip()
-end
-
 function _QuestieJourney:CreateObjectiveText(desc)
     local objText = ""
 
@@ -86,7 +81,7 @@ end
 
 function _QuestieJourney:GetLevelDifficultyRanges(questLevel, questMinLevel)
 
-    local red, orange, yellow, green, gray = 0,0,0,0,0
+    local red, orange, yellow, green, gray
 
     -- Calculate Base Values
     red = questMinLevel

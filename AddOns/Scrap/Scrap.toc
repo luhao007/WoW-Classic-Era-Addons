@@ -1,13 +1,13 @@
-## Interface: 11307
+## Interface: 11401
 ## Author: Jaliborc (JoÃ£o Cardoso)
-## Version: 9.0.6
+## Version: 9.1.0
 ## OptionalDeps: WoWUnit, TestPoncho
 ## SavedVariables: Scrap_Sets
 ## SavedVariablesPerCharacter: Scrap_CharSets
 
 ## Title: Scrap
 ## Notes: Sells all your junk at the merchant.
-## Title-zhCN: |cFFFFE00A<|r|cFF0070DE物品|r|cFFFFE00A>|r |cFFFFFFFF垃圾管理|r |cFFFFE00AScrap|r
+## Title-zhCN: |cFFFFE00A<|r|cFFFFF569物品|r|cFFFFE00A>|r |cFFFFFFFF垃圾管理|r |cFFFFE00AScrap|r
 ## Notes-zhCN: 自动出售灰色物品
 
 ## X-License: GNU General Public License Version 3

@@ -1,11 +1,11 @@
 local mod	= DBM:NewMod("Geddon", "DBM-MC", 1)
 local L		= mod:GetLocalizedStrings()
 
-mod:SetRevision("20200623011525")
+mod:SetRevision("20211029181411")
 mod:SetCreatureID(12056)
 mod:SetEncounterID(668)
 mod:SetModelID(12129)
-mod:SetUsedIcons(8)
+mod:SetUsedIcons(1, 2, 3)
 mod:SetHotfixNoticeRev(20191122000000)--2019, 11, 22
 
 mod:RegisterCombat("combat")
@@ -17,7 +17,7 @@ mod:RegisterEventsInCombat(
 )
 
 --[[
-(ability.id = 19695 or ability.id = 19659 or ability.id = 20478) and type = "cast"
+(ability.id = 19695 or ability.id = 19659 or ability.id = 20478 or ability.id = 20475) and type = "cast"
 --]]
 local warnInferno		= mod:NewSpellAnnounce(19695, 3)
 local warnBomb			= mod:NewTargetNoFilterAnnounce(20475, 4)
@@ -36,9 +36,12 @@ local timerBombCD		= mod:NewCDTimer(13.3, 20475, nil, nil, nil, 3)--13.3-18.3
 local timerBomb			= mod:NewTargetTimer(8, 20475, nil, nil, nil, 3)
 local timerArmageddon	= mod:NewCastTimer(8, 20478, nil, nil, nil, 2)
 
-mod:AddSetIconOption("SetIconOnBombTarget", 20475, false, false, {8})
+mod:AddSetIconOption("SetIconOnBombTarget", 20475, true, false, {1, 2, 3})
+
+mod.vb.bombIcon = 1
 
 function mod:OnCombatStart(delay)
+	self.vb.bombIcon = 1
 	--timerIgniteManaCD:Start(7-delay)--7-19, too much variation for first
 	timerBombCD:Start(11-delay)
 end
@@ -51,8 +54,9 @@ do
 		if spellName == LivingBomb then
 			timerBomb:Start(args.destName)
 			if self.Options.SetIconOnBombTarget then
-				self:SetIcon(args.destName, 8)
+				self:SetIcon(args.destName, self.vb.bombIcon)
 			end
+			self.vb.bombIcon = self.vb.bombIcon + 1
 			if args:IsPlayer() then
 				specWarnBomb:Show()
 				specWarnBomb:Play("runout")
@@ -60,8 +64,11 @@ do
 					yellBomb:Yell()
 					yellBombFades:Countdown(20475)
 				end
-			else
+			elseif not self:IsSeasonal() then--Only one bomb
 				warnBomb:Show(args.destName)
+			end
+			if self:IsSeasonal() then--3 bombs, aggregate
+				warnBomb:CombinedShow(0.5, args.destName)
 			end
 		elseif spellName == Ignite and self:CheckDispelFilter() then
 			specWarnIgnite:CombinedShow(0.3, args.destName)
@@ -104,7 +111,8 @@ do
 			warnArmageddon:Show()
 			timerArmageddon:Start()
 		elseif spellName == LivingBomb then
-			timerBombCD:Start()
+			self.vb.bombIcon = 1
+			timerBombCD:Start(self:IsSeasonal() and 11.3 or 13.3)
 		end
 	end
 end

@@ -5,8 +5,22 @@ Changelog
 KNOWN ISSUES:
 - Certain UI elements aren't displaying.  Like the bars around the quest list and the background for the Options window.
 - Blue colored text is "leaking" in the quest info window.
-- "Color quest titles in blue" option is not working.
 - Item Comparisons are not working.
+
+
+Version 4.12.51  (for WoW Classic)  September 30, 2021
+
+- TOC updated to 11400 for Patch 1.14.
+- Updated some quest & item names that referred to Alex Afrasiabi and have been changed. 
+- FIX: Corrected bug where quests weren't showing for anything.  Huge thanks to Flubik on CurseForge for helping.
+
+
+
+Version 4.12.50  (for WoW Classic)  July 1, 2021
+
+- Atlas_ClassicWoW is now a required dependency. 
+- Added an error message if you have the wrong version of AtlasQuest installed for the current WoW version (Retail, Classic, TBC).
+- "Color quest titles in blue if in questlog" option should be working.
 
 
 

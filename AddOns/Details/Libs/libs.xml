@@ -2,5 +2,5 @@
 
 	<Include file="NickTag-1.0\NickTag-1.0.xml" />
 
-	<Include file="DF\Details-Framework-Classic\load.xml"/>
+	<Include file="DetailsFramework\lib\load.xml"/>
 </Ui>

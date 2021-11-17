@@ -21,9 +21,10 @@ local math_max = math.max;
 function QuestiePlayer:Initialize()
     _QuestiePlayer.playerLevel = UnitLevel("player")
 
-    local _, _, raceIndex = UnitRace("player")
-    raceIndex = math.pow(2, raceIndex-1)
-    _QuestiePlayer.raceIndex = raceIndex
+    local _, _, raceId = UnitRace("player")
+    _QuestiePlayer.raceId = raceId
+    raceId = math.pow(2, raceId -1)
+    _QuestiePlayer.raceIndex = raceId
 
     local className, _, classIndex = UnitClass("player")
     classIndex = math.pow(2, classIndex-1)
@@ -44,6 +45,11 @@ end
 function QuestiePlayer:GetPlayerLevel()
     local level = UnitLevel("player");
     return math_max(_QuestiePlayer.playerLevel, level);
+end
+
+---@return number
+function QuestiePlayer:GetRaceId()
+    return _QuestiePlayer.raceId
 end
 
 ---@return string
@@ -109,7 +115,8 @@ function QuestiePlayer:GetPartyMembers()
         for _, v in pairs(partyMembers) do
             local member = {}
             member.Name = v;
-            member.Class, _, _ = UnitClass(v);
+            local class, _, _ = UnitClass(v)
+            member.Class = class
             member.Level = UnitLevel(v);
             table.insert(party, member);
         end
@@ -122,18 +129,9 @@ function QuestiePlayer:GetPartyMemberByName(playerName)
     if(UnitInParty("player") or UnitInRaid("player")) then
         local player = {}
         for index=1, 40 do
-            local name = nil
-            local className, classFilename = nil;
-            --This disables raid check for players.
-            --if(UnitInRaid("player")) then
-            --    name = UnitName("raid"..index);
-            --    className, classFilename = UnitClass("raid"..index);
-            --end
-            if(not name) then
-                name = UnitName("party"..index);
-                className, classFilename = UnitClass("party"..index);
-            end
-            if(name == playerName) then
+            local name = UnitName("party"..index);
+            local _, classFilename = UnitClass("party"..index);
+            if name == playerName then
                 player.name = playerName;
                 player.class = classFilename;
                 local rPerc, gPerc, bPerc, argbHex = GetClassColor(classFilename)
@@ -154,7 +152,6 @@ end
 function QuestiePlayer:GetPartyMemberList()
     local members = {}
     if(UnitInParty("player") or UnitInRaid("player")) then
-        local player = {}
         for index=1, 40 do
             local name = UnitName("party"..index)
             if name then

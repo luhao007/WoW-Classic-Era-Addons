@@ -1,5 +1,5 @@
-## Interface: 11307
-## Version: v1.4.0
+## Interface: 11401
+## Version: v1.4.2
 ## Dependencies: ClassicCastbars
 
 ## Title: ClassicCastbars_Options

@@ -3916,7 +3916,7 @@ end
 	end
 	
 	if (not row.IconUpBorder) then
-		row.IconUpBorder = CreateFrame ("frame", nil, row)
+		row.IconUpBorder = CreateFrame ("frame", nil, row, BackdropTemplateMixin and "BackdropTemplate")
 		row.IconUpBorder:SetAllPoints (row.icone)
 		row.IconUpBorder:SetBackdrop ({edgeFile = [[Interface\Buttons\WHITE8X8]], edgeSize = 1})
 		row.IconUpBorder:SetBackdropBorderColor (0, 0, 0, 0.75)

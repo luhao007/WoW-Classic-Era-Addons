@@ -1,5 +1,24 @@
-Decursive 2.7.8.2
+Decursive 2.7.8.4
 =================
+
+Decursive 2.7.8.4 (2021-11-12)
+------------------------------
+
+- TOC + library update
+
+- Add more information when the version of BugGrabber is wrong (very old
+  version) to help people to fix the issue by themselves.
+
+**New Way to support Decursive:** If you are an [ADA/Cardano](https://cardano.org) holder you can
+delegate your stake to my pool: [anfra.io](https://anfra.io)
+
+
+
+Decursive 2.7.8.3 (2021-07-04)
+------------------------------
+
+- Retail TOC Update
+
 
 Decursive 2.7.8.2 (2021-05-20)
 ------------------------------
@@ -15,10 +34,6 @@ Decursive 2.7.8.1 (2021-04-21)
 - Fix for rare `Dcr_DebuffsFrame.lua:1469: attempt to index field '?' (a nil value)` Lua error.
 
 - Remove old unknown rank text when a spell cast fails.
-
-
-**New Way to support Decursive:** If you are an [ADA/Cardano](https://cardano.org) holder you can
-delegate your stake to my pool: [anfra.io](https://anfra.io)
 
 
 Decursive 2.7.8 (2020-11-21)

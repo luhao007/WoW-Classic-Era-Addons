@@ -1,7 +1,7 @@
 local mod	= DBM:NewMod("Sulfuron", "DBM-MC", 1)
 local L		= mod:GetLocalizedStrings()
 
-mod:SetRevision("20200817152042")
+mod:SetRevision("20211031024951")
 mod:SetCreatureID(12098)--, 11662
 mod:SetEncounterID(669)
 mod:SetModelID(13030)
@@ -21,11 +21,12 @@ local warnImmolate		= mod:NewTargetAnnounce(20294, 2, nil, false, 2)
 local specWarnHeal		= mod:NewSpecialWarningInterrupt(19775, "HasInterrupt", nil, nil, 1, 2)
 
 local timerInspire		= mod:NewTargetTimer(10, 19779, nil, "Tank|Healer", 2, 5, nil, DBM_CORE_L.TANK_ICON..DBM_CORE_L.HEALER_ICON)
-local timerHeal			= mod:NewCastTimer(2, 19775, nil, nil, 2, 4, nil, DBM_CORE_L.INTERRUPT_ICON)
 
---function mod:OnCombatStart(delay)
+local castsPerGUID = {}
 
---end
+function mod:OnCombatEnd()
+	table.wipe(castsPerGUID)
+end
 
 do
 	local Inspire, HandRag, ShadowPain, Immolate = DBM:GetSpellInfo(19779), DBM:GetSpellInfo(19780), DBM:GetSpellInfo(19776), DBM:GetSpellInfo(20294)
@@ -60,10 +61,26 @@ do
 	function mod:SPELL_CAST_START(args)
 		--if args.spellId == 19775 then
 		if args.spellName == DarkMending and args:IsSrcTypeHostile() then
-			if self:CheckInterruptFilter(args.sourceGUID, false, true) then--Only show warning/timer for your own target.
-				timerHeal:Start()
-				specWarnHeal:Show(args.sourceName)
-				specWarnHeal:Play("kickcast")
+			if not castsPerGUID[args.sourceGUID] then
+				castsPerGUID[args.sourceGUID] = 0
+			end
+			castsPerGUID[args.sourceGUID] = castsPerGUID[args.sourceGUID] + 1
+			local count = castsPerGUID[args.sourceGUID]
+			if self:CheckInterruptFilter(args.sourceGUID, false, false) then
+				specWarnHeal:Show(args.sourceName, count)
+				if count == 1 then
+					specWarnHeal:Play("kick1r")
+				elseif count == 2 then
+					specWarnHeal:Play("kick2r")
+				elseif count == 3 then
+					specWarnHeal:Play("kick3r")
+				elseif count == 4 then
+					specWarnHeal:Play("kick4r")
+				elseif count == 5 then
+					specWarnHeal:Play("kick5r")
+				else
+					specWarnHeal:Play("kickcast")
+				end
 			end
 		end
 	end

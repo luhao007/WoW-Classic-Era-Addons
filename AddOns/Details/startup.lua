@@ -1895,7 +1895,7 @@ function _G._detalhes:Start()
 	local originalPosition
 	local isOnOriginalPosition = true
 
-	local taintWarning = CreateFrame ("frame")
+	local taintWarning = CreateFrame ("frame", nil, nil, BackdropTemplateMixin and "BackdropTemplate")
 	taintWarning:SetSize (400, 35)
 	taintWarning:SetFrameStrata ("low")
 

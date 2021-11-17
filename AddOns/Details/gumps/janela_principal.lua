@@ -1898,7 +1898,7 @@ local barra_backdrop_onleave = {
 }
 
 --> pre creating the truncate frame
-	_detalhes.left_anti_truncate = CreateFrame ("frame", "DetailsLeftTextAntiTruncate", UIParent)
+	_detalhes.left_anti_truncate = CreateFrame ("frame", "DetailsLeftTextAntiTruncate", UIParent, BackdropTemplateMixin and "BackdropTemplate")
 	_detalhes.left_anti_truncate:SetBackdrop (gump_fundo_backdrop)
 	_detalhes.left_anti_truncate:SetBackdropColor (0, 0, 0, 0.8)
 	_detalhes.left_anti_truncate:SetFrameStrata ("FULLSCREEN")
@@ -2402,7 +2402,7 @@ local icon_frame_inspect_callback = function (guid, unitid, icon_frame)
 end
 
 local icon_frame_create_animation = function()
-	local f = CreateFrame ("frame", nil, UIParent)
+	local f = CreateFrame ("frame", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
 	f:SetFrameStrata ("FULLSCREEN")
 	f.anim = f:CreateAnimationGroup()
 	f.rotate = f.anim:CreateAnimation ("Rotation")
@@ -3146,20 +3146,20 @@ end
 
 local function CreateAlertFrame (baseframe, instancia)
 
-	local frame_upper = CreateFrame ("scrollframe", "DetailsAlertFrameScroll" .. instancia.meu_id, baseframe)
+	local frame_upper = CreateFrame ("scrollframe", "DetailsAlertFrameScroll" .. instancia.meu_id, baseframe, BackdropTemplateMixin and "BackdropTemplate")
 	frame_upper:SetPoint ("bottom", baseframe, "bottom")
 	frame_upper:SetPoint ("left", baseframe, "left", 3, 0)
 	frame_upper:SetPoint ("right", baseframe, "right", -3, 0)
 	frame_upper:SetHeight (13)
 	frame_upper:SetFrameStrata ("TOOLTIP")
 	
-	local frame_lower = CreateFrame ("frame", "DetailsAlertFrameScrollChild" .. instancia.meu_id, frame_upper)
+	local frame_lower = CreateFrame ("frame", "DetailsAlertFrameScrollChild" .. instancia.meu_id, frame_upper, BackdropTemplateMixin and "BackdropTemplate")
 	frame_lower:SetHeight (25)
 	frame_lower:SetPoint ("left", frame_upper, "left")
 	frame_lower:SetPoint ("right", frame_upper, "right")
 	frame_upper:SetScrollChild (frame_lower)
 
-	local alert_bg = CreateFrame ("frame", "DetailsAlertFrame" .. instancia.meu_id, frame_lower)
+	local alert_bg = CreateFrame ("frame", "DetailsAlertFrame" .. instancia.meu_id, frame_lower, BackdropTemplateMixin and "BackdropTemplate")
 	alert_bg:SetPoint ("bottom", baseframe, "bottom")
 	alert_bg:SetPoint ("left", baseframe, "left", 3, 0)
 	alert_bg:SetPoint ("right", baseframe, "right", -3, 0)
@@ -3185,7 +3185,7 @@ local function CreateAlertFrame (baseframe, instancia)
 	_detalhes:SetFontSize (text, 10)
 	text:SetTextColor (1, 1, 1, 0.8)
 	
-	local rotate_frame = CreateFrame ("frame", "DetailsAlertFrameRotate" .. instancia.meu_id, alert_bg)
+	local rotate_frame = CreateFrame ("frame", "DetailsAlertFrameRotate" .. instancia.meu_id, alert_bg, BackdropTemplateMixin and "BackdropTemplate")
 	rotate_frame:SetWidth (12)
 	rotate_frame:SetPoint ("right", alert_bg, "right", -2, 0)
 	rotate_frame:SetHeight (alert_bg:GetWidth())
@@ -3196,7 +3196,7 @@ local function CreateAlertFrame (baseframe, instancia)
 	icon:SetWidth (14)
 	icon:SetHeight (14)
 	
-	local button = CreateFrame ("button", "DetailsInstance"..instancia.meu_id.."AlertButton", alert_bg)
+	local button = CreateFrame ("button", "DetailsInstance"..instancia.meu_id.."AlertButton", alert_bg, BackdropTemplateMixin and "BackdropTemplate")
 	button:SetAllPoints()
 	button:SetFrameStrata ("FULLSCREEN")
 	button:SetScript ("OnClick", alert_on_click)
@@ -3361,7 +3361,7 @@ end
 do
 
 	--search key: ~tooltip
-	local tooltip_anchor = CreateFrame ("frame", "DetailsTooltipAnchor", UIParent)
+	local tooltip_anchor = CreateFrame ("frame", "DetailsTooltipAnchor", UIParent, BackdropTemplateMixin and "BackdropTemplate")
 	tooltip_anchor:SetSize (140, 20)
 	tooltip_anchor:SetAlpha (0)
 	tooltip_anchor:SetMovable (false)
@@ -3463,7 +3463,7 @@ function gump:CriaJanelaPrincipal (ID, instancia, criando)
 -- main frames -----------------------------------------------------------------------------------------------------------------------------------------------
 
 	--> create the base frame, everything connect in this frame except the rows.
-	local baseframe = CreateFrame ("scrollframe", "DetailsBaseFrame"..ID, _UIParent) --
+	local baseframe = CreateFrame ("scrollframe", "DetailsBaseFrame"..ID, _UIParent, BackdropTemplateMixin and "BackdropTemplate") --
 	baseframe:SetMovable (true)
 	baseframe:SetResizable (true)
 	baseframe:SetUserPlaced (false)
@@ -3475,8 +3475,8 @@ function gump:CriaJanelaPrincipal (ID, instancia, criando)
 
 	--> background holds the wallpaper, alert strings ans textures, have setallpoints on baseframe
 	--> backgrounddisplay is a scrollschild of backgroundframe
-	local backgroundframe =  CreateFrame ("scrollframe", "Details_WindowFrame"..ID, baseframe) --window frame
-	local backgrounddisplay = CreateFrame ("frame", "Details_GumpFrame"..ID, backgroundframe) --gump frame
+	local backgroundframe =  CreateFrame ("scrollframe", "Details_WindowFrame"..ID, baseframe, BackdropTemplateMixin and "BackdropTemplate") --window frame
+	local backgrounddisplay = CreateFrame ("frame", "Details_GumpFrame"..ID, backgroundframe, BackdropTemplateMixin and "BackdropTemplate") --gump frame
 	backgroundframe:SetFrameLevel (3)
 	backgrounddisplay:SetFrameLevel (3)
 	backgroundframe.instance = instancia
@@ -3484,7 +3484,7 @@ function gump:CriaJanelaPrincipal (ID, instancia, criando)
 	instancia.windowBackgroundDisplay = backgrounddisplay
 	
 	--> row frame is the parent of rows, it have setallpoints on baseframe
-	local rowframe = CreateFrame ("frame", "DetailsRowFrame"..ID, _UIParent) --row frame
+	local rowframe = CreateFrame ("frame", "DetailsRowFrame"..ID, _UIParent, BackdropTemplateMixin and "BackdropTemplate") --row frame
 	rowframe:SetAllPoints (baseframe)
 	rowframe:SetFrameStrata (baseframe_strata)
 	rowframe:SetFrameLevel (3)
@@ -3492,14 +3492,14 @@ function gump:CriaJanelaPrincipal (ID, instancia, criando)
 	instancia.rowframe = rowframe
 	
 	--> right click bookmark
-	local switchbutton = CreateFrame("button", "Details_SwitchButtonFrame" ..  ID, UIParent)
+	local switchbutton = CreateFrame("button", "Details_SwitchButtonFrame" ..  ID, UIParent, BackdropTemplateMixin and "BackdropTemplate")
 	switchbutton:SetAllPoints (baseframe)
 	switchbutton:SetFrameStrata (baseframe_strata)
 	switchbutton:SetFrameLevel (4)
 	instancia.windowSwitchButton = switchbutton
 	
 	--> avoid mouse hover over a high window when the menu is open for a lower instance.
-	local anti_menu_overlap = CreateFrame ("frame", "Details_WindowFrameAntiMenuOverlap" .. ID, UIParent)
+	local anti_menu_overlap = CreateFrame ("frame", "Details_WindowFrameAntiMenuOverlap" .. ID, UIParent, BackdropTemplateMixin and "BackdropTemplate")
 	anti_menu_overlap:SetSize (100, 13)
 	anti_menu_overlap:SetFrameStrata ("DIALOG")
 	anti_menu_overlap:EnableMouse (true)
@@ -3508,14 +3508,14 @@ function gump:CriaJanelaPrincipal (ID, instancia, criando)
 	baseframe.anti_menu_overlap = anti_menu_overlap
 	
 	--> floating frame is an anchor for widgets which should be overlaying the window
-	local floatingframe = CreateFrame ("frame", "DetailsInstance"..ID.."BorderHolder", baseframe)
+	local floatingframe = CreateFrame ("frame", "DetailsInstance"..ID.."BorderHolder", baseframe, BackdropTemplateMixin and "BackdropTemplate")
 	floatingframe:SetFrameLevel (baseframe:GetFrameLevel()+7)
 	instancia.floatingframe = floatingframe
 
 -- scroll bar -----------------------------------------------------------------------------------------------------------------------------------------------
 --> create the scrollbar, almost not used.
 
-	local scrollbar = CreateFrame ("slider", "Details_ScrollBar"..ID, backgrounddisplay) --> scroll
+	local scrollbar = CreateFrame ("slider", "Details_ScrollBar"..ID, backgrounddisplay, BackdropTemplateMixin and "BackdropTemplate") --> scroll
 	
 	--> scroll image-node up
 		baseframe.scroll_up = backgrounddisplay:CreateTexture (nil, "background")
@@ -3543,8 +3543,8 @@ function gump:CriaJanelaPrincipal (ID, instancia, criando)
 		baseframe.scroll_middle:SetHeight (64)
 	
 	--> scroll widgets
-		baseframe.button_up = CreateFrame ("button", "DetailsScrollUp" .. instancia.meu_id, backgrounddisplay)
-		baseframe.button_down = CreateFrame ("button", "DetailsScrollDown" .. instancia.meu_id, backgrounddisplay)
+		baseframe.button_up = CreateFrame ("button", "DetailsScrollUp" .. instancia.meu_id, backgrounddisplay, BackdropTemplateMixin and "BackdropTemplate")
+		baseframe.button_down = CreateFrame ("button", "DetailsScrollDown" .. instancia.meu_id, backgrounddisplay, BackdropTemplateMixin and "BackdropTemplate")
 	
 		baseframe.button_up:SetWidth (29)
 		baseframe.button_up:SetHeight (32)
@@ -3587,7 +3587,7 @@ function gump:CriaJanelaPrincipal (ID, instancia, criando)
 	
 -- stretch button -----------------------------------------------------------------------------------------------------------------------------------------------
 
-		baseframe.button_stretch = CreateFrame ("button", "DetailsButtonStretch" .. instancia.meu_id, baseframe)
+		baseframe.button_stretch = CreateFrame ("button", "DetailsButtonStretch" .. instancia.meu_id, baseframe, BackdropTemplateMixin and "BackdropTemplate")
 		baseframe.button_stretch:SetPoint ("bottom", baseframe, "top", 0, 20)
 		baseframe.button_stretch:SetPoint ("right", baseframe, "right", -27, 0)
 		baseframe.button_stretch:SetFrameLevel (1)
@@ -3678,7 +3678,7 @@ function gump:CriaJanelaPrincipal (ID, instancia, criando)
 -- resizers & lock button ~lock ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	--> right resizer
-		baseframe.resize_direita = CreateFrame ("button", "Details_Resize_Direita"..ID, baseframe)
+		baseframe.resize_direita = CreateFrame ("button", "Details_Resize_Direita"..ID, baseframe, BackdropTemplateMixin and "BackdropTemplate")
 		
 		local resize_direita_texture = baseframe.resize_direita:CreateTexture (nil, "overlay")
 		resize_direita_texture:SetWidth (16)
@@ -3697,7 +3697,7 @@ function gump:CriaJanelaPrincipal (ID, instancia, criando)
 		baseframe.resize_direita.side = 2
 
 	--> lock window button
-		baseframe.lock_button = CreateFrame ("button", "Details_Lock_Button"..ID, baseframe)
+		baseframe.lock_button = CreateFrame ("button", "Details_Lock_Button"..ID, baseframe, BackdropTemplateMixin and "BackdropTemplate")
 		baseframe.lock_button:SetPoint ("right", baseframe.resize_direita, "left", -1, 1.5)
 		baseframe.lock_button:SetFrameLevel (baseframe:GetFrameLevel() + 6)
 		baseframe.lock_button:SetWidth (40)
@@ -3717,7 +3717,7 @@ function gump:CriaJanelaPrincipal (ID, instancia, criando)
 		baseframe.lock_button.instancia = instancia
 		
 	--> left resizer
-		baseframe.resize_esquerda = CreateFrame ("button", "Details_Resize_Esquerda"..ID, baseframe)
+		baseframe.resize_esquerda = CreateFrame ("button", "Details_Resize_Esquerda"..ID, baseframe, BackdropTemplateMixin and "BackdropTemplate")
 		
 		local resize_esquerda_texture = baseframe.resize_esquerda:CreateTexture (nil, "overlay")
 		resize_esquerda_texture:SetWidth (16)
@@ -3791,7 +3791,7 @@ function gump:CriaJanelaPrincipal (ID, instancia, criando)
 
 -- break snap button ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-		instancia.break_snap_button = CreateFrame ("button", "DetailsBreakSnapButton" .. ID, floatingframe)
+		instancia.break_snap_button = CreateFrame ("button", "DetailsBreakSnapButton" .. ID, floatingframe, BackdropTemplateMixin and "BackdropTemplate")
 		instancia.break_snap_button:SetPoint ("bottom", baseframe.resize_direita, "top", -1, 0)
 		instancia.break_snap_button:SetFrameLevel (baseframe:GetFrameLevel() + 5)
 		instancia.break_snap_button:SetSize (13, 13)
@@ -3831,7 +3831,7 @@ function gump:CriaJanelaPrincipal (ID, instancia, criando)
 -- side bars highlights ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	--> top
-		local fcima = CreateFrame ("frame", "DetailsTopSideBarHighlight" .. instancia.meu_id, floatingframe)
+		local fcima = CreateFrame ("frame", "DetailsTopSideBarHighlight" .. instancia.meu_id, floatingframe, BackdropTemplateMixin and "BackdropTemplate")
 		gump:CreateFlashAnimation (fcima)
 		fcima:Hide()
 		
@@ -3845,7 +3845,7 @@ function gump:CriaJanelaPrincipal (ID, instancia, criando)
 		instancia.h_cima = fcima
 		
 	--> bottom
-		local fbaixo = CreateFrame ("frame", "DetailsBottomSideBarHighlight" .. instancia.meu_id, floatingframe)
+		local fbaixo = CreateFrame ("frame", "DetailsBottomSideBarHighlight" .. instancia.meu_id, floatingframe, BackdropTemplateMixin and "BackdropTemplate")
 		gump:CreateFlashAnimation (fbaixo)
 		fbaixo:Hide()
 		
@@ -3859,7 +3859,7 @@ function gump:CriaJanelaPrincipal (ID, instancia, criando)
 		instancia.h_baixo = fbaixo
 		
 	--> left
-		local fesquerda = CreateFrame ("frame", "DetailsLeftSideBarHighlight" .. instancia.meu_id, floatingframe)
+		local fesquerda = CreateFrame ("frame", "DetailsLeftSideBarHighlight" .. instancia.meu_id, floatingframe, BackdropTemplateMixin and "BackdropTemplate")
 		gump:CreateFlashAnimation (fesquerda)
 		fesquerda:Hide()
 		
@@ -3873,7 +3873,7 @@ function gump:CriaJanelaPrincipal (ID, instancia, criando)
 		instancia.h_esquerda = fesquerda
 		
 	--> right
-		local fdireita = CreateFrame ("frame", "DetailsRightSideBarHighlight" .. instancia.meu_id, floatingframe)
+		local fdireita = CreateFrame ("frame", "DetailsRightSideBarHighlight" .. instancia.meu_id, floatingframe, BackdropTemplateMixin and "BackdropTemplate")
 		gump:CreateFlashAnimation (fdireita)	
 		fdireita:Hide()
 		
@@ -4015,7 +4015,7 @@ function gump:CriaNovaBarra (instancia, index)
 	local rowframe = instancia.rowframe
 	
 	--> create the bar with rowframe as parent
-	local new_row = CreateFrame ("button", "DetailsBarra_"..instancia.meu_id.."_"..index, rowframe)
+	local new_row = CreateFrame ("button", "DetailsBarra_"..instancia.meu_id.."_"..index, rowframe, BackdropTemplateMixin and "BackdropTemplate")
 	
 	new_row.row_id = index
 	new_row.instance_id = instancia.meu_id
@@ -4042,7 +4042,7 @@ function gump:CriaNovaBarra (instancia, index)
 	new_row:RegisterForClicks ("LeftButtonDown", "RightButtonDown")
 	
 	--> statusbar
-	new_row.statusbar = CreateFrame ("StatusBar", "DetailsBarra_Statusbar_"..instancia.meu_id.."_"..index, new_row)
+	new_row.statusbar = CreateFrame ("StatusBar", "DetailsBarra_Statusbar_"..instancia.meu_id.."_"..index, new_row, BackdropTemplateMixin and "BackdropTemplate")
 	new_row.statusbar.value = 0
 	--> right to left texture
 	new_row.statusbar.right_to_left_texture = new_row.statusbar:CreateTexture (nil, "overlay")
@@ -4053,19 +4053,19 @@ function gump:CriaNovaBarra (instancia, index)
 	new_row.right_to_left_texture = new_row.statusbar.right_to_left_texture
 	
 	--> frame for hold the backdrop border
-	new_row.border = CreateFrame ("Frame", "DetailsBarra_Border_" .. instancia.meu_id .. "_" .. index, new_row.statusbar)
+	new_row.border = CreateFrame ("Frame", "DetailsBarra_Border_" .. instancia.meu_id .. "_" .. index, new_row.statusbar, BackdropTemplateMixin and "BackdropTemplate")
 	new_row.border:SetFrameLevel (new_row.statusbar:GetFrameLevel()+2)
 	new_row.border:SetAllPoints (new_row)
 	
 	-- search key: ~model
 	
 	--low 3d bar
-	new_row.modelbox_low = CreateFrame ("playermodel", "DetailsBarra_ModelBarLow_" .. instancia.meu_id .. "_" .. index, new_row) --rowframe
+	new_row.modelbox_low = CreateFrame ("playermodel", "DetailsBarra_ModelBarLow_" .. instancia.meu_id .. "_" .. index, new_row, BackdropTemplateMixin and "BackdropTemplate") --rowframe
 	new_row.modelbox_low:SetFrameLevel (new_row.statusbar:GetFrameLevel()-1)
 	new_row.modelbox_low:SetPoint ("topleft", new_row, "topleft")
 	new_row.modelbox_low:SetPoint ("bottomright", new_row, "bottomright")
 	--high 3d bar
-	new_row.modelbox_high = CreateFrame ("playermodel", "DetailsBarra_ModelBarHigh_" .. instancia.meu_id .. "_" .. index, new_row) --rowframe
+	new_row.modelbox_high = CreateFrame ("playermodel", "DetailsBarra_ModelBarHigh_" .. instancia.meu_id .. "_" .. index, new_row, BackdropTemplateMixin and "BackdropTemplate") --rowframe
 	new_row.modelbox_high:SetFrameLevel (new_row.statusbar:GetFrameLevel()+1)
 	new_row.modelbox_high:SetPoint ("topleft", new_row, "topleft")
 	new_row.modelbox_high:SetPoint ("bottomright", new_row, "bottomright")
@@ -4093,7 +4093,7 @@ function gump:CriaNovaBarra (instancia, index)
 	icone_classe:SetTexCoord (.75, 1, .75, 1)
 	new_row.icone_classe = icone_classe
 	
-	local icon_frame = CreateFrame ("frame", "DetailsBarra_IconFrame_" .. instancia.meu_id .. "_" .. index, new_row.statusbar)
+	local icon_frame = CreateFrame ("frame", "DetailsBarra_IconFrame_" .. instancia.meu_id .. "_" .. index, new_row.statusbar, BackdropTemplateMixin and "BackdropTemplate")
 	icon_frame:SetPoint ("topleft", icone_classe, "topleft")
 	icon_frame:SetPoint ("bottomright", icone_classe, "bottomright")
 	icon_frame:SetFrameLevel (new_row.statusbar:GetFrameLevel()+1)
@@ -4498,7 +4498,7 @@ function _detalhes:CheckPsUpdate()
 	if (is_enabled) then
 		--> check if the frame is created
 		if (not self.ps_update_frame) then
-			self.ps_update_frame = CreateFrame ("frame", "DetailsInstance" .. self.meu_id .. "PsUpdate", self.baseframe)
+			self.ps_update_frame = CreateFrame ("frame", "DetailsInstance" .. self.meu_id .. "PsUpdate", self.baseframe, BackdropTemplateMixin and "BackdropTemplate")
 			self.ps_update_frame.instance = self
 		end
 		
@@ -5341,20 +5341,20 @@ function gump:CriaRodape (baseframe, instancia)
 	baseframe.rodape.top_bg:SetPoint ("left", baseframe.rodape.esquerdo, "right", -16, -48)
 	baseframe.rodape.top_bg:SetPoint ("right", baseframe.rodape.direita, "left", 16, -48)
 	
-	local StatusBarLeftAnchor = CreateFrame ("frame", "DetailsStatusBarAnchorLeft" .. instancia.meu_id, baseframe)
+	local StatusBarLeftAnchor = CreateFrame ("frame", "DetailsStatusBarAnchorLeft" .. instancia.meu_id, baseframe, BackdropTemplateMixin and "BackdropTemplate")
 	StatusBarLeftAnchor:SetPoint ("left", baseframe.rodape.top_bg, "left", 5, 57)
 	StatusBarLeftAnchor:SetWidth (1)
 	StatusBarLeftAnchor:SetHeight (1)
 	baseframe.rodape.StatusBarLeftAnchor = StatusBarLeftAnchor
 	
-	local StatusBarCenterAnchor = CreateFrame ("frame", "DetailsStatusBarAnchorCenter" .. instancia.meu_id, baseframe)
+	local StatusBarCenterAnchor = CreateFrame ("frame", "DetailsStatusBarAnchorCenter" .. instancia.meu_id, baseframe, BackdropTemplateMixin and "BackdropTemplate")
 	StatusBarCenterAnchor:SetPoint ("center", baseframe.rodape.top_bg, "center", 0, 57)
 	StatusBarCenterAnchor:SetWidth (1)
 	StatusBarCenterAnchor:SetHeight (1)
 	baseframe.rodape.StatusBarCenterAnchor = StatusBarCenterAnchor
 	
 	--> display frame
-		baseframe.statusbar = CreateFrame ("frame", "DetailsStatusBar" .. instancia.meu_id, instancia.floatingframe)
+		baseframe.statusbar = CreateFrame ("frame", "DetailsStatusBar" .. instancia.meu_id, instancia.floatingframe, BackdropTemplateMixin and "BackdropTemplate")
 		baseframe.statusbar:SetFrameLevel (instancia.floatingframe:GetFrameLevel()+2)
 		baseframe.statusbar:SetPoint ("left", baseframe.rodape.esquerdo, "right", -13, 10)
 		baseframe.statusbar:SetPoint ("right", baseframe.rodape.direita, "left", 13, 10)
@@ -5380,7 +5380,7 @@ function gump:CriaRodape (baseframe, instancia)
 		baseframe.statusbar:Hide()
 	
 	--> frame invis�vel
-	baseframe.DOWNFrame = CreateFrame ("frame", "DetailsDownFrame" .. instancia.meu_id, baseframe)
+	baseframe.DOWNFrame = CreateFrame ("frame", "DetailsDownFrame" .. instancia.meu_id, baseframe, BackdropTemplateMixin and "BackdropTemplate")
 	baseframe.DOWNFrame:SetPoint ("left", baseframe.rodape.esquerdo, "right", 0, 10)
 	baseframe.DOWNFrame:SetPoint ("right", baseframe.rodape.direita, "left", 0, 10)
 	baseframe.DOWNFrame:SetHeight (14)
@@ -9258,11 +9258,11 @@ function _detalhes:GetTitleBarIconsTexture (button, instance)
 end
 
 function _detalhes:CreateFakeWindow()
-	local t = CreateFrame ("frame")
+	local t = CreateFrame ("frame", nil, nil, BackdropTemplateMixin and "BackdropTemplate")
 	t:SetSize (200, 91)
 	t:SetBackdrop ({bgFile = "Interface\\AddOns\\Details\\images\\background", tile = true, tileSize = 16 })
 	t:SetBackdropColor (0.0941, 0.0941, 0.0941, 0.3)
-	local tb = CreateFrame ("frame", nil, t)
+	local tb = CreateFrame ("frame", nil, t, BackdropTemplateMixin and "BackdropTemplate")
 	tb:SetPoint ("bottomleft", t, "topleft", 0, 0)
 	tb:SetPoint ("bottomright", t, "topright", 0, 0)
 	tb:SetHeight (16)
@@ -9349,7 +9349,7 @@ function gump:CriaCabecalho (baseframe, instancia)
 	baseframe.cabecalho = {}
 	
 	--> FECHAR INSTANCIA ----------------------------------------------------------------------------------------------------------------------------------------------------
-	baseframe.cabecalho.fechar = CreateFrame ("button", "DetailsCloseInstanceButton" .. instancia.meu_id, baseframe) --, "UIPanelCloseButton"
+	baseframe.cabecalho.fechar = CreateFrame ("button", "DetailsCloseInstanceButton" .. instancia.meu_id, baseframe, BackdropTemplateMixin and "BackdropTemplate") --, "UIPanelCloseButton"
 	baseframe.cabecalho.fechar:SetWidth (18)
 	baseframe.cabecalho.fechar:SetHeight (18)
 	baseframe.cabecalho.fechar:SetFrameLevel (5) --> altura mais alta que os demais frames
@@ -9428,7 +9428,7 @@ function gump:CriaCabecalho (baseframe, instancia)
 	baseframe.cabecalho.top_bg:SetHeight (128)
 
 	--> frame invis�vel
-	baseframe.UPFrame = CreateFrame ("frame", "DetailsUpFrameInstance"..instancia.meu_id, baseframe)
+	baseframe.UPFrame = CreateFrame ("frame", "DetailsUpFrameInstance"..instancia.meu_id, baseframe, BackdropTemplateMixin and "BackdropTemplate")
 	baseframe.UPFrame:SetPoint ("left", baseframe.cabecalho.ball, "right", 0, -53)
 	baseframe.UPFrame:SetPoint ("right", baseframe.cabecalho.ball_r, "left", 0, -53)
 	baseframe.UPFrame:SetHeight (20)
@@ -9442,7 +9442,7 @@ function gump:CriaCabecalho (baseframe, instancia)
 	BGFrame_scripts (baseframe.UPFrame, baseframe, instancia)
 	
 	--> corrige o v�o entre o baseframe e o upframe
-	baseframe.UPFrameConnect = CreateFrame ("frame", "DetailsAntiGap"..instancia.meu_id, baseframe)
+	baseframe.UPFrameConnect = CreateFrame ("frame", "DetailsAntiGap"..instancia.meu_id, baseframe, BackdropTemplateMixin and "BackdropTemplate")
 	baseframe.UPFrameConnect:SetPoint ("bottomleft", baseframe, "topleft", 0, -1)
 	baseframe.UPFrameConnect:SetPoint ("bottomright", baseframe, "topright", 0, -1)
 	baseframe.UPFrameConnect:SetHeight (2)
@@ -9453,7 +9453,7 @@ function gump:CriaCabecalho (baseframe, instancia)
 	
 	BGFrame_scripts (baseframe.UPFrameConnect, baseframe, instancia)
 	
-	baseframe.UPFrameLeftPart = CreateFrame ("frame", "DetailsUpFrameLeftPart"..instancia.meu_id, baseframe)
+	baseframe.UPFrameLeftPart = CreateFrame ("frame", "DetailsUpFrameLeftPart"..instancia.meu_id, baseframe, BackdropTemplateMixin and "BackdropTemplate")
 	baseframe.UPFrameLeftPart:SetPoint ("bottomleft", baseframe, "topleft", 0, 0)
 	baseframe.UPFrameLeftPart:SetSize (22, 20)
 	baseframe.UPFrameLeftPart:EnableMouse (true)
@@ -9464,32 +9464,32 @@ function gump:CriaCabecalho (baseframe, instancia)
 	BGFrame_scripts (baseframe.UPFrameLeftPart, baseframe, instancia)
 
 	--> anchors para os micro displays no lado de cima da janela
-	local StatusBarLeftAnchor = CreateFrame ("frame", "DetailsStatusBarLeftAnchor" .. instancia.meu_id, baseframe)
+	local StatusBarLeftAnchor = CreateFrame ("frame", "DetailsStatusBarLeftAnchor" .. instancia.meu_id, baseframe, BackdropTemplateMixin and "BackdropTemplate")
 	StatusBarLeftAnchor:SetPoint ("bottomleft", baseframe, "topleft", 0, 9)
 	StatusBarLeftAnchor:SetWidth (1)
 	StatusBarLeftAnchor:SetHeight (1)
 	baseframe.cabecalho.StatusBarLeftAnchor = StatusBarLeftAnchor
 	
-	local StatusBarCenterAnchor = CreateFrame ("frame", "DetailsStatusBarCenterAnchor" .. instancia.meu_id, baseframe)
+	local StatusBarCenterAnchor = CreateFrame ("frame", "DetailsStatusBarCenterAnchor" .. instancia.meu_id, baseframe, BackdropTemplateMixin and "BackdropTemplate")
 	StatusBarCenterAnchor:SetPoint ("center", baseframe, "center")
 	StatusBarCenterAnchor:SetPoint ("bottom", baseframe, "top", 0, 9)
 	StatusBarCenterAnchor:SetWidth (1)
 	StatusBarCenterAnchor:SetHeight (1)
 	baseframe.cabecalho.StatusBarCenterAnchor = StatusBarCenterAnchor	
 
-	local StatusBarRightAnchor = CreateFrame ("frame", "DetailsStatusBarRightAnchor" .. instancia.meu_id, baseframe)
+	local StatusBarRightAnchor = CreateFrame ("frame", "DetailsStatusBarRightAnchor" .. instancia.meu_id, baseframe, BackdropTemplateMixin and "BackdropTemplate")
 	StatusBarRightAnchor:SetPoint ("bottomright", baseframe, "topright", 0, 9)
 	StatusBarRightAnchor:SetWidth (1)
 	StatusBarRightAnchor:SetHeight (1)
 	baseframe.cabecalho.StatusBarRightAnchor = StatusBarRightAnchor
 	
-	local MenuAnchorLeft = CreateFrame ("frame", "DetailsMenuAnchorLeft"..instancia.meu_id, baseframe)
+	local MenuAnchorLeft = CreateFrame ("frame", "DetailsMenuAnchorLeft"..instancia.meu_id, baseframe, BackdropTemplateMixin and "BackdropTemplate")
 	MenuAnchorLeft:SetSize (1, 1)
 	
-	local MenuAnchorRight = CreateFrame ("frame", "DetailsMenuAnchorRight"..instancia.meu_id, baseframe)
+	local MenuAnchorRight = CreateFrame ("frame", "DetailsMenuAnchorRight"..instancia.meu_id, baseframe, BackdropTemplateMixin and "BackdropTemplate")
 	MenuAnchorRight:SetSize (1, 1)
 	
-	local Menu2AnchorRight = CreateFrame ("frame", "DetailsMenu2AnchorRight"..instancia.meu_id, baseframe)
+	local Menu2AnchorRight = CreateFrame ("frame", "DetailsMenu2AnchorRight"..instancia.meu_id, baseframe, BackdropTemplateMixin and "BackdropTemplate")
 	Menu2AnchorRight:SetSize (1, 1)
 	
 	instancia.menu_points = {MenuAnchorLeft, MenuAnchorRight}
@@ -9639,7 +9639,7 @@ function gump:CriaCabecalho (baseframe, instancia)
 		end
 	end
 
-	baseframe.cabecalho.reset = CreateFrame ("button", "DetailsClearSegmentsButton" .. instancia.meu_id, baseframe)
+	baseframe.cabecalho.reset = CreateFrame ("button", "DetailsClearSegmentsButton" .. instancia.meu_id, baseframe, BackdropTemplateMixin and "BackdropTemplate")
 	baseframe.cabecalho.reset:SetFrameLevel (baseframe.UPFrame:GetFrameLevel()+1)
 	baseframe.cabecalho.reset:SetSize (10, 16)
 	baseframe.cabecalho.reset:SetPoint ("right", baseframe.cabecalho.novo, "left")

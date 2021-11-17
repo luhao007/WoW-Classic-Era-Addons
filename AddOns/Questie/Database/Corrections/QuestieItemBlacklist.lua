@@ -39,6 +39,7 @@ function QuestieItemBlacklist:Load()
         [7909] = true, -- aquamarine
         [7910] = true, -- star ruby
         [8153] = true, -- wildvine
+        [8244] = true, -- flawless-draenethyst-sphere
         [8831] = true, -- purple lotus
         [8836] = true, -- arthas tears
         [8838] = true, -- sungrass
@@ -47,6 +48,7 @@ function QuestieItemBlacklist:Load()
         [8846] = true, -- gromsblood
         [8932] = true, -- Alterac Swiss
         [10561] = true, -- Mithril Casing
+        [10593] = true, -- imperfect-draenethyst-fragment
         [12207] = true, -- giant egg
         [12361] = true, -- blue sapphire
         [12363] = true, -- arcane crystal
@@ -176,6 +178,7 @@ function QuestieItemBlacklist:Load()
         [22529] = true, -- savage frond
         
         -- TBC Phase 1
+        [21887] = true, -- Knothide Leather
         [22572] = true, -- Mote of Air
         [22573] = true, -- Mote of Earth
         [22574] = true, -- Mote of Fire
@@ -186,7 +189,14 @@ function QuestieItemBlacklist:Load()
         [22829] = true, -- Super Healing Potion
         [22832] = true, -- Super Mana Potion
         [23445] = true, -- Fel Iron Bar
+        [23793] = true, -- Heavy Knothide Leather
         [24246] = true, -- Sanguine Hibiscus
-        [24401] = true, -- Unidentified Plant Parts  
+        [24401] = true, -- Unidentified Plant Parts
+        [26042] = true, -- Oshu'gun Crystal Powder Sample
+        [26043] = true, -- Oshu'gun Crystal Powder Sample
+
+        [22786] = true, -- Dreaming Glory
+        [22790] = true, -- Ancient Lichen
+        [32569] = true, -- Apexis Shard
     }
 end

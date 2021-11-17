@@ -458,7 +458,7 @@ local cancelFadeAnimation = function(frame)
 	Details.FadeHandler.frames[frame] = nil
 end
 
-Details.FadeHandler.OnUpdateFrame = CreateFrame("frame", "DetailsFadeFrameOnUpdate", UIParent)
+Details.FadeHandler.OnUpdateFrame = CreateFrame("frame", "DetailsFadeFrameOnUpdate", UIParent, BackdropTemplateMixin and "BackdropTemplate")
 Details.FadeHandler.OnUpdateFrame:SetScript("OnUpdate", function(self, deltaTime)
 	for frame, frameSettings in pairs(Details.FadeHandler.frames) do
 		local totalTime = frameSettings.totalTime

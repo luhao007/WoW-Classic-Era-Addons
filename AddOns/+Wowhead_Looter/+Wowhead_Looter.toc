@@ -1,13 +1,13 @@
-## Interface: 11307
+## Interface: 11401
 ## Author: mystadio
-## Version: 11307
+## Version: 11401
 ## LoadOnDemand: 0
 ## SavedVariables: wlTime, wlVersion, wlUploaded, wlStats, wlExportData, wlRealmList, wlAuction, wlEvent, wlItemSuffix, wlObject, wlProfile, wlProfileData, wlUnit, wlItemDurability, wlItemBonuses, wlTradeSkillDifficulty
 ## SavedVariablesPerCharacter: wlScans, wlSetting, wlPetBlacklist, wlUIReloaded
 ## DefaultState: enabled
 
 ## Title: Wowhead Looter
-## Notes: Gathers data for Wowhead while you play. Version 11304.
+## Notes: Gathers data for Wowhead while you play. Version 11400.
 ## Title-zhCN: |cFFFFE00A<|r|cFFFFFFFF辅助|r|cFFFFE00A>|r |cFFFFFFFFWowhead数据采集|r |cFFFFE00A+Wowhead_Looter|r
 ## Notes-zhCN: 收集各种游戏内数据并上传Wowhead
 
